@@ -10,6 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@500;600&family=Orbitron:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Cloudflare Turnstile -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
 </head>
 <body>
   <div class="gradient-bg"></div>
@@ -27,6 +29,7 @@
       <a href="#promos">Promotions</a>
       <a href="#reviews">Reviews</a>
       <a href="#availability">Availability</a>
+      <a href="#calendar">Book a Call</a>
       <a href="#contact" class="btn">Get Quote</a>
     </nav>
   </header>
@@ -45,7 +48,6 @@
         </div>
       </div>
 
-      <!-- WHAT WE DELIVER -->
       <div class="hero-card glass">
         <h3>What We Deliver</h3>
         <div class="pill-grid">
@@ -60,103 +62,27 @@
     <section id="services" class="container section">
       <h2>Core Services</h2>
       <div class="cards">
-        <div class="card glass">
-          <h3>Internet Access</h3>
-          <p>Fiber, Dedicated Internet (DIA), Coax. POTS over LTE/VoIP conversions. Multi‑carrier quoting for best fit.</p>
-        </div>
-        <div class="card glass">
-          <h3>Wi‑Fi &amp; LAN</h3>
-          <p>Heatmaps, AP placement, structured cabling, PoE switching, VLAN/QoS, guest networks, captive portal.</p>
-        </div>
-        <div class="card glass">
-          <h3>Mobility</h3>
-          <p>Business 5G plans, devices, lifecycle management. AT&amp;T, Verizon, T‑Mobile — mix for coverage & cost.</p>
-        </div>
-        <div class="card glass">
-          <h3>Cybersecurity</h3>
-          <p>Firewalls, SASE/SD‑WAN, endpoint protection, MFA/SSO, monitoring, policy hardening, compliance‑ready.</p>
-        </div>
-        <div class="card glass">
-          <h3>Cloud &amp; Collaboration</h3>
-          <p>Migrations (email/files), identity, Zero Trust access, secure remote work, device management.</p>
-        </div>
-        <div class="card glass">
-          <h3>Multi‑Site Networks</h3>
-          <p>SD‑WAN transitions, LTE/5G failover, carrier diversity, multi‑cloud connectivity, QoS for voice/video.</p>
-        </div>
+        <div class="card glass"><h3>Internet Access</h3><p>Fiber, Dedicated Internet (DIA), Coax. POTS over LTE/VoIP conversions. Multi‑carrier quoting for best fit.</p></div>
+        <div class="card glass"><h3>Wi‑Fi &amp; LAN</h3><p>Heatmaps, AP placement, structured cabling, PoE switching, VLAN/QoS, guest networks, captive portal.</p></div>
+        <div class="card glass"><h3>Mobility</h3><p>Business 5G plans, devices, lifecycle management. AT&amp;T, Verizon, T‑Mobile — mix for coverage & cost.</p></div>
+        <div class="card glass"><h3>Cybersecurity</h3><p>Firewalls, SASE/SD‑WAN, endpoint protection, MFA/SSO, monitoring, policy hardening, compliance‑ready.</p></div>
+        <div class="card glass"><h3>Cloud &amp; Collaboration</h3><p>Migrations (email/files), identity, Zero Trust access, secure remote work, device management.</p></div>
+        <div class="card glass"><h3>Multi‑Site Networks</h3><p>SD‑WAN transitions, LTE/5G failover, carrier diversity, multi‑cloud connectivity, QoS for voice/video.</p></div>
       </div>
     </section>
 
     <section id="promos" class="container section">
       <h2>Current Promotions & Bundles</h2>
       <p class="muted small">Examples below — actual availability and pricing vary by address and are confirmed during quoting.</p>
-
-      <!-- Carousel -->
       <div class="carousel">
         <div class="track">
-          <div class="slide glass">
-            <img src="logos/spectrum.svg" alt="Spectrum Business"/>
-            <h4>Gig‑speed coax in select areas</h4>
-            <ul>
-              <li>Up to 1000 Mbps coax</li>
-              <li>Static IP & business Wi‑Fi options</li>
-              <li>Install promos in many markets</li>
-            </ul>
-          </div>
-          <div class="slide glass">
-            <img src="logos/att.svg" alt="AT&T Business"/>
-            <h4>Dedicated fiber (DIA)</h4>
-            <ul>
-              <li>Symmetric DIA with SLAs</li>
-              <li>Managed security/router options</li>
-              <li>Term or month‑to‑month</li>
-            </ul>
-          </div>
-          <div class="slide glass">
-            <img src="logos/tmobile.svg" alt="T‑Mobile Business"/>
-            <h4>5G Business Internet</h4>
-            <ul>
-              <li>FWA primary or backup</li>
-              <li>Unlimited business plans</li>
-              <li>Device promos vary</li>
-            </ul>
-          </div>
-          <div class="slide glass">
-            <img src="logos/verizon.svg" alt="Verizon Business"/>
-            <h4>5G/LTE backup</h4>
-            <ul>
-              <li>Failover for fiber/coax</li>
-              <li>Device & plan incentives</li>
-              <li>Static IP on FWA</li>
-            </ul>
-          </div>
-          <div class="slide glass">
-            <img src="logos/starlink.svg" alt="Starlink Business"/>
-            <h4>Remote & multi‑site</h4>
-            <ul>
-              <li>LEO satellite for hard‑to‑reach sites</li>
-              <li>Great primary for remote</li>
-              <li>Pro mounting available</li>
-            </ul>
-          </div>
-          <div class="slide glass">
-            <img src="logos/cox.svg" alt="Cox Business"/>
-            <h4>Business Internet + Wi‑Fi</h4>
-            <ul>
-              <li>Gig‑coax & fiber</li>
-              <li>Wi‑Fi & static IP add‑ons</li>
-              <li>Local market promos</li>
-            </ul>
-          </div>
-          <div class="slide glass">
-            <img src="logos/frontier.svg" alt="Frontier Business"/>
-            <h4>Fiber to the Premises</h4>
-            <ul>
-              <li>Symmetric fiber</li>
-              <li>No‑term options</li>
-              <li>Competitive SMB/enterprise</li>
-            </ul>
-          </div>
+          <div class="slide glass"><img src="logos/spectrum.svg" alt="Spectrum Business"/><h4>Gig‑speed coax</h4><ul><li>Up to 1000 Mbps</li><li>Static IP / Wi‑Fi options</li><li>Install promos</li></ul></div>
+          <div class="slide glass"><img src="logos/att.svg" alt="AT&T Business"/><h4>Dedicated fiber</h4><ul><li>Symmetric DIA w/ SLAs</li><li>Managed security/router</li><li>Term or M2M</li></ul></div>
+          <div class="slide glass"><img src="logos/tmobile.svg" alt="T‑Mobile Business"/><h4>5G Business Internet</h4><ul><li>FWA primary/backup</li><li>Unlimited plans</li><li>Device promos</li></ul></div>
+          <div class="slide glass"><img src="logos/verizon.svg" alt="Verizon Business"/><h4>5G/LTE backup</h4><ul><li>Failover for fiber/coax</li><li>Plan incentives</li><li>Static IP on FWA</li></ul></div>
+          <div class="slide glass"><img src="logos/starlink.svg" alt="Starlink Business"/><h4>Remote & multi‑site</h4><ul><li>LEO satellite</li><li>Great for remote</li><li>Pro mounting</li></ul></div>
+          <div class="slide glass"><img src="logos/cox.svg" alt="Cox Business"/><h4>Internet + Wi‑Fi</h4><ul><li>Gig‑coax & fiber</li><li>Static IP add‑ons</li><li>Local promos</li></ul></div>
+          <div class="slide glass"><img src="logos/frontier.svg" alt="Frontier Business"/><h4>Fiber to Premises</h4><ul><li>Symmetric fiber</li><li>No‑term options</li><li>Competitive pricing</li></ul></div>
         </div>
         <div class="carousel-controls">
           <button class="prev" aria-label="Previous">‹</button>
@@ -168,31 +94,9 @@
     <section id="reviews" class="container section">
       <h2>What Clients Say</h2>
       <div class="reviews">
-        <div class="review glass">
-          <div class="stars">★★★★★</div>
-          <p>“SGI made our office internet upgrade painless. They handled AT&amp;T, Spectrum, and our Wi‑Fi install — all in one call.”</p>
-          <div class="who">Miguel R. — Operations, Orange County Construction</div>
-        </div>
-        <div class="review glass">
-          <div class="stars">★★★★★</div>
-          <p>“Outages used to kill our phones. SGI moved us to dedicated fiber with wireless backup. Zero nonsense, just results.”</p>
-          <div class="who">Vanessa G. — Office Admin, Cali Medical Supplies</div>
-        </div>
-        <div class="review glass">
-          <div class="stars">★★★★☆</div>
-          <p>“Great support. New fiber + VoIP conversion went smooth and on time. Communication was excellent.”</p>
-          <div class="who">Aaron T. — GM, Prime Auto Group</div>
-        </div>
-        <div class="review glass">
-          <div class="stars">★★★★★</div>
-          <p>“They set us up with 5G for our salon and it’s been rock solid. The tech was professional and fast.”</p>
-          <div class="who">Jasmine P. — Owner, Cloud Nine Salon</div>
-        </div>
-        <div class="review glass">
-          <div class="stars">★★★★★</div>
-          <p>“SGI built Starlink + Frontier fiber failover for our remote depots. No one else offered a mixed‑carrier design like that.”</p>
-          <div class="who">Robert K. — IT Director, Southern Logistics</div>
-        </div>
+        <div class="review glass"><div class="stars">★★★★★</div><p>“SGI made our office internet upgrade painless. They handled AT&amp;T, Spectrum, and our Wi‑Fi install — all in one call.”</p><div class="who">Miguel R. — Operations</div></div>
+        <div class="review glass"><div class="stars">★★★★★</div><p>“Outages used to kill our phones. SGI moved us to dedicated fiber with wireless backup. Zero nonsense, just results.”</p><div class="who">Vanessa G. — Office Admin</div></div>
+        <div class="review glass"><div class="stars">★★★★☆</div><p>“Great support. New fiber + VoIP conversion went smooth and on time. Communication was excellent.”</p><div class="who">Aaron T. — GM</div></div>
       </div>
     </section>
 
@@ -203,6 +107,14 @@
         <input id="zip" name="zip" placeholder="Business ZIP code" aria-label="ZIP" required/>
         <button class="btn primary" type="submit">Check Now</button>
       </form>
+    </section>
+
+    <section id="calendar" class="container section">
+      <h2>Book a Call</h2>
+      <p class="muted">Pick a time that works for you. We’ll confirm via <a class="link" href="mailto:sales@sgitbs.com">sales@sgitbs.com</a>.</p>
+      <div class="calendar-embed glass">
+        <iframe id="calendly-frame" title="Book a call" src="https://calendly.com/sgitbs/intro-call" loading="lazy"></iframe>
+      </div>
     </section>
 
     <section id="contact" class="container section">
@@ -231,7 +143,11 @@
               <label><input type="checkbox" name="sdwan"/> SD‑WAN/SASE</label>
             </div>
             <textarea name="message" rows="5" placeholder="Anything else we should know (timelines, current provider, issues)"></textarea>
-            <!-- Spam honeypot (hidden to humans) -->
+
+            <!-- Turnstile widget (invisible) -->
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAAB92KNmp7Z3rQd7b" data-size="invisible" data-callback="sgiTurnstileCallback"></div>
+
+            <!-- Honeypot -->
             <input type="text" name="website" class="hp" autocomplete="off" tabindex="-1" aria-hidden="true" />
             <button class="btn primary" type="submit">Send Request</button>
             <div id="lead-msg" class="muted small"></div>
@@ -264,13 +180,13 @@
       </div>
       <div>
         <strong>Quick Links</strong>
-        <p class="muted small"><a href="#services">Services</a> · <a href="#promos">Promotions</a> · <a href="#reviews">Reviews</a> · <a href="#contact">Request Quote</a></p>
+        <p class="muted small"><a href="#services">Services</a> · <a href="#promos">Promotions</a> · <a href="#reviews">Reviews</a> · <a href="#calendar">Book a Call</a> · <a href="#contact">Request Quote</a></p>
       </div>
     </div>
     <div class="container center tiny muted">© 2025 SGI Total Business Solutions. All rights reserved.</div>
   </footer>
 
-  <!-- Floating Action Buttons -->
+  <!-- Action Buttons -->
   <a class="fab call" href="tel:+17149244485" aria-label="Call SGI">
     <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1v3.61a1 1 0 01-1 1A17 17 0 013 5a1 1 0 011-1h3.61a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.24 1.01l-2.32 2.22z"/></svg>
     <span>Call</span>
@@ -280,7 +196,6 @@
     <span>Text</span>
   </a>
 
-  <script>window.SGI_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyauvvLHcFRRtGz1O9d-I4HkNjheiAEv5mryEy5HCIslN1HzX4RMe48fnGFXuqOfxvG/exec";</script>
-  <script src="script.js?v=40"></script>
+  <script src="script.js?v=70"></script>
 </body>
 </html>
