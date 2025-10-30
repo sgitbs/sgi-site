@@ -5,6 +5,27 @@
   const EMAIL = "sales@sgitbs.com";
   let pageLoadTS = Date.now();
 
+  // Carousel controls
+  const track = document.querySelector(".carousel .track");
+  const prevBtn = document.querySelector(".carousel .prev");
+  const nextBtn = document.querySelector(".carousel .next");
+  if (track && prevBtn && nextBtn) {
+    prevBtn.addEventListener("click", ()=> track.scrollBy({ left: -340, behavior: "smooth" }));
+    nextBtn.addEventListener("click", ()=> track.scrollBy({ left: 340, behavior: "smooth" }));
+  }
+
+  // ZIP field feeds lead form and scrolls
+  const zipForm = document.getElementById("zip-form");
+  if (zipForm) {
+    zipForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const zip = document.getElementById("zip").value.trim();
+      const leadZip = document.querySelector("#lead-form input[name='zip']");
+      if (leadZip && zip) leadZip.value = zip;
+      document.querySelector("#contact").scrollIntoView({ behavior: "smooth" });
+    });
+  }
+
   // Helpers
   async function postJSON(url, payload) {
     try {
@@ -36,6 +57,7 @@
     if (helper && helper.classList.contains("error-text")) helper.remove();
   }
 
+  // Lead form
   const leadForm = document.getElementById("lead-form");
   const leadMsg = document.getElementById("lead-msg");
 
@@ -45,28 +67,32 @@
     const email = (data.get("email")||"").trim();
     const company = (data.get("company")||"").trim();
     const phone = (data.get("phone")||"").trim();
-    const hp = (data.get("website")||"").trim();
-    const dwellOK = (Date.now() - pageLoadTS) > 4000;
+    const hp = (data.get("website")||"").trim(); // honeypot
+    const dwellOK = (Date.now() - pageLoadTS) > 5000; // >=5s
 
     const nameEl = leadForm.querySelector("input[name='name']");
     const emailEl = leadForm.querySelector("input[name='email']");
     const companyEl = leadForm.querySelector("input[name='company']");
     const phoneEl = leadForm.querySelector("input[name='phone']");
+
     [nameEl,emailEl,companyEl,phoneEl].forEach(clearError);
 
     let bad = false;
-    if (!name) { showError(nameEl,"Enter your full name."); bad = true; }
+    if (!name) { showError(nameEl,"Please enter your full name."); bad = true; }
     const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRe.test(email)) { showError(emailEl,"Enter a valid email."); bad = true; }
+    if (!emailRe.test(email)) { showError(emailEl,"Enter a valid email address."); bad = true; }
     if (!company) { showError(companyEl,"Company is required."); bad = true; }
     const phoneRe = /^[0-9\-\+\(\)\s\.]{7,}$/;
-    if (!phoneRe.test(phone)) { showError(phoneEl,"Enter a valid phone."); bad = true; }
+    if (!phoneRe.test(phone)) { showError(phoneEl,"Enter a valid phone number."); bad = true; }
 
-    if (!dwellOK){ leadMsg.textContent = "One moment…"; return; }
+    if (!dwellOK){ leadMsg.textContent = "Please take a few seconds to complete the form."; return; }
     if (hp){ leadMsg.textContent = "Submission blocked."; return; }
     if (bad) return;
 
-    // Get Turnstile token (visible)
+    const services = ["fiber","dia","coax","pots","wifi","cell","security","sdwan"]
+      .filter(k => data.get(k)==="on").map(s => s.toUpperCase()).join(", ");
+
+    // Visible Turnstile token
     let token = "";
     try {
       token = (window.turnstile && typeof window.turnstile.getResponse === "function")
@@ -74,9 +100,6 @@
         : "";
     } catch(_) {}
     if (!token) { leadMsg.textContent = "Please complete the CAPTCHA and try again."; return; }
-
-    const services = ["fiber","dia","coax","pots","wifi","cell","security","sdwan"]
-      .filter(k => data.get(k)==="on").map(s => s.toUpperCase()).join(", ");
 
     const payload = {
       type:"lead",
@@ -87,16 +110,18 @@
       services,
       message:data.get("message")||"",
       turnstile_token: token,
-      source:"sgi-site-v9"
+      source:"sgi-futuristic-v7-classic"
     };
 
     postJSON(WEB_APP_URL, payload).then(ok=>{
       leadMsg.textContent = ok
         ? `Submitted! We'll reach out from ${EMAIL} shortly.`
         : "Could not submit right now. Please try again.";
-      if (ok && window.turnstile && typeof window.turnstile.reset === "function") {
-        window.turnstile.reset();
+      if (ok) {
         leadForm.reset();
+        if (window.turnstile && typeof window.turnstile.reset === "function") {
+          window.turnstile.reset();
+        }
       }
     });
   }
