@@ -9,13 +9,13 @@
   <link rel="stylesheet" href="style.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@500;600&family=Orbitron:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="gradient-bg"></div>
 
   <header class="header container">
-    <a href="#home" class="brand">
+    <a href="#home" class="brand" aria-label="Home">
       <img src="logo.svg" alt="SGI logo" class="logo"/>
       <div class="brand-text">
         <div class="sgi">SGI</div>
@@ -44,8 +44,10 @@
           <span>Nationwide</span> • <span>Same‑day responses</span> • <span>One point of contact</span>
         </div>
       </div>
+
+      <!-- WHAT WE DELIVER -->
       <div class="hero-card glass">
-        <h3>What we deliver</h3>
+        <h3>What We Deliver</h3>
         <div class="pill-grid">
           <div class="pill"><small>Internet</small><b>Fiber • DIA • Coax</b></div>
           <div class="pill"><small>Phones</small><b>POTS • VoIP • Mobile</b></div>
@@ -88,69 +90,77 @@
     <section id="promos" class="container section">
       <h2>Current Promotions & Bundles</h2>
       <p class="muted small">Examples below — actual availability and pricing vary by address and are confirmed during quoting.</p>
-      <div class="promos">
-        <div class="promo glass">
-          <div class="tag spectrum">Spectrum Business</div>
-          <h4>Gig‑speed coax in select areas</h4>
-          <ul>
-            <li>Up to 1000 Mbps coax in supported ZIPs</li>
-            <li>Static IPs &amp; business Wi‑Fi options</li>
-            <li>Install promotions in many markets</li>
-          </ul>
+
+      <!-- Carousel -->
+      <div class="carousel">
+        <div class="track">
+          <div class="slide glass">
+            <img src="logos/spectrum.svg" alt="Spectrum Business"/>
+            <h4>Gig‑speed coax in select areas</h4>
+            <ul>
+              <li>Up to 1000 Mbps coax</li>
+              <li>Static IP & business Wi‑Fi options</li>
+              <li>Install promos in many markets</li>
+            </ul>
+          </div>
+          <div class="slide glass">
+            <img src="logos/att.svg" alt="AT&T Business"/>
+            <h4>Dedicated fiber (DIA)</h4>
+            <ul>
+              <li>Symmetric DIA with SLAs</li>
+              <li>Managed security/router options</li>
+              <li>Term or month‑to‑month</li>
+            </ul>
+          </div>
+          <div class="slide glass">
+            <img src="logos/tmobile.svg" alt="T‑Mobile Business"/>
+            <h4>5G Business Internet</h4>
+            <ul>
+              <li>FWA primary or backup</li>
+              <li>Unlimited business plans</li>
+              <li>Device promos vary</li>
+            </ul>
+          </div>
+          <div class="slide glass">
+            <img src="logos/verizon.svg" alt="Verizon Business"/>
+            <h4>5G/LTE backup</h4>
+            <ul>
+              <li>Failover for fiber/coax</li>
+              <li>Device & plan incentives</li>
+              <li>Static IP on FWA</li>
+            </ul>
+          </div>
+          <div class="slide glass">
+            <img src="logos/starlink.svg" alt="Starlink Business"/>
+            <h4>Remote & multi‑site</h4>
+            <ul>
+              <li>LEO satellite for hard‑to‑reach sites</li>
+              <li>Great primary for remote</li>
+              <li>Pro mounting available</li>
+            </ul>
+          </div>
+          <div class="slide glass">
+            <img src="logos/cox.svg" alt="Cox Business"/>
+            <h4>Business Internet + Wi‑Fi</h4>
+            <ul>
+              <li>Gig‑coax & fiber</li>
+              <li>Wi‑Fi & static IP add‑ons</li>
+              <li>Local market promos</li>
+            </ul>
+          </div>
+          <div class="slide glass">
+            <img src="logos/frontier.svg" alt="Frontier Business"/>
+            <h4>Fiber to the Premises</h4>
+            <ul>
+              <li>Symmetric fiber</li>
+              <li>No‑term options</li>
+              <li>Competitive SMB/enterprise</li>
+            </ul>
+          </div>
         </div>
-        <div class="promo glass">
-          <div class="tag att">AT&amp;T Business (Fiber/DIA)</div>
-          <h4>Dedicated fiber where available</h4>
-          <ul>
-            <li>Symmetric DIA with enterprise SLAs</li>
-            <li>Bundled security &amp; managed router options</li>
-            <li>Term and month‑to‑month options</li>
-          </ul>
-        </div>
-        <div class="promo glass">
-          <div class="tag tmo">T‑Mobile Business</div>
-          <h4>5G Business Internet & Mobility</h4>
-          <ul>
-            <li>Fixed wireless access for primary/backup</li>
-            <li>Unlimited business plans for teams</li>
-            <li>Device promos vary by region</li>
-          </ul>
-        </div>
-        <div class="promo glass">
-          <div class="tag vz">Verizon Business</div>
-          <h4>5G/LTE backup + Business Internet</h4>
-          <ul>
-            <li>Failover for fiber/coax circuits</li>
-            <li>Device & plan incentives in some areas</li>
-            <li>Static IP options for FWA</li>
-          </ul>
-        </div>
-        <div class="promo glass">
-          <div class="tag starlink">Starlink Business</div>
-          <h4>Remote & multi‑site connectivity</h4>
-          <ul>
-            <li>LEO satellite internet for hard‑to‑reach sites</li>
-            <li>Great as primary for remote / backup for critical</li>
-            <li>Professional mounting available</li>
-          </ul>
-        </div>
-        <div class="promo glass">
-          <div class="tag cox">Cox Business</div>
-          <h4>Business Internet + Wi‑Fi</h4>
-          <ul>
-            <li>Gig‑coax & fiber in supported markets</li>
-            <li>Wi‑Fi and static IP add‑ons</li>
-            <li>Local market promos available</li>
-          </ul>
-        </div>
-        <div class="promo glass">
-          <div class="tag frontier">Frontier Business</div>
-          <h4>Fiber to the Premises</h4>
-          <ul>
-            <li>Symmetric fiber where built</li>
-            <li>No‑term options in many areas</li>
-            <li>Competitive pricing for SMB/enterprise</li>
-          </ul>
+        <div class="carousel-controls">
+          <button class="prev" aria-label="Previous">‹</button>
+          <button class="next" aria-label="Next">›</button>
         </div>
       </div>
     </section>
@@ -188,11 +198,10 @@
 
     <section id="availability" class="container section">
       <h2>Check Service Availability</h2>
-      <p class="muted">Enter your business ZIP to see the best providers we can deliver at your address.</p>
+      <p class="muted">Enter your business ZIP, then we’ll tailor your quote.</p>
       <form id="zip-form" class="zip glass">
         <input id="zip" name="zip" placeholder="Business ZIP code" aria-label="ZIP" required/>
         <button class="btn primary" type="submit">Check Now</button>
-        <div id="zip-msg" class="muted small"></div>
       </form>
     </section>
 
@@ -201,10 +210,11 @@
         <div>
           <h2>Request a Quote</h2>
           <p class="muted">Tell us about your locations and needs—our team will compare carriers, tailor a plan, and schedule install with pro techs.</p>
-          <form id="lead-form" class="lead glass">
+          <form id="lead-form" class="lead glass" novalidate>
             <input name="name" placeholder="Full Name" required/>
             <input type="email" name="email" placeholder="Work Email" required/>
-            <input name="company" placeholder="Company"/>
+            <input name="company" placeholder="Company" required/>
+            <input name="phone" placeholder="Phone" required/>
             <input name="address" placeholder="Business Address"/>
             <div class="row">
               <input name="city" placeholder="City"/>
@@ -221,6 +231,8 @@
               <label><input type="checkbox" name="sdwan"/> SD‑WAN/SASE</label>
             </div>
             <textarea name="message" rows="5" placeholder="Anything else we should know (timelines, current provider, issues)"></textarea>
+            <!-- Spam honeypot (hidden to humans) -->
+            <input type="text" name="website" class="hp" autocomplete="off" tabindex="-1" aria-hidden="true" />
             <button class="btn primary" type="submit">Send Request</button>
             <div id="lead-msg" class="muted small"></div>
           </form>
@@ -258,7 +270,17 @@
     <div class="container center tiny muted">© 2025 SGI Total Business Solutions. All rights reserved.</div>
   </footer>
 
+  <!-- Floating Action Buttons -->
+  <a class="fab call" href="tel:+17149244485" aria-label="Call SGI">
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1v3.61a1 1 0 01-1 1A17 17 0 013 5a1 1 0 011-1h3.61a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.24 1.01l-2.32 2.22z"/></svg>
+    <span>Call</span>
+  </a>
+  <a class="fab text" href="sms:+17149244485" aria-label="Text SGI">
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2zM6 9h12v2H6V9zm0-4h12v2H6V5zm0 8h8v2H6v-2z"/></svg>
+    <span>Text</span>
+  </a>
+
   <script>window.SGI_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyauvvLHcFRRtGz1O9d-I4HkNjheiAEv5mryEy5HCIslN1HzX4RMe48fnGFXuqOfxvG/exec";</script>
-  <script src="script.js?v=21"></script>
+  <script src="script.js?v=40"></script>
 </body>
 </html>
