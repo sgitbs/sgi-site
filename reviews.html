@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>SGI Total Business Solutions — Connectivity · Mobility · Infrastructure</title>
+<title>Client Reviews — SGI Total Business Solutions</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <style>
 /* ═══════════════════════════════════════
@@ -264,6 +264,36 @@ a { text-decoration: none; }
 }
 
 </style>
+<style>
+.reviews-full { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.review-card-lg { background:white; border:1px solid var(--gray-200); border-radius:14px; padding:32px 28px; transition:all .2s; position:relative; }
+.review-card-lg::before { content:'"'; font-family:'Georgia',serif; font-size:80px; color:var(--gray-200); position:absolute; top:12px; left:20px; line-height:1; }
+.review-card-lg:hover { border-color:var(--blue-pale); box-shadow:0 12px 36px rgba(0,0,0,.08); transform:translateY(-3px); }
+.rev-stars-lg { color:#f59e0b; font-size:18px; letter-spacing:3px; margin-bottom:16px; }
+.rev-text-lg { font-size:15px; color:var(--text-mid); line-height:1.8; margin-bottom:20px; font-style:italic; position:relative; z-index:1; }
+.rev-author-lg { font-size:14px; font-weight:700; color:var(--text-dark); }
+.rev-biz-lg { font-size:12px; color:var(--text-muted); margin-top:3px; letter-spacing:.3px; }
+.rating-hero { display:flex; align-items:center; gap:40px; padding:40px 48px; background:white; border-bottom:1px solid var(--gray-200); flex-wrap:wrap; gap:32px; }
+.rh-big { text-align:center; }
+.rh-big-num { font-size:80px; font-weight:800; color:var(--blue); line-height:1; letter-spacing:-3px; }
+.rh-big-stars { color:#f59e0b; font-size:24px; letter-spacing:4px; margin:4px 0; }
+.rh-big-sub { font-size:14px; color:var(--text-muted); }
+.rh-bars { flex:1; min-width:200px; }
+.rh-bar-row { display:flex; align-items:center; gap:12px; margin-bottom:10px; }
+.rh-bar-label { font-size:13px; color:var(--text-muted); min-width:48px; }
+.rh-bar-track { flex:1; height:8px; background:var(--gray-200); border-radius:4px; overflow:hidden; }
+.rh-bar-fill { height:100%; background:#f59e0b; border-radius:4px; }
+.rh-bar-count { font-size:12px; color:var(--text-muted); min-width:28px; text-align:right; }
+.rh-stats { display:flex; gap:48px; flex-wrap:wrap; }
+.rh-stat { display:flex; flex-direction:column; gap:4px; }
+.rh-stat-num { font-size:36px; font-weight:800; color:var(--text-dark); letter-spacing:-1px; line-height:1; }
+.rh-stat-label { font-size:12px; color:var(--text-muted); max-width:100px; line-height:1.4; }
+@media(max-width:960px){
+  .reviews-full { grid-template-columns:1fr; }
+  .rating-hero { padding:24px; }
+  .rh-big-num { font-size:56px; }
+}
+</style>
 </head>
 <body>
 
@@ -274,11 +304,7 @@ a { text-decoration: none; }
     <div class="topbar-item">✉️ <strong>sales@sgitbs.com</strong></div>
     <div class="topbar-item tbs-highlight">✔ Same-day response guaranteed</div>
   </div>
-  <div class="topbar-right">
-    <a href="#">@sgiconnect</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </div>
+  <div class="topbar-right"><a href="contact.html">Contact</a><a href="#">@sgiconnect</a></div>
 </div>
 
 <!-- NAV -->
@@ -286,14 +312,14 @@ a { text-decoration: none; }
   <a href="index.html"><div class="nav-logo-wrap">
     <svg width="220" height="44" viewBox="0 0 220 44" fill="none">
       <defs>
-        <linearGradient id="wg1n" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7ec8f0"/><stop offset="100%" stop-color="#1a7de0"/></linearGradient>
-        <linearGradient id="wg2n" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#4aaae8" stop-opacity="0.8"/><stop offset="100%" stop-color="#0d5abf" stop-opacity="0.8"/></linearGradient>
-        <linearGradient id="wg3n" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1a7de0" stop-opacity="0.5"/><stop offset="100%" stop-color="#0a3d8f" stop-opacity="0.5"/></linearGradient>
+        <linearGradient id="wg1r" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7ec8f0"/><stop offset="100%" stop-color="#1a7de0"/></linearGradient>
+        <linearGradient id="wg2r" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#4aaae8" stop-opacity="0.8"/><stop offset="100%" stop-color="#0d5abf" stop-opacity="0.8"/></linearGradient>
+        <linearGradient id="wg3r" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1a7de0" stop-opacity="0.5"/><stop offset="100%" stop-color="#0a3d8f" stop-opacity="0.5"/></linearGradient>
       </defs>
       <circle cx="22" cy="36" r="4" fill="#0a3d8f"/>
-      <path d="M12 27 Q22 17 32 27" stroke="url(#wg3n)" stroke-width="4.5" fill="none" stroke-linecap="round"/>
-      <path d="M6 20 Q22 4 38 20" stroke="url(#wg2n)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-      <path d="M1 13 Q22 -5 43 13" stroke="url(#wg1n)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M12 27 Q22 17 32 27" stroke="url(#wg3r)" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+      <path d="M6 20 Q22 4 38 20" stroke="url(#wg2r)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+      <path d="M1 13 Q22 -5 43 13" stroke="url(#wg1r)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
       <line x1="54" y1="4" x2="54" y2="38" stroke="#d0dde8" stroke-width="1.2"/>
       <text x="64" y="34" font-family="Inter,sans-serif" font-size="30" font-weight="800" fill="#0b1f3a" letter-spacing="-0.5">S</text>
       <text x="87" y="34" font-family="Inter,sans-serif" font-size="30" font-weight="800" fill="#0b1f3a" letter-spacing="-0.5">G</text>
@@ -302,10 +328,10 @@ a { text-decoration: none; }
     </svg>
   </div></a>
   <ul class="nav-links">
-    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="index.html">Home</a></li>
     <li><a href="services.html">Services</a></li>
     <li><a href="providers.html">Provider Catalog</a></li>
-    <li><a href="reviews.html">Reviews</a></li>
+    <li><a href="reviews.html" class="active">Reviews</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -323,136 +349,122 @@ a { text-decoration: none; }
   <a href="contact.html" class="mobile-cta">Get Free Quote</a>
 </div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-content">
-    <div class="hero-badge"><div class="badge-dot"></div><span>Carrier-neutral · No commissions bias · Same-day response</span></div>
-    <h1>Better business<br/><span class="blue">connectivity.</span><br/><span class="thin">Your terms.</span></h1>
-    <p class="hero-sub">We compare AT&T, Spectrum, Verizon, T-Mobile, Starlink, Cox, and Frontier at your address — then design, install, and manage your complete network. One contact. No bias.</p>
-    <div class="hero-pills">
-      <div class="hero-pill">● Connectivity</div>
-      <div class="hero-pill">● Mobility</div>
-      <div class="hero-pill">● Infrastructure</div>
-    </div>
-    <div class="hero-btns">
-      <button class="btn-hero-primary" onclick="window.location='contact.html'">Get My Free Quote →</button>
-      <button class="btn-hero-outline" onclick="window.location='tel:+19493864416'">Call (949) 386-4416</button>
-    </div>
-    <div class="hero-stats">
-      <div class="h-stat"><div class="h-stat-num">7<span>+</span></div><div class="h-stat-label">Carriers compared at your address</div></div>
-      <div class="h-stat"><div class="h-stat-num"><span>&lt;</span>24h</div><div class="h-stat-label">Quote turnaround guaranteed</div></div>
-      <div class="h-stat"><div class="h-stat-num">5.0<span>★</span></div><div class="h-stat-label">Average rating from 40+ clients</div></div>
-      <div class="h-stat"><div class="h-stat-num">1</div><div class="h-stat-label">Point of contact, start to install</div></div>
-    </div>
-  </div>
-  <div class="hero-visual">
-    <svg width="300" height="260" viewBox="0 0 300 260" fill="none" opacity="0.7">
-      <defs>
-        <linearGradient id="hv1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7ec8f0"/><stop offset="100%" stop-color="#1a7de0"/></linearGradient>
-        <linearGradient id="hv2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#4aaae8" stop-opacity="0.8"/><stop offset="100%" stop-color="#0d5abf" stop-opacity="0.8"/></linearGradient>
-        <linearGradient id="hv3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1a7de0" stop-opacity="0.5"/><stop offset="100%" stop-color="#0a3d8f" stop-opacity="0.5"/></linearGradient>
-        <linearGradient id="hv4" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#2d8ff5" stop-opacity="0.3"/><stop offset="100%" stop-color="#062878" stop-opacity="0.3"/></linearGradient>
-      </defs>
-      <circle cx="150" cy="218" r="18" fill="#0a3d8f"/>
-      <path d="M88 168 Q150 108 212 168" stroke="url(#hv1)" stroke-width="16" fill="none" stroke-linecap="round"/>
-      <path d="M50 130 Q150 46 250 130" stroke="url(#hv2)" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M16 94 Q150 -10 284 94" stroke="url(#hv3)" stroke-width="9" fill="none" stroke-linecap="round"/>
-      <path d="M0 60 Q150 -42 300 60" stroke="url(#hv4)" stroke-width="6" fill="none" stroke-linecap="round"/>
-    </svg>
-  </div>
-</section>
-
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="trust-item"><div class="trust-icon">⭐</div><div><div class="ti-title">5.0 ★ Rating</div><div class="ti-sub">40+ Business Clients</div></div></div>
-  <div class="trust-div"></div>
-  <div class="trust-item"><div class="trust-icon">⏱</div><div><div class="ti-title">Same-Day Response</div><div class="ti-sub">Guaranteed on every inquiry</div></div></div>
-  <div class="trust-div"></div>
-  <div class="trust-item"><div class="trust-icon">🔀</div><div><div class="ti-title">Carrier-Neutral</div><div class="ti-sub">We work for you, not the carrier</div></div></div>
-  <div class="trust-div"></div>
-  <div class="trust-item"><div class="trust-icon">📡</div><div><div class="ti-title">7+ Carriers</div><div class="ti-sub">Compared at your exact address</div></div></div>
-  <div class="trust-div"></div>
-  <div class="trust-item"><div class="trust-icon">✅</div><div><div class="ti-title">Post-Install Support</div><div class="ti-sub">We stay with you after day one</div></div></div>
-</div>
-
-<!-- CARRIER TICKER -->
-<div class="ticker-wrap">
-  <div class="ticker-track">
-    <span class="ticker-chip">● AT&T Business</span><span class="ticker-chip">● Spectrum Business</span><span class="ticker-chip">● Verizon Business</span><span class="ticker-chip">● T-Mobile Business</span><span class="ticker-chip">● Starlink</span><span class="ticker-chip">● Cox Business</span><span class="ticker-chip">● Frontier</span><span class="ticker-chip">● Carrier-Neutral Experts</span>
-    <span class="ticker-chip">● AT&T Business</span><span class="ticker-chip">● Spectrum Business</span><span class="ticker-chip">● Verizon Business</span><span class="ticker-chip">● T-Mobile Business</span><span class="ticker-chip">● Starlink</span><span class="ticker-chip">● Cox Business</span><span class="ticker-chip">● Frontier</span><span class="ticker-chip">● Carrier-Neutral Experts</span>
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="section-label light">Client Reviews</div>
+    <h1>Real businesses.<br/>Real results.</h1>
+    <p>40+ verified reviews from businesses across Southern California. See what our clients say about working with SGI.</p>
   </div>
 </div>
 
-<!-- SERVICES PREVIEW -->
+<!-- RATING SUMMARY -->
+<div class="rating-hero">
+  <div class="rh-big">
+    <div class="rh-big-num">5.0</div>
+    <div class="rh-big-stars">★★★★★</div>
+    <div class="rh-big-sub">Overall rating</div>
+  </div>
+  <div class="rh-bars">
+    <div class="rh-bar-row"><span class="rh-bar-label">5 ★</span><div class="rh-bar-track"><div class="rh-bar-fill" style="width:95%"></div></div><span class="rh-bar-count">38</span></div>
+    <div class="rh-bar-row"><span class="rh-bar-label">4 ★</span><div class="rh-bar-track"><div class="rh-bar-fill" style="width:5%"></div></div><span class="rh-bar-count">2</span></div>
+    <div class="rh-bar-row"><span class="rh-bar-label">3 ★</span><div class="rh-bar-track"><div class="rh-bar-fill" style="width:0%"></div></div><span class="rh-bar-count">0</span></div>
+    <div class="rh-bar-row"><span class="rh-bar-label">2 ★</span><div class="rh-bar-track"><div class="rh-bar-fill" style="width:0%"></div></div><span class="rh-bar-count">0</span></div>
+    <div class="rh-bar-row"><span class="rh-bar-label">1 ★</span><div class="rh-bar-track"><div class="rh-bar-fill" style="width:0%"></div></div><span class="rh-bar-count">0</span></div>
+  </div>
+  <div class="rh-stats">
+    <div class="rh-stat"><div class="rh-stat-num">40+</div><div class="rh-stat-label">Verified business reviews</div></div>
+    <div class="rh-stat"><div class="rh-stat-num">100%</div><div class="rh-stat-label">Would recommend SGI</div></div>
+    <div class="rh-stat"><div class="rh-stat-num">&lt;24h</div><div class="rh-stat-label">Average response time</div></div>
+  </div>
+</div>
+
+<!-- ALL REVIEWS -->
 <section class="section-light">
-  <div class="section-header-row">
-    <div>
-      <div class="section-label">What We Deliver</div>
-      <h2 class="section-title">Every layer of your business network. <span class="blue">Handled.</span></h2>
-      <p class="section-sub">From a single office to a multi-location enterprise — we design, source, install, and manage it all.</p>
+  <div class="section-label">What Clients Say</div>
+  <h2 class="section-title" style="margin-bottom:40px;">Businesses trust SGI.</h2>
+  <div class="reviews-full">
+
+    <div class="review-card-lg">
+      <div class="rev-stars-lg">★★★★★</div>
+      <p class="rev-text-lg">"SGI made our office internet upgrade completely painless. They handled AT&T, Spectrum, and our entire Wi-Fi install — all coordinated through one call. Best decision we made for our office this year."</p>
+      <div class="rev-author-lg">Miguel R.</div>
+      <div class="rev-biz-lg">Operations Manager · Rancho Cucamonga, CA</div>
     </div>
-    <a href="services.html" class="see-all-btn">See all services →</a>
-  </div>
-  <div class="services-grid">
-    <div class="svc-card"><div class="svc-icon">📡</div><h3>Internet Access</h3><p>Fiber, DIA, and coax compared across all major carriers at your exact address.</p></div>
-    <div class="svc-card"><div class="svc-icon">📶</div><h3>Wi-Fi & LAN Design</h3><p>Site surveys, heatmaps, enterprise AP placement, structured cabling.</p></div>
-    <div class="svc-card"><div class="svc-icon">🔒</div><h3>Cybersecurity</h3><p>Firewalls, SASE/SD-WAN, endpoint protection, MFA/SSO — fully managed.</p></div>
-    <div class="svc-card"><div class="svc-icon">📱</div><h3>Mobility / 5G Plans</h3><p>Business 5G plans across AT&T, Verizon, and T-Mobile. Mixed strategies for savings.</p></div>
-    <div class="svc-card"><div class="svc-icon">🏢</div><h3>Multi-Site Networks</h3><p>SD-WAN, LTE/5G failover, unified carrier management across all locations.</p></div>
-    <div class="svc-card"><div class="svc-icon">☁️</div><h3>Cloud & Collaboration</h3><p>Microsoft 365, Azure, Google Workspace — migration, management, and support.</p></div>
+
+    <div class="review-card-lg">
+      <div class="rev-stars-lg">★★★★★</div>
+      <p class="rev-text-lg">"Outages used to knock out our phones every other week. SGI moved us to dedicated fiber with a wireless backup — zero nonsense, zero downtime from day one. Wish we'd called them years ago."</p>
+      <div class="rev-author-lg">Vanessa G.</div>
+      <div class="rev-biz-lg">Office Administrator · Ontario, CA</div>
+    </div>
+
+    <div class="review-card-lg">
+      <div class="rev-stars-lg">★★★★★</div>
+      <p class="rev-text-lg">"The fiber and VoIP conversion went smooth and on schedule. Communication throughout was excellent — they kept us updated at every step and followed through on every single promise they made."</p>
+      <div class="rev-author-lg">Aaron T.</div>
+      <div class="rev-biz-lg">General Manager · Corona, CA</div>
+    </div>
+
+    <div class="review-card-lg">
+      <div class="rev-stars-lg">★★★★★</div>
+      <p class="rev-text-lg">"We needed reliable connectivity across three locations. SGI built a solution that tied all of them together under one plan — easier and cheaper than going direct to any single carrier would have been."</p>
+      <div class="rev-author-lg">Linda K.</div>
+      <div class="rev-biz-lg">Operations Director · San Bernardino, CA</div>
+    </div>
+
+    <div class="review-card-lg">
+      <div class="rev-stars-lg">★★★★★</div>
+      <p class="rev-text-lg">"Saved us over $800/month by switching to a Spectrum/T-Mobile hybrid. SGI found the savings, handled the entire transition, and we never lost a single day of service. Absolutely recommend."</p>
+      <div class="rev-author-lg">Carlos M.</div>
+      <div class="rev-biz-lg">Business Owner · Fontana, CA</div>
+    </div>
+
+    <div class="review-card-lg">
+      <div class="rev-stars-lg">★★★★★</div>
+      <p class="rev-text-lg">"I was skeptical at first — sounded too good to be true. But they delivered. New fiber installed in a week, three times the speed, lower monthly cost. SGI is the real deal, period."</p>
+      <div class="rev-author-lg">Sarah W.</div>
+      <div class="rev-biz-lg">Practice Manager · Riverside, CA</div>
+    </div>
+
+    <div class="review-card-lg">
+      <div class="rev-stars-lg">★★★★★</div>
+      <p class="rev-text-lg">"Fast, professional, and honest. They compared five carriers for us, recommended the best option without any pressure, and got us installed with zero issues. The follow-up support has been equally great."</p>
+      <div class="rev-author-lg">David H.</div>
+      <div class="rev-biz-lg">CEO · Logistics Firm · Chino, CA</div>
+    </div>
+
+    <div class="review-card-lg">
+      <div class="rev-stars-lg">★★★★★</div>
+      <p class="rev-text-lg">"Our internet had been unreliable for two years. SGI diagnosed the issue, recommended a different carrier, and handled the entire switch. We've had zero outages in six months since. Incredible service."</p>
+      <div class="rev-author-lg">Maria L.</div>
+      <div class="rev-biz-lg">Dental Practice Manager · Pomona, CA</div>
+    </div>
+
+    <div class="review-card-lg">
+      <div class="rev-stars-lg">★★★★★</div>
+      <p class="rev-text-lg">"SGI handled our multi-site rollout across all four locations flawlessly. One point of contact, one invoice, everything managed. I can't imagine going back to dealing with carriers directly ever again."</p>
+      <div class="rev-author-lg">James T.</div>
+      <div class="rev-biz-lg">Regional Manager · Retail Chain · Inland Empire</div>
+    </div>
+
   </div>
 </section>
 
-<!-- WHY SGI -->
-<section class="section-gray">
-  <div class="section-label">Why Choose SGI</div>
-  <h2 class="section-title">We're different<span class="blue">.</span> Here's how.</h2>
-  <div class="why-grid">
-    <div class="why-card featured"><div class="why-num">01</div><h3>100% Carrier-Neutral</h3><p>We represent no single carrier. We pull real quotes from every provider at your address and show you an honest comparison — price, speed, reliability, and contract terms side by side.</p></div>
-    <div class="why-card"><div class="why-num">02</div><h3>One Contact. Everything.</h3><p>Internet, Wi-Fi, phones, security, mobile plans — one number, one account manager, one invoice. No more juggling three carrier support lines.</p></div>
-    <div class="why-card"><div class="why-num">03</div><h3>Same-Day Response</h3><p>When you call or submit a quote request, you hear back within hours — not days. We know downtime costs money.</p></div>
-    <div class="why-card featured"><div class="why-num">04</div><h3>Post-Install Support</h3><p>We don't disappear after the contract is signed. We stay through installation, testing, and ongoing management — advocating on your behalf if a carrier drops the ball.</p></div>
-  </div>
-</section>
-
-<!-- REVIEWS PREVIEW -->
-<section class="section-light">
-  <div class="section-header-row">
-    <div>
-      <div class="section-label">Client Reviews</div>
-      <h2 class="section-title">Businesses trust SGI.</h2>
-    </div>
-    <div class="rating-block">
-      <div class="rating-num">5.0</div>
-      <div class="rating-stars">★★★★★</div>
-      <div class="rating-sub">40+ verified reviews</div>
-    </div>
-  </div>
-  <div class="reviews-grid">
-    <div class="review-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"SGI made our office internet upgrade completely painless. They handled AT&T, Spectrum, and our entire Wi-Fi install — all coordinated through one call."</p><div class="rev-author">Miguel R.</div><div class="rev-biz">Operations Manager · Rancho Cucamonga, CA</div></div>
-    <div class="review-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Outages used to knock out our phones every month. SGI moved us to dedicated fiber with wireless backup. Zero nonsense, just results from day one."</p><div class="rev-author">Vanessa G.</div><div class="rev-biz">Office Administrator · Ontario, CA</div></div>
-    <div class="review-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Saved us over $800/month switching to a Spectrum/T-Mobile hybrid. SGI identified the savings, handled the transition, and we never lost a day of service."</p><div class="rev-author">Carlos M.</div><div class="rev-biz">Business Owner · Fontana, CA</div></div>
-  </div>
-  <div style="text-align:center;margin-top:32px;"><a href="reviews.html" class="see-all-btn">Read all reviews →</a></div>
-</section>
-
-<!-- CTA BAND -->
+<!-- CTA -->
 <div class="cta-band">
   <div class="cta-left">
-    <div class="section-label light">Get Started Today</div>
-    <h2>Ready to find the right network for your business?</h2>
-    <p>Enter your business ZIP and we'll pull real-time carrier availability, compare pricing, and build your custom plan — no obligation, completely free.</p>
+    <div class="section-label light">Join Our Clients</div>
+    <h2>Ready to experience the SGI difference?</h2>
+    <p>Join 40+ businesses across Southern California who've simplified their connectivity and cut costs with SGI. Get your free quote today.</p>
     <div class="cta-contacts">
       <div class="cta-contact"><span class="cc-label">Call</span>(949) 386-4416</div>
       <div class="cta-contact"><span class="cc-label">Email</span>sales@sgitbs.com</div>
-      <div class="cta-contact"><span class="cc-label">Social</span>@sgiconnect</div>
     </div>
   </div>
   <div class="quote-form">
     <div class="form-title">Get Your Free Quote</div>
-    <div class="form-sub">We'll respond within 24 hours — usually much faster.</div>
+    <div class="form-sub">Same-day response. No obligation. 100% free.</div>
     <div class="form-row-2">
       <div class="form-grp"><label>First Name</label><input type="text" placeholder="John"/></div>
       <div class="form-grp"><label>Last Name</label><input type="text" placeholder="Smith"/></div>
@@ -471,7 +483,6 @@ a { text-decoration: none; }
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-top">
     <div class="footer-brand">
@@ -482,12 +493,9 @@ a { text-decoration: none; }
     </div>
     <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Internet Access</a></li><li><a href="services.html">Wi-Fi & LAN</a></li><li><a href="services.html">Cybersecurity</a></li><li><a href="services.html">Mobility / 5G</a></li><li><a href="services.html">Multi-Site Networks</a></li><li><a href="services.html">Cloud & Collab</a></li></ul></div>
     <div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="providers.html">Provider Catalog</a></li><li><a href="reviews.html">Reviews</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+19493864416">(949) 386-4416</a></li><li><a href="mailto:sales@sgitbs.com">sales@sgitbs.com</a></li><li><a href="#">sgitbs.com</a></li><li><a href="#">@sgiconnect</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+19493864416">(949) 386-4416</a></li><li><a href="mailto:sales@sgitbs.com">sales@sgitbs.com</a></li><li><a href="#">@sgiconnect</a></li></ul></div>
   </div>
-  <div class="footer-bottom">
-    <div>© 2025 SGI Total Business Solutions Inc. All rights reserved.</div>
-    <div class="footer-links"><a href="#">Privacy</a><a href="#">Terms</a></div>
-  </div>
+  <div class="footer-bottom"><div>© 2025 SGI Total Business Solutions Inc. All rights reserved.</div><div class="footer-links"><a href="#">Privacy</a><a href="#">Terms</a></div></div>
 </footer>
 
 <script>function toggleMenu(){var m=document.getElementById("mobileMenu"),b=document.getElementById("hamburger");if(m){m.classList.toggle("open");b.textContent=m.classList.contains("open")?"✕":"☰";}}document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".mobile-menu a").forEach(function(l){l.addEventListener("click",function(){var m=document.getElementById("mobileMenu"),b=document.getElementById("hamburger");if(m){m.classList.remove("open");b.textContent="☰";}});});});</script>

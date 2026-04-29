@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>SGI Total Business Solutions — Connectivity · Mobility · Infrastructure</title>
+<title>Contact — SGI Total Business Solutions</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <style>
 /* ═══════════════════════════════════════
@@ -264,6 +264,34 @@ a { text-decoration: none; }
 }
 
 </style>
+<style>
+.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; padding:80px 48px; background:white; }
+.contact-info h2 { font-size:40px; font-weight:800; color:var(--text-dark); margin-bottom:16px; letter-spacing:-1px; }
+.contact-info p { font-size:16px; color:var(--text-muted); line-height:1.8; margin-bottom:40px; }
+.contact-methods { display:flex; flex-direction:column; gap:20px; }
+.contact-method { display:flex; align-items:flex-start; gap:16px; padding:20px; background:var(--gray-50); border:1px solid var(--gray-200); border-radius:12px; transition:all .2s; }
+.contact-method:hover { border-color:var(--blue-pale); box-shadow:0 4px 16px rgba(0,102,204,.08); }
+.cm-icon { width:44px; height:44px; background:var(--blue-pale); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; }
+.cm-label { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--text-muted); margin-bottom:4px; }
+.cm-value { font-size:16px; font-weight:600; color:var(--text-dark); }
+.cm-sub { font-size:12px; color:var(--text-muted); margin-top:2px; }
+.contact-form-box { background:white; border:1px solid var(--gray-200); border-radius:16px; padding:40px 36px; box-shadow:0 8px 32px rgba(0,0,0,.06); }
+.contact-form-box .form-title { font-size:24px; font-weight:800; margin-bottom:6px; }
+.contact-form-box .form-sub { font-size:14px; color:var(--text-muted); margin-bottom:28px; }
+.map-section { background:var(--gray-50); padding:64px 48px; }
+.map-placeholder { background:var(--gray-100); border:1px solid var(--gray-200); border-radius:12px; height:300px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:12px; }
+.map-placeholder h3 { font-size:18px; font-weight:700; color:var(--text-mid); }
+.map-placeholder p { font-size:14px; color:var(--text-muted); }
+.service-area-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:40px; }
+.area-card { background:white; border:1px solid var(--gray-200); border-radius:10px; padding:16px 18px; }
+.area-card h4 { font-size:14px; font-weight:700; color:var(--text-dark); margin-bottom:4px; }
+.area-card p { font-size:12px; color:var(--text-muted); }
+@media(max-width:960px){
+  .contact-grid { grid-template-columns:1fr; gap:36px; padding:48px 20px; }
+  .map-section { padding:48px 20px; }
+  .service-area-grid { grid-template-columns:repeat(2,1fr); }
+}
+</style>
 </head>
 <body>
 
@@ -274,11 +302,7 @@ a { text-decoration: none; }
     <div class="topbar-item">✉️ <strong>sales@sgitbs.com</strong></div>
     <div class="topbar-item tbs-highlight">✔ Same-day response guaranteed</div>
   </div>
-  <div class="topbar-right">
-    <a href="#">@sgiconnect</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </div>
+  <div class="topbar-right"><a href="#">@sgiconnect</a></div>
 </div>
 
 <!-- NAV -->
@@ -286,14 +310,14 @@ a { text-decoration: none; }
   <a href="index.html"><div class="nav-logo-wrap">
     <svg width="220" height="44" viewBox="0 0 220 44" fill="none">
       <defs>
-        <linearGradient id="wg1n" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7ec8f0"/><stop offset="100%" stop-color="#1a7de0"/></linearGradient>
-        <linearGradient id="wg2n" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#4aaae8" stop-opacity="0.8"/><stop offset="100%" stop-color="#0d5abf" stop-opacity="0.8"/></linearGradient>
-        <linearGradient id="wg3n" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1a7de0" stop-opacity="0.5"/><stop offset="100%" stop-color="#0a3d8f" stop-opacity="0.5"/></linearGradient>
+        <linearGradient id="wg1c" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7ec8f0"/><stop offset="100%" stop-color="#1a7de0"/></linearGradient>
+        <linearGradient id="wg2c" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#4aaae8" stop-opacity="0.8"/><stop offset="100%" stop-color="#0d5abf" stop-opacity="0.8"/></linearGradient>
+        <linearGradient id="wg3c" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1a7de0" stop-opacity="0.5"/><stop offset="100%" stop-color="#0a3d8f" stop-opacity="0.5"/></linearGradient>
       </defs>
       <circle cx="22" cy="36" r="4" fill="#0a3d8f"/>
-      <path d="M12 27 Q22 17 32 27" stroke="url(#wg3n)" stroke-width="4.5" fill="none" stroke-linecap="round"/>
-      <path d="M6 20 Q22 4 38 20" stroke="url(#wg2n)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-      <path d="M1 13 Q22 -5 43 13" stroke="url(#wg1n)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M12 27 Q22 17 32 27" stroke="url(#wg3c)" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+      <path d="M6 20 Q22 4 38 20" stroke="url(#wg2c)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+      <path d="M1 13 Q22 -5 43 13" stroke="url(#wg1c)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
       <line x1="54" y1="4" x2="54" y2="38" stroke="#d0dde8" stroke-width="1.2"/>
       <text x="64" y="34" font-family="Inter,sans-serif" font-size="30" font-weight="800" fill="#0b1f3a" letter-spacing="-0.5">S</text>
       <text x="87" y="34" font-family="Inter,sans-serif" font-size="30" font-weight="800" fill="#0b1f3a" letter-spacing="-0.5">G</text>
@@ -302,15 +326,14 @@ a { text-decoration: none; }
     </svg>
   </div></a>
   <ul class="nav-links">
-    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="index.html">Home</a></li>
     <li><a href="services.html">Services</a></li>
     <li><a href="providers.html">Provider Catalog</a></li>
     <li><a href="reviews.html">Reviews</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
   </ul>
   <div class="nav-right">
-    <button class="btn-ghost" onclick="window.location='contact.html'">Check Availability</button>
-    <button class="btn-solid" onclick="window.location='contact.html'">Get Free Quote</button>
+    <button class="btn-solid" onclick="document.getElementById('contactForm').scrollIntoView({behavior:'smooth'})">Get Free Quote</button>
   </div>
   <button class="hamburger" onclick="toggleMenu()" id="hamburger">☰</button>
 </nav>
@@ -323,155 +346,120 @@ a { text-decoration: none; }
   <a href="contact.html" class="mobile-cta">Get Free Quote</a>
 </div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-content">
-    <div class="hero-badge"><div class="badge-dot"></div><span>Carrier-neutral · No commissions bias · Same-day response</span></div>
-    <h1>Better business<br/><span class="blue">connectivity.</span><br/><span class="thin">Your terms.</span></h1>
-    <p class="hero-sub">We compare AT&T, Spectrum, Verizon, T-Mobile, Starlink, Cox, and Frontier at your address — then design, install, and manage your complete network. One contact. No bias.</p>
-    <div class="hero-pills">
-      <div class="hero-pill">● Connectivity</div>
-      <div class="hero-pill">● Mobility</div>
-      <div class="hero-pill">● Infrastructure</div>
-    </div>
-    <div class="hero-btns">
-      <button class="btn-hero-primary" onclick="window.location='contact.html'">Get My Free Quote →</button>
-      <button class="btn-hero-outline" onclick="window.location='tel:+19493864416'">Call (949) 386-4416</button>
-    </div>
-    <div class="hero-stats">
-      <div class="h-stat"><div class="h-stat-num">7<span>+</span></div><div class="h-stat-label">Carriers compared at your address</div></div>
-      <div class="h-stat"><div class="h-stat-num"><span>&lt;</span>24h</div><div class="h-stat-label">Quote turnaround guaranteed</div></div>
-      <div class="h-stat"><div class="h-stat-num">5.0<span>★</span></div><div class="h-stat-label">Average rating from 40+ clients</div></div>
-      <div class="h-stat"><div class="h-stat-num">1</div><div class="h-stat-label">Point of contact, start to install</div></div>
-    </div>
-  </div>
-  <div class="hero-visual">
-    <svg width="300" height="260" viewBox="0 0 300 260" fill="none" opacity="0.7">
-      <defs>
-        <linearGradient id="hv1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7ec8f0"/><stop offset="100%" stop-color="#1a7de0"/></linearGradient>
-        <linearGradient id="hv2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#4aaae8" stop-opacity="0.8"/><stop offset="100%" stop-color="#0d5abf" stop-opacity="0.8"/></linearGradient>
-        <linearGradient id="hv3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1a7de0" stop-opacity="0.5"/><stop offset="100%" stop-color="#0a3d8f" stop-opacity="0.5"/></linearGradient>
-        <linearGradient id="hv4" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#2d8ff5" stop-opacity="0.3"/><stop offset="100%" stop-color="#062878" stop-opacity="0.3"/></linearGradient>
-      </defs>
-      <circle cx="150" cy="218" r="18" fill="#0a3d8f"/>
-      <path d="M88 168 Q150 108 212 168" stroke="url(#hv1)" stroke-width="16" fill="none" stroke-linecap="round"/>
-      <path d="M50 130 Q150 46 250 130" stroke="url(#hv2)" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M16 94 Q150 -10 284 94" stroke="url(#hv3)" stroke-width="9" fill="none" stroke-linecap="round"/>
-      <path d="M0 60 Q150 -42 300 60" stroke="url(#hv4)" stroke-width="6" fill="none" stroke-linecap="round"/>
-    </svg>
-  </div>
-</section>
-
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="trust-item"><div class="trust-icon">⭐</div><div><div class="ti-title">5.0 ★ Rating</div><div class="ti-sub">40+ Business Clients</div></div></div>
-  <div class="trust-div"></div>
-  <div class="trust-item"><div class="trust-icon">⏱</div><div><div class="ti-title">Same-Day Response</div><div class="ti-sub">Guaranteed on every inquiry</div></div></div>
-  <div class="trust-div"></div>
-  <div class="trust-item"><div class="trust-icon">🔀</div><div><div class="ti-title">Carrier-Neutral</div><div class="ti-sub">We work for you, not the carrier</div></div></div>
-  <div class="trust-div"></div>
-  <div class="trust-item"><div class="trust-icon">📡</div><div><div class="ti-title">7+ Carriers</div><div class="ti-sub">Compared at your exact address</div></div></div>
-  <div class="trust-div"></div>
-  <div class="trust-item"><div class="trust-icon">✅</div><div><div class="ti-title">Post-Install Support</div><div class="ti-sub">We stay with you after day one</div></div></div>
-</div>
-
-<!-- CARRIER TICKER -->
-<div class="ticker-wrap">
-  <div class="ticker-track">
-    <span class="ticker-chip">● AT&T Business</span><span class="ticker-chip">● Spectrum Business</span><span class="ticker-chip">● Verizon Business</span><span class="ticker-chip">● T-Mobile Business</span><span class="ticker-chip">● Starlink</span><span class="ticker-chip">● Cox Business</span><span class="ticker-chip">● Frontier</span><span class="ticker-chip">● Carrier-Neutral Experts</span>
-    <span class="ticker-chip">● AT&T Business</span><span class="ticker-chip">● Spectrum Business</span><span class="ticker-chip">● Verizon Business</span><span class="ticker-chip">● T-Mobile Business</span><span class="ticker-chip">● Starlink</span><span class="ticker-chip">● Cox Business</span><span class="ticker-chip">● Frontier</span><span class="ticker-chip">● Carrier-Neutral Experts</span>
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="section-label light">Get In Touch</div>
+    <h1>Let's find the right<br/>network for your business.</h1>
+    <p>Call, email, or fill out the form — we'll get back to you the same day with real answers, not a sales pitch.</p>
   </div>
 </div>
 
-<!-- SERVICES PREVIEW -->
-<section class="section-light">
-  <div class="section-header-row">
-    <div>
-      <div class="section-label">What We Deliver</div>
-      <h2 class="section-title">Every layer of your business network. <span class="blue">Handled.</span></h2>
-      <p class="section-sub">From a single office to a multi-location enterprise — we design, source, install, and manage it all.</p>
+<!-- CONTACT GRID -->
+<div class="contact-grid">
+  <div class="contact-info">
+    <h2>We're here to help.</h2>
+    <p>Whether you need a quick quote, have a question about a carrier, or want to audit your current telecom spend — reach out and we'll respond the same day.</p>
+    <div class="contact-methods">
+      <div class="contact-method">
+        <div class="cm-icon">📞</div>
+        <div>
+          <div class="cm-label">Phone</div>
+          <div class="cm-value"><a href="tel:+19493864416" style="color:var(--text-dark);">(949) 386-4416</a></div>
+          <div class="cm-sub">Monday – Friday, 8am – 6pm PT</div>
+        </div>
+      </div>
+      <div class="contact-method">
+        <div class="cm-icon">✉️</div>
+        <div>
+          <div class="cm-label">Email</div>
+          <div class="cm-value"><a href="mailto:sales@sgitbs.com" style="color:var(--text-dark);">sales@sgitbs.com</a></div>
+          <div class="cm-sub">We respond within hours, not days</div>
+        </div>
+      </div>
+      <div class="contact-method">
+        <div class="cm-icon">🌐</div>
+        <div>
+          <div class="cm-label">Website</div>
+          <div class="cm-value">sgitbs.com</div>
+          <div class="cm-sub">Provider catalog, services & more</div>
+        </div>
+      </div>
+      <div class="contact-method">
+        <div class="cm-icon">📱</div>
+        <div>
+          <div class="cm-label">Social</div>
+          <div class="cm-value">@sgiconnect</div>
+          <div class="cm-sub">TikTok · Instagram · LinkedIn</div>
+        </div>
+      </div>
     </div>
-    <a href="services.html" class="see-all-btn">See all services →</a>
   </div>
-  <div class="services-grid">
-    <div class="svc-card"><div class="svc-icon">📡</div><h3>Internet Access</h3><p>Fiber, DIA, and coax compared across all major carriers at your exact address.</p></div>
-    <div class="svc-card"><div class="svc-icon">📶</div><h3>Wi-Fi & LAN Design</h3><p>Site surveys, heatmaps, enterprise AP placement, structured cabling.</p></div>
-    <div class="svc-card"><div class="svc-icon">🔒</div><h3>Cybersecurity</h3><p>Firewalls, SASE/SD-WAN, endpoint protection, MFA/SSO — fully managed.</p></div>
-    <div class="svc-card"><div class="svc-icon">📱</div><h3>Mobility / 5G Plans</h3><p>Business 5G plans across AT&T, Verizon, and T-Mobile. Mixed strategies for savings.</p></div>
-    <div class="svc-card"><div class="svc-icon">🏢</div><h3>Multi-Site Networks</h3><p>SD-WAN, LTE/5G failover, unified carrier management across all locations.</p></div>
-    <div class="svc-card"><div class="svc-icon">☁️</div><h3>Cloud & Collaboration</h3><p>Microsoft 365, Azure, Google Workspace — migration, management, and support.</p></div>
-  </div>
-</section>
 
-<!-- WHY SGI -->
-<section class="section-gray">
-  <div class="section-label">Why Choose SGI</div>
-  <h2 class="section-title">We're different<span class="blue">.</span> Here's how.</h2>
-  <div class="why-grid">
-    <div class="why-card featured"><div class="why-num">01</div><h3>100% Carrier-Neutral</h3><p>We represent no single carrier. We pull real quotes from every provider at your address and show you an honest comparison — price, speed, reliability, and contract terms side by side.</p></div>
-    <div class="why-card"><div class="why-num">02</div><h3>One Contact. Everything.</h3><p>Internet, Wi-Fi, phones, security, mobile plans — one number, one account manager, one invoice. No more juggling three carrier support lines.</p></div>
-    <div class="why-card"><div class="why-num">03</div><h3>Same-Day Response</h3><p>When you call or submit a quote request, you hear back within hours — not days. We know downtime costs money.</p></div>
-    <div class="why-card featured"><div class="why-num">04</div><h3>Post-Install Support</h3><p>We don't disappear after the contract is signed. We stay through installation, testing, and ongoing management — advocating on your behalf if a carrier drops the ball.</p></div>
-  </div>
-</section>
-
-<!-- REVIEWS PREVIEW -->
-<section class="section-light">
-  <div class="section-header-row">
-    <div>
-      <div class="section-label">Client Reviews</div>
-      <h2 class="section-title">Businesses trust SGI.</h2>
-    </div>
-    <div class="rating-block">
-      <div class="rating-num">5.0</div>
-      <div class="rating-stars">★★★★★</div>
-      <div class="rating-sub">40+ verified reviews</div>
-    </div>
-  </div>
-  <div class="reviews-grid">
-    <div class="review-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"SGI made our office internet upgrade completely painless. They handled AT&T, Spectrum, and our entire Wi-Fi install — all coordinated through one call."</p><div class="rev-author">Miguel R.</div><div class="rev-biz">Operations Manager · Rancho Cucamonga, CA</div></div>
-    <div class="review-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Outages used to knock out our phones every month. SGI moved us to dedicated fiber with wireless backup. Zero nonsense, just results from day one."</p><div class="rev-author">Vanessa G.</div><div class="rev-biz">Office Administrator · Ontario, CA</div></div>
-    <div class="review-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Saved us over $800/month switching to a Spectrum/T-Mobile hybrid. SGI identified the savings, handled the transition, and we never lost a day of service."</p><div class="rev-author">Carlos M.</div><div class="rev-biz">Business Owner · Fontana, CA</div></div>
-  </div>
-  <div style="text-align:center;margin-top:32px;"><a href="reviews.html" class="see-all-btn">Read all reviews →</a></div>
-</section>
-
-<!-- CTA BAND -->
-<div class="cta-band">
-  <div class="cta-left">
-    <div class="section-label light">Get Started Today</div>
-    <h2>Ready to find the right network for your business?</h2>
-    <p>Enter your business ZIP and we'll pull real-time carrier availability, compare pricing, and build your custom plan — no obligation, completely free.</p>
-    <div class="cta-contacts">
-      <div class="cta-contact"><span class="cc-label">Call</span>(949) 386-4416</div>
-      <div class="cta-contact"><span class="cc-label">Email</span>sales@sgitbs.com</div>
-      <div class="cta-contact"><span class="cc-label">Social</span>@sgiconnect</div>
-    </div>
-  </div>
-  <div class="quote-form">
-    <div class="form-title">Get Your Free Quote</div>
-    <div class="form-sub">We'll respond within 24 hours — usually much faster.</div>
+  <div class="contact-form-box" id="contactForm">
+    <div class="form-title">Request a Free Quote</div>
+    <div class="form-sub">Tell us about your business and we'll build a custom solution — no obligation.</div>
     <div class="form-row-2">
       <div class="form-grp"><label>First Name</label><input type="text" placeholder="John"/></div>
       <div class="form-grp"><label>Last Name</label><input type="text" placeholder="Smith"/></div>
     </div>
     <div class="form-grp"><label>Business Name</label><input type="text" placeholder="Acme Corp"/></div>
+    <div class="form-grp"><label>Business Email</label><input type="email" placeholder="john@acmecorp.com"/></div>
     <div class="form-row-2">
-      <div class="form-grp"><label>Phone</label><input type="tel" placeholder="(949) 386-4416"/></div>
+      <div class="form-grp"><label>Phone</label><input type="tel" placeholder="(949) 000-0000"/></div>
       <div class="form-grp"><label>Business ZIP</label><input type="text" placeholder="91730" maxlength="5"/></div>
     </div>
     <div class="form-grp">
-      <label>Service Interest</label>
-      <select><option value="">Select a service...</option><option>Internet / Fiber</option><option>Wi-Fi & LAN Design</option><option>Cybersecurity</option><option>Mobility / 5G Plans</option><option>Multi-Site Network</option><option>Cloud & Collaboration</option><option>Full Audit — Not Sure Yet</option></select>
+      <label>Number of Employees</label>
+      <select>
+        <option value="">Select range...</option>
+        <option>1–10 employees</option>
+        <option>11–50 employees</option>
+        <option>51–200 employees</option>
+        <option>201–500 employees</option>
+        <option>500+ employees</option>
+      </select>
     </div>
-    <button class="form-btn">Request My Free Quote →</button>
-    <p class="form-disclaimer">No spam. No commitment. Same-day response.</p>
+    <div class="form-grp">
+      <label>Service Interest</label>
+      <select>
+        <option value="">Select a service...</option>
+        <option>Internet / Fiber</option>
+        <option>Wi-Fi & LAN Design</option>
+        <option>Cybersecurity</option>
+        <option>Mobility / 5G Plans</option>
+        <option>Multi-Site Network</option>
+        <option>Cloud & Collaboration</option>
+        <option>VoIP / Phone System</option>
+        <option>Full Audit — Not Sure Yet</option>
+      </select>
+    </div>
+    <div class="form-grp">
+      <label>Tell us more (optional)</label>
+      <textarea rows="3" placeholder="Current provider, biggest pain point, timeline, anything else..." style="width:100%;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:8px;padding:11px 14px;font-family:'Inter',sans-serif;font-size:14px;color:var(--text-dark);outline:none;resize:vertical;transition:border-color .2s;"></textarea>
+    </div>
+    <button class="form-btn">Send My Request →</button>
+    <p class="form-disclaimer">No spam. No commitment. We'll respond the same day.</p>
   </div>
 </div>
 
-<!-- FOOTER -->
+<!-- SERVICE AREA -->
+<div class="map-section">
+  <div class="section-label">Service Area</div>
+  <h2 class="section-title">Southern California based.<br/><span class="blue">Nationwide reach.</span></h2>
+  <p style="font-size:16px;color:var(--text-muted);margin-bottom:32px;">We're based in the Inland Empire and serve businesses throughout Southern California — and beyond. If your carrier serves your ZIP code, we can get you the best deal on it.</p>
+  <div class="service-area-grid">
+    <div class="area-card"><h4>🏙️ Los Angeles</h4><p>Full coverage · All carriers</p></div>
+    <div class="area-card"><h4>🌆 Orange County</h4><p>Full coverage · All carriers</p></div>
+    <div class="area-card"><h4>🏔️ Inland Empire</h4><p>Home base · All carriers</p></div>
+    <div class="area-card"><h4>🌊 San Diego</h4><p>Full coverage · All carriers</p></div>
+    <div class="area-card"><h4>☀️ Palm Springs</h4><p>Full coverage · All carriers</p></div>
+    <div class="area-card"><h4>🌉 San Francisco Bay</h4><p>Extended coverage</p></div>
+    <div class="area-card"><h4>🌲 Sacramento</h4><p>Extended coverage</p></div>
+    <div class="area-card"><h4>🇺🇸 Nationwide</h4><p>Remote consulting available</p></div>
+  </div>
+</div>
+
 <footer class="footer">
   <div class="footer-top">
     <div class="footer-brand">
@@ -482,12 +470,9 @@ a { text-decoration: none; }
     </div>
     <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Internet Access</a></li><li><a href="services.html">Wi-Fi & LAN</a></li><li><a href="services.html">Cybersecurity</a></li><li><a href="services.html">Mobility / 5G</a></li><li><a href="services.html">Multi-Site Networks</a></li><li><a href="services.html">Cloud & Collab</a></li></ul></div>
     <div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="providers.html">Provider Catalog</a></li><li><a href="reviews.html">Reviews</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+19493864416">(949) 386-4416</a></li><li><a href="mailto:sales@sgitbs.com">sales@sgitbs.com</a></li><li><a href="#">sgitbs.com</a></li><li><a href="#">@sgiconnect</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+19493864416">(949) 386-4416</a></li><li><a href="mailto:sales@sgitbs.com">sales@sgitbs.com</a></li><li><a href="#">@sgiconnect</a></li></ul></div>
   </div>
-  <div class="footer-bottom">
-    <div>© 2025 SGI Total Business Solutions Inc. All rights reserved.</div>
-    <div class="footer-links"><a href="#">Privacy</a><a href="#">Terms</a></div>
-  </div>
+  <div class="footer-bottom"><div>© 2025 SGI Total Business Solutions Inc. All rights reserved.</div><div class="footer-links"><a href="#">Privacy</a><a href="#">Terms</a></div></div>
 </footer>
 
 <script>function toggleMenu(){var m=document.getElementById("mobileMenu"),b=document.getElementById("hamburger");if(m){m.classList.toggle("open");b.textContent=m.classList.contains("open")?"✕":"☰";}}document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".mobile-menu a").forEach(function(l){l.addEventListener("click",function(){var m=document.getElementById("mobileMenu"),b=document.getElementById("hamburger");if(m){m.classList.remove("open");b.textContent="☰";}});});});</script>
