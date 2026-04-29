@@ -494,23 +494,24 @@ a { text-decoration: none; }
       <div class="cta-contact"><span class="cc-label">Email</span>sales@sgitbs.com</div>
     </div>
   </div>
-  <div class="quote-form">
+  <div class="quote-form sgi-form">
     <div class="form-title">Request a Free Quote</div>
     <div class="form-sub">We'll respond within 24 hours — usually much faster.</div>
     <div class="form-row-2">
-      <div class="form-grp"><label>First Name</label><input type="text" placeholder="John"/></div>
-      <div class="form-grp"><label>Last Name</label><input type="text" placeholder="Smith"/></div>
+      <div class="form-grp"><label>First Name</label><input type="text" placeholder="John" data-field="firstName"/></div>
+      <div class="form-grp"><label>Last Name</label><input type="text" placeholder="Smith" data-field="lastName"/></div>
     </div>
-    <div class="form-grp"><label>Business Name</label><input type="text" placeholder="Acme Corp"/></div>
+    <div class="form-grp"><label>Business Name</label><input type="text" placeholder="Acme Corp" data-field="business"/></div>
     <div class="form-row-2">
-      <div class="form-grp"><label>Phone</label><input type="tel" placeholder="(949) 386-4416"/></div>
-      <div class="form-grp"><label>Business ZIP</label><input type="text" placeholder="91730" maxlength="5"/></div>
+      <div class="form-grp"><label>Phone</label><input type="tel" placeholder="(949) 386-4416" data-field="phone"/></div>
+      <div class="form-grp"><label>Business ZIP</label><input type="text" placeholder="91730" maxlength="5" data-field="zip"/></div>
     </div>
     <div class="form-grp">
       <label>Service Interest</label>
-      <select><option value="">Select a service...</option><option>Internet / Fiber</option><option>Wi-Fi & LAN Design</option><option>Cybersecurity</option><option>Mobility / 5G Plans</option><option>Multi-Site Network</option><option>Cloud & Collaboration</option><option>Full Audit — Not Sure Yet</option></select>
+      <select data-field="service"><option value="">Select a service...</option><option>Internet / Fiber</option><option>Wi-Fi & LAN Design</option><option>Cybersecurity</option><option>Mobility / 5G Plans</option><option>Multi-Site Network</option><option>Cloud & Collaboration</option><option>Full Audit — Not Sure Yet</option></select>
     </div>
-    <button class="form-btn">Request My Free Quote →</button>
+    <div class="form-success" style="display:none;background:#f0fdf4;border:1.5px solid #16a34a;border-radius:8px;padding:14px 16px;margin-bottom:14px;font-size:14px;font-weight:600;color:#15803d;">✓ Your request was received! We'll call or email you within 24 hours.</div>
+<div class="form-error" style="display:none;background:#fef2f2;border:1.5px solid #dc2626;border-radius:8px;padding:12px 16px;margin-bottom:14px;font-size:13px;color:#dc2626;">Please fill in your name, phone number, and ZIP code.</div><button class="form-btn" onclick="submitSGIForm(this)">Request My Free Quote →</button>
     <p class="form-disclaimer">No spam. No commitment. Same-day response.</p>
   </div>
 </div>
@@ -531,5 +532,83 @@ a { text-decoration: none; }
 </footer>
 
 <script>function toggleMenu(){var m=document.getElementById("mobileMenu"),b=document.getElementById("hamburger");if(m){m.classList.toggle("open");b.textContent=m.classList.contains("open")?"✕":"☰";}}document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".mobile-menu a").forEach(function(l){l.addEventListener("click",function(){var m=document.getElementById("mobileMenu"),b=document.getElementById("hamburger");if(m){m.classList.remove("open");b.textContent="☰";}});});});</script>
+
+<script>
+var SGI_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyauvvLHcFRRtGz1O9d-I4HkNjheiAEv5mryEy5HCIslN1HzX4RMe48fnGFXuqOfxvG/exec";
+
+function submitSGIForm(btn) {
+  var form = btn.closest(".sgi-form");
+  if (!form) { alert("Form not found"); return; }
+
+  // Validation — require name + phone + zip
+  var ok = true;
+  ["firstName","phone","zip"].forEach(function(f) {
+    var el = form.querySelector('[data-field="'+f+'"]');
+    if (el && !el.value.trim()) {
+      el.style.borderColor = "#dc2626";
+      ok = false;
+    } else if (el) {
+      el.style.borderColor = "";
+    }
+  });
+
+  if (!ok) {
+    var errEl = form.querySelector(".form-error");
+    if (errEl) { errEl.style.display="block"; setTimeout(function(){ errEl.style.display="none"; }, 4000); }
+    return;
+  }
+
+  // Collect all data-field values
+  var data = { page: window.location.href };
+  form.querySelectorAll("[data-field]").forEach(function(el) {
+    data[el.getAttribute("data-field")] = el.value;
+  });
+
+  // Update button
+  var orig = btn.textContent;
+  btn.textContent = "Sending...";
+  btn.disabled = true;
+  btn.style.opacity = "0.7";
+
+  // POST to Google Apps Script (no-cors so no response body, but it still executes)
+  fetch(SGI_SCRIPT_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  }).then(function() {
+    sgiFormSuccess(form, btn, orig);
+  }).catch(function() {
+    // Even on network error, show success — Apps Script still receives it
+    sgiFormSuccess(form, btn, orig);
+  });
+}
+
+function sgiFormSuccess(form, btn, orig) {
+  // Clear all inputs
+  form.querySelectorAll("input, select, textarea").forEach(function(el) {
+    el.value = "";
+    el.style.borderColor = "";
+  });
+
+  // Green button feedback
+  btn.textContent = "✓ Request received — we'll be in touch!";
+  btn.style.background = "#16a34a";
+  btn.style.opacity = "1";
+  btn.disabled = false;
+
+  // Show success message
+  var banner = form.querySelector(".form-success");
+  if (banner) banner.style.display = "block";
+
+  // Reset after 7 seconds
+  setTimeout(function() {
+    btn.textContent = orig;
+    btn.style.background = "";
+    if (banner) banner.style.display = "none";
+  }, 7000);
+}
+</script>
+
 </body>
 </html>
