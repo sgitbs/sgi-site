@@ -2112,5 +2112,11 @@ footer { background:var(--navy-deep); padding:40px 48px; border-top:1px solid va
     document.getElementById('noResults').style.display = n === 0 ? 'block' : 'none';
   }
 </script>
+
+<script>function toggleMenu(){var m=document.getElementById("mobileMenu"),b=document.getElementById("hamburger");if(m){m.classList.toggle("open");b.textContent=m.classList.contains("open")?"✕":"☰";}}document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".mobile-menu a").forEach(function(l){l.addEventListener("click",function(){var m=document.getElementById("mobileMenu"),b=document.getElementById("hamburger");if(m){m.classList.remove("open");b.textContent="☰";}});});});</script>
+<script>
+var SGI_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzCade7QS8tcZQukSv_31fb2YQo76QoOR5TgeL6he9bwhhasPOE7cnV24LHQaXhQX8/exec";
+function submitSGIForm(btn){var form=btn.closest(".sgi-form");if(!form)return;var ok=true;["firstName","phone","zip"].forEach(function(f){var el=form.querySelector('[data-field="'+f+'"]');if(el&&!el.value.trim()){el.style.borderColor="#dc2626";ok=false;}else if(el)el.style.borderColor="";});if(!ok){var e=form.querySelector(".form-error");if(e){e.style.display="block";setTimeout(function(){e.style.display="none";},4000);}return;}var data={page:window.location.href};form.querySelectorAll("[data-field]").forEach(function(el){data[el.getAttribute("data-field")]=el.value;});var orig=btn.textContent;btn.textContent="Sending...";btn.disabled=true;btn.style.opacity="0.7";fetch(SGI_SCRIPT_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},body:JSON.stringify(data)}).then(function(){sgiOK(form,btn,orig);}).catch(function(){sgiOK(form,btn,orig);})}function sgiOK(form,btn,orig){form.querySelectorAll("input,select,textarea").forEach(function(el){el.value="";el.style.borderColor="";});btn.textContent="✓ Request received!";btn.style.background="#16a34a";btn.style.opacity="1";btn.disabled=false;var b=form.querySelector(".form-success");if(b)b.style.display="block";setTimeout(function(){btn.textContent=orig;btn.style.background="";if(b)b.style.display="none";},6000);}
+</script>
 </body>
 </html>
