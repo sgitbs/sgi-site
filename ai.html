@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>SGI Total Business Solutions — Internet · Cybersecurity · Cloud · Mobility</title>
-<meta name="description" content="SGI delivers internet, cybersecurity, cloud, and mobility solutions for businesses — individually or as a complete managed package. Carrier-neutral. One partner. Southern California and nationwide."/>
+<title>AI Solutions — SGI Total Business Solutions</title>
+<meta name="description" content="SGI delivers AI solutions for businesses — conversational AI, AI cybersecurity, Microsoft 365 Copilot, AI contact center, and more. Southern California and nationwide."/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <style>
+
 
 
 
@@ -601,6 +602,247 @@ a { text-decoration: none; }
   .rev-row{grid-template-columns:1fr;}
   .bundle-upsell{flex-direction:column;}
 }
+
+
+/* ── AI PAGE EXTRAS ── */
+.ai-nav { color: #2d8ff5 !important; font-weight: 700 !important; }
+.ai-nav::after { background: #2d8ff5 !important; }
+
+.ai-hero {
+  background: linear-gradient(135deg, #04080f 0%, #050d1a 40%, #0a1628 100%);
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  padding: 100px 48px 80px;
+  position: relative;
+  overflow: hidden;
+}
+.ai-grid-bg {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(45,143,245,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45,143,245,0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.ai-glow-1 { position:absolute; top:-100px; right:-100px; width:600px; height:600px; background:radial-gradient(circle, rgba(45,143,245,0.15) 0%, transparent 65%); pointer-events:none; }
+.ai-glow-2 { position:absolute; bottom:-100px; left:-50px; width:400px; height:400px; background:radial-gradient(circle, rgba(90,176,255,0.08) 0%, transparent 65%); pointer-events:none; }
+
+.ai-badge {
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(45,143,245,0.12);
+  border:1px solid rgba(45,143,245,0.3);
+  border-radius:100px;padding:8px 20px;margin-bottom:28px;
+}
+.ai-badge-pulse {
+  width:10px;height:10px;border-radius:50%;
+  background:#2d8ff5;
+  animation:pulse 1.5s infinite;
+  box-shadow:0 0 0 0 rgba(45,143,245,0.4);
+}
+@keyframes pulse {
+  0%{box-shadow:0 0 0 0 rgba(45,143,245,0.4);}
+  70%{box-shadow:0 0 0 10px rgba(45,143,245,0);}
+  100%{box-shadow:0 0 0 0 rgba(45,143,245,0);}
+}
+.ai-badge span { font-size:13px;font-weight:600;color:#7ec8e3;letter-spacing:1px; }
+
+.ai-hero h1 {
+  font-size:68px;font-weight:800;line-height:1.05;
+  letter-spacing:-2px;color:white;margin-bottom:24px;
+}
+.ai-hero h1 .grad {
+  background:linear-gradient(90deg,#2d8ff5,#7ec8e3,#2d8ff5);
+  background-size:200%;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+  animation:shimmer 3s linear infinite;
+}
+@keyframes shimmer { 0%{background-position:0%} 100%{background-position:200%} }
+
+.ai-hero p { font-size:18px;color:#6a90b0;line-height:1.8;max-width:560px;margin-bottom:40px; }
+
+.ai-stat-row {
+  display:flex;gap:40px;flex-wrap:wrap;
+  padding-top:36px;border-top:1px solid rgba(45,143,245,0.15);
+}
+.ai-stat { display:flex;flex-direction:column;gap:4px; }
+.ai-stat-num { font-size:36px;font-weight:800;color:white;letter-spacing:-1px;line-height:1; }
+.ai-stat-num span { color:#2d8ff5; }
+.ai-stat-label { font-size:12px;color:#4a6282;max-width:120px;line-height:1.4; }
+
+/* Floating AI visual */
+.ai-visual {
+  position:absolute;right:60px;top:50%;transform:translateY(-50%);
+  width:340px;height:340px;
+  display:flex;align-items:center;justify-content:center;
+}
+.ai-orb {
+  width:220px;height:220px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%, #1a5faa, #0a1628);
+  box-shadow:0 0 60px rgba(45,143,245,0.3), 0 0 120px rgba(45,143,245,0.1);
+  display:flex;align-items:center;justify-content:center;
+  font-size:72px;
+  animation:float 4s ease-in-out infinite;
+  position:relative;z-index:2;
+}
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+.ai-ring {
+  position:absolute;border-radius:50%;border:1px solid rgba(45,143,245,0.2);
+  animation:ring-pulse 3s ease-out infinite;
+}
+.ai-ring-1 { width:260px;height:260px;animation-delay:0s; }
+.ai-ring-2 { width:300px;height:300px;animation-delay:.5s; }
+.ai-ring-3 { width:340px;height:340px;animation-delay:1s; }
+@keyframes ring-pulse { 0%{opacity:.6;transform:scale(.95)} 100%{opacity:0;transform:scale(1.05)} }
+
+/* Stat band */
+.ai-band {
+  background:#050d1a;
+  border-top:1px solid rgba(45,143,245,0.1);
+  border-bottom:1px solid rgba(45,143,245,0.1);
+  padding:36px 48px;
+  display:grid;grid-template-columns:repeat(5,1fr);gap:1px;
+}
+.ai-band-item {
+  display:flex;flex-direction:column;align-items:center;
+  text-align:center;padding:20px 12px;
+}
+.abi-num { font-size:32px;font-weight:800;color:white;letter-spacing:-1px;line-height:1; }
+.abi-num span { color:#2d8ff5; }
+.abi-label { font-size:11px;color:#3a5a7a;margin-top:6px;line-height:1.4;max-width:100px; }
+
+/* Category sections */
+.ai-section { padding:80px 48px; }
+.ai-section.dark { background:#06090f; }
+.ai-section.mid { background:#08111e; }
+.ai-section.light-dark { background:#0a1628; }
+
+.ai-eyebrow {
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:700;letter-spacing:4px;
+  text-transform:uppercase;color:#2d8ff5;margin-bottom:14px;
+}
+.ai-title {
+  font-size:42px;font-weight:800;line-height:1.1;
+  letter-spacing:-1px;color:white;margin-bottom:16px;
+}
+.ai-title .blue { color:#2d8ff5; }
+.ai-desc { font-size:16px;color:#4a6282;line-height:1.8;max-width:600px;margin-bottom:48px; }
+
+/* AI product cards */
+.ai-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:16px; }
+.ai-card {
+  background:rgba(13,27,50,0.8);
+  border:1px solid rgba(45,143,245,0.15);
+  border-radius:16px;padding:28px 24px;
+  transition:all .25s;position:relative;overflow:hidden;
+  display:flex;flex-direction:column;
+}
+.ai-card::before {
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,#2d8ff5,#7ec8e3);
+  transform:scaleX(0);transform-origin:left;transition:transform .3s;
+}
+.ai-card:hover { transform:translateY(-4px);border-color:rgba(45,143,245,0.4);box-shadow:0 16px 40px rgba(45,143,245,0.12); }
+.ai-card:hover::before { transform:scaleX(1); }
+.ai-card-icon { font-size:32px;margin-bottom:14px; }
+.ai-card-badge {
+  display:inline-block;background:rgba(45,143,245,0.15);
+  color:#7ec8e3;font-size:10px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  padding:3px 10px;border-radius:100px;margin-bottom:12px;
+  border:1px solid rgba(45,143,245,0.2);
+}
+.ai-card h3 { font-size:18px;font-weight:700;color:white;margin-bottom:8px; }
+.ai-card-provider { font-size:12px;color:#2d8ff5;font-weight:600;margin-bottom:10px; }
+.ai-card p { font-size:13px;color:#4a6282;line-height:1.7;margin-bottom:16px;flex:1; }
+.ai-card-tags { display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px; }
+.ai-tag {
+  background:rgba(45,143,245,0.08);
+  border:1px solid rgba(45,143,245,0.15);
+  border-radius:4px;padding:3px 10px;
+  font-size:11px;font-weight:500;color:#5a8aaa;
+}
+.ai-card-cta {
+  display:flex;align-items:center;justify-content:space-between;
+  padding-top:14px;border-top:1px solid rgba(45,143,245,0.1);margin-top:auto;
+}
+.ai-card-label { font-size:11px;color:#2a4060; }
+.ai-card-btn {
+  background:#1a5faa;color:white;border:none;border-radius:6px;
+  padding:7px 16px;font-family:'Inter',sans-serif;
+  font-size:12px;font-weight:600;cursor:pointer;
+  transition:all .2s;
+}
+.ai-card-btn:hover { background:#2d8ff5;transform:translateY(-1px); }
+
+/* Why AI section */
+.why-ai-grid { display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px; }
+.why-ai-card {
+  background:rgba(13,27,50,0.6);
+  border:1px solid rgba(45,143,245,0.12);
+  border-radius:14px;padding:28px 24px;
+}
+.wai-num { font-size:48px;font-weight:800;color:rgba(45,143,245,0.15);line-height:1;margin-bottom:12px; }
+.wai-title { font-size:20px;font-weight:700;color:white;margin-bottom:10px; }
+.wai-desc { font-size:14px;color:#4a6282;line-height:1.75; }
+
+/* CTA section */
+.ai-cta {
+  background:linear-gradient(135deg,#04080f,#0a1628);
+  padding:80px 48px;
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;
+  border-top:1px solid rgba(45,143,245,0.1);
+}
+.ai-cta-left h2 { font-size:40px;font-weight:800;color:white;line-height:1.1;letter-spacing:-1px;margin-bottom:16px; }
+.ai-cta-left p { font-size:15px;color:#4a6282;line-height:1.8;margin-bottom:28px; }
+.ai-cta-contacts { display:flex;flex-direction:column;gap:10px; }
+.ai-contact { display:flex;align-items:center;gap:12px;font-size:14px;font-weight:500;color:#7ec8e3; }
+.ai-contact-label { font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#2d8ff5;min-width:48px; }
+
+/* AI form override */
+.ai-form-wrap .quote-form {
+  background:#0a1628;border:1px solid rgba(45,143,245,0.2);
+  border-radius:16px;padding:36px 32px;
+  box-shadow:0 24px 64px rgba(0,0,0,.5);
+}
+.ai-form-wrap .form-title { color:white; }
+.ai-form-wrap .form-sub { color:#4a6282; }
+.ai-form-wrap .form-grp label { color:#3a5a7a; }
+.ai-form-wrap .form-grp input,
+.ai-form-wrap .form-grp select {
+  background:#060e1c;border-color:rgba(45,143,245,0.2);color:white;
+}
+.ai-form-wrap .form-grp input:focus,
+.ai-form-wrap .form-grp select:focus { border-color:#2d8ff5;background:#08111e; }
+.ai-form-wrap .form-btn { background:#1a5faa; }
+.ai-form-wrap .form-btn:hover { background:#2d8ff5; }
+.ai-form-wrap .form-disclaimer { color:#2a4060; }
+
+/* Business use cases */
+.use-cases { display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px; }
+.uc-card {
+  background:rgba(13,27,50,0.5);
+  border:1px solid rgba(45,143,245,0.12);
+  border-radius:12px;padding:24px 20px;
+  transition:all .2s;
+}
+.uc-card:hover { border-color:rgba(45,143,245,0.3);transform:translateY(-2px); }
+.uc-icon { font-size:28px;margin-bottom:12px; }
+.uc-title { font-size:16px;font-weight:700;color:white;margin-bottom:8px; }
+.uc-desc { font-size:13px;color:#3a5a7a;line-height:1.6; }
+
+@media(max-width:960px){
+  .ai-hero { padding:80px 20px 60px;min-height:auto; }
+  .ai-hero h1 { font-size:42px; }
+  .ai-visual { display:none; }
+  .ai-stat-row { gap:24px; }
+  .ai-band { grid-template-columns:repeat(3,1fr);padding:24px 20px; }
+  .ai-section { padding:48px 20px; }
+  .ai-grid,.why-ai-grid,.use-cases { grid-template-columns:1fr; }
+  .ai-cta { grid-template-columns:1fr;gap:40px;padding:48px 20px; }
+}
+
 </style>
 </head>
 <body>
@@ -618,9 +860,9 @@ a { text-decoration: none; }
 <nav class="nav">
   <a href="index.html"><div class="nav-logo-wrap"><svg width="220" height="44" viewBox="0 0 220 44" fill="none"><defs><linearGradient id="wgAI1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7ec8f0"/><stop offset="100%" stop-color="#1a7de0"/></linearGradient><linearGradient id="wgAI2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#4aaae8" stop-opacity="0.8"/><stop offset="100%" stop-color="#0d5abf" stop-opacity="0.8"/></linearGradient><linearGradient id="wgAI3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1a7de0" stop-opacity="0.5"/><stop offset="100%" stop-color="#0a3d8f" stop-opacity="0.5"/></linearGradient></defs><circle cx="22" cy="36" r="4" fill="#0a3d8f"/><path d="M12 27 Q22 17 32 27" stroke="url(#wgAI3)" stroke-width="4.5" fill="none" stroke-linecap="round"/><path d="M6 20 Q22 4 38 20" stroke="url(#wgAI2)" stroke-width="3.5" fill="none" stroke-linecap="round"/><path d="M1 13 Q22 -5 43 13" stroke="url(#wgAI1)" stroke-width="2.5" fill="none" stroke-linecap="round"/><line x1="54" y1="4" x2="54" y2="38" stroke="#d0dde8" stroke-width="1.2"/><text x="64" y="34" font-family="Inter,sans-serif" font-size="30" font-weight="800" fill="#0b1f3a" letter-spacing="-0.5">S</text><text x="87" y="34" font-family="Inter,sans-serif" font-size="30" font-weight="800" fill="#0b1f3a" letter-spacing="-0.5">G</text><text x="116" y="34" font-family="Inter,sans-serif" font-size="30" font-weight="800" fill="#0b1f3a">I</text><rect x="116" y="4" width="9" height="4" rx="1.5" fill="#2d8ff5"/></svg></div></a>
   <ul class="nav-links">
-    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="index.html">Home</a></li>
     <li><a href="services.html">Services</a></li>
-    <li><a href="ai.html" class="ai-nav">🤖 AI Solutions</a></li>
+    <li><a href="ai.html" class="active ai-nav">🤖 AI Solutions</a></li>
     <li><a href="cybersecurity.html">Cybersecurity &amp; Cloud</a></li>
     <li><a href="providers.html">Provider Catalog</a></li>
     <li><a href="reviews.html">Reviews</a></li>
@@ -643,278 +885,331 @@ a { text-decoration: none; }
   <a href="contact.html" class="mobile-cta">Get Free Quote</a>
 </div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-content">
-    <div class="hero-badge"><div class="badge-dot"></div><span>Complete Technology Partner · Southern California &amp; Nationwide</span></div>
-    <h1>Technology that protects,<br/><span class="blue">connects,</span> and<br/><span class="thin">scales your business.</span></h1>
-    <p class="hero-sub">SGI delivers internet, cybersecurity, cloud, and mobility solutions — individually or as a complete managed package. One partner. One call. No gaps.</p>
-    <div class="pill-row">
-      <div class="pill">🌐 Connectivity</div>
-      <div class="pill">🔒 Cybersecurity</div>
-      <div class="pill">☁️ Cloud &amp; SaaS</div>
-      <div class="pill">📱 Mobility</div>
-      <div class="pill">📞 VoIP / UCaaS</div>
+<!-- AI HERO -->
+<div class="ai-hero">
+  <div class="ai-grid-bg"></div>
+  <div class="ai-glow-1"></div>
+  <div class="ai-glow-2"></div>
+  <div style="position:relative;z-index:2;max-width:640px;">
+    <div class="ai-badge">
+      <div class="ai-badge-pulse"></div>
+      <span>Now Available · AI Solutions for Every Business</span>
     </div>
-    <div class="hero-btns">
-      <button class="btn-hero-primary" onclick="window.location='contact.html'">Get a Free Technology Assessment →</button>
+    <h1>Your business,<br/>powered by <span class="grad">Artificial<br/>Intelligence.</span></h1>
+    <p>AI isn't just for tech giants anymore. SGI brings the world's leading AI solutions to businesses of every size — from AI receptionists that never miss a call to cybersecurity AI that stops ransomware before it executes.</p>
+    <div class="hero-btns" style="margin-bottom:40px;">
+      <button class="btn-hero-primary" onclick="window.location='contact.html'" style="background:#1a5faa;">Get a Free AI Consultation →</button>
       <button class="btn-hero-outline" onclick="window.location='tel:+19493864416'">Call (949) 386-4416</button>
     </div>
-    <div class="hero-stats">
-      <div class="h-stat"><div class="h-stat-num">250<span>+</span></div><div class="h-stat-label">Technology providers available</div></div>
-      <div class="h-stat"><div class="h-stat-num">6</div><div class="h-stat-label">Core solution categories</div></div>
-      <div class="h-stat"><div class="h-stat-num">5.0<span>★</span></div><div class="h-stat-label">Average client rating</div></div>
-      <div class="h-stat"><div class="h-stat-num">1</div><div class="h-stat-label">Partner for everything</div></div>
+    <div class="ai-stat-row">
+      <div class="ai-stat"><div class="ai-stat-num">50<span>+</span></div><div class="ai-stat-label">AI-powered solutions available</div></div>
+      <div class="ai-stat"><div class="ai-stat-num">5</div><div class="ai-stat-label">AI categories we cover</div></div>
+      <div class="ai-stat"><div class="ai-stat-num">$0</div><div class="ai-stat-label">Cost for your AI consultation</div></div>
+      <div class="ai-stat"><div class="ai-stat-num">1</div><div class="ai-stat-label">Advisor for all your AI needs</div></div>
     </div>
   </div>
-  <div class="hero-visual">
-    <svg width="300" height="260" viewBox="0 0 300 260" fill="none" opacity="0.7">
-      <defs>
-        <linearGradient id="hv1i" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7ec8f0"/><stop offset="100%" stop-color="#1a7de0"/></linearGradient>
-        <linearGradient id="hv2i" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#4aaae8" stop-opacity="0.8"/><stop offset="100%" stop-color="#0d5abf" stop-opacity="0.8"/></linearGradient>
-        <linearGradient id="hv3i" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1a7de0" stop-opacity="0.5"/><stop offset="100%" stop-color="#0a3d8f" stop-opacity="0.5"/></linearGradient>
-      </defs>
-      <circle cx="150" cy="218" r="18" fill="#0a3d8f"/>
-      <path d="M88 168 Q150 108 212 168" stroke="url(#hv1i)" stroke-width="16" fill="none" stroke-linecap="round"/>
-      <path d="M50 130 Q150 46 250 130" stroke="url(#hv2i)" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M16 94 Q150 -10 284 94" stroke="url(#hv3i)" stroke-width="9" fill="none" stroke-linecap="round"/>
-    </svg>
-  </div>
-</section>
-
-<!-- PROOF BAND -->
-<div class="proof-band">
-  <div class="pb-item"><div class="pb-icon">⭐</div><div><div class="pb-title">5.0 ★ Rating</div><div class="pb-sub">40+ verified business clients</div></div></div>
-  <div class="pb-div"></div>
-  <div class="pb-item"><div class="pb-icon">🔀</div><div><div class="pb-title">Carrier &amp; Vendor Neutral</div><div class="pb-sub">We work for you, not the provider</div></div></div>
-  <div class="pb-div"></div>
-  <div class="pb-item"><div class="pb-icon">🔒</div><div><div class="pb-title">Cybersecurity Experts</div><div class="pb-sub">18+ security providers available</div></div></div>
-  <div class="pb-div"></div>
-  <div class="pb-item"><div class="pb-icon">☁️</div><div><div class="pb-title">Cloud &amp; SaaS Partner</div><div class="pb-sub">Microsoft 365, AWS, Google &amp; more</div></div></div>
-  <div class="pb-div"></div>
-  <div class="pb-item"><div class="pb-icon">✅</div><div><div class="pb-title">One Partner. Everything.</div><div class="pb-sub">From internet to endpoint security</div></div></div>
-</div>
-
-<!-- TICKER -->
-<div class="ticker-wrap">
-  <div class="ticker-track">
-    <span class="ticker-chip">● AT&amp;T Business</span><span class="ticker-chip">● Spectrum Business</span><span class="ticker-chip">● Palo Alto Networks</span><span class="ticker-chip">● Microsoft 365</span><span class="ticker-chip">● SentinelOne</span><span class="ticker-chip">● Verizon Business</span><span class="ticker-chip">● T-Mobile Business</span><span class="ticker-chip">● Cato Networks SASE</span><span class="ticker-chip">● RingCentral</span><span class="ticker-chip">● AWS Cloud</span><span class="ticker-chip">● Coro Cybersecurity</span><span class="ticker-chip">● Zoom Phone</span><span class="ticker-chip">● Starlink</span><span class="ticker-chip">● Cox Business</span><span class="ticker-chip">● Proofpoint</span><span class="ticker-chip">● Google Workspace</span>
-    <span class="ticker-chip">● AT&amp;T Business</span><span class="ticker-chip">● Spectrum Business</span><span class="ticker-chip">● Palo Alto Networks</span><span class="ticker-chip">● Microsoft 365</span><span class="ticker-chip">● SentinelOne</span><span class="ticker-chip">● Verizon Business</span><span class="ticker-chip">● T-Mobile Business</span><span class="ticker-chip">● Cato Networks SASE</span><span class="ticker-chip">● RingCentral</span><span class="ticker-chip">● AWS Cloud</span><span class="ticker-chip">● Coro Cybersecurity</span><span class="ticker-chip">● Zoom Phone</span><span class="ticker-chip">● Starlink</span><span class="ticker-chip">● Cox Business</span><span class="ticker-chip">● Proofpoint</span><span class="ticker-chip">● Google Workspace</span>
+  <div class="ai-visual">
+    <div class="ai-ring ai-ring-1"></div>
+    <div class="ai-ring ai-ring-2"></div>
+    <div class="ai-ring ai-ring-3"></div>
+    <div class="ai-orb">🤖</div>
   </div>
 </div>
 
-<!-- CORE SOLUTIONS — INDIVIDUAL SERVICES -->
-<section class="cat-section">
-  <div class="cat-header full">
-    <div class="cat-eyebrow">Individual Services</div>
-    <h2 class="cat-title">Need one thing? We've got it.<br/><span>Every service available individually.</span></h2>
-    <p class="cat-desc">You don't have to buy a package. Every service below is available as a standalone solution. Just need internet? Done. Just need a firewall? Done. We'll quote it, install it, and support it — no minimums, no bundles required.</p>
-  </div>
-  <div class="individual-grid">
+<!-- AI STAT BAND -->
+<div class="ai-band">
+  <div class="ai-band-item"><div class="abi-num">$4.4<span>T</span></div><div class="abi-label">Global AI market by 2032</div></div>
+  <div class="ai-band-item"><div class="abi-num">72<span>%</span></div><div class="abi-label">Of businesses adopting AI in 2025</div></div>
+  <div class="ai-band-item"><div class="abi-num">40<span>%</span></div><div class="abi-label">Productivity gain from AI tools</div></div>
+  <div class="ai-band-item"><div class="abi-num">3<span>x</span></div><div class="abi-label">Faster threat detection with AI security</div></div>
+  <div class="ai-band-item"><div class="abi-num">24<span>/7</span></div><div class="abi-label">AI works around the clock — humans don't</div></div>
+</div>
 
-    <div class="ind-svc-card">
-      <div class="isc-icon">🌐</div>
-      <div class="isc-name">Business Internet &amp; Fiber</div>
-      <div class="isc-desc">Fiber, DIA, coax, fixed wireless, and satellite — compared across 34+ carriers at your exact address. Best speed, best price, guaranteed.</div>
-      <div class="isc-tags"><span class="isc-tag">Fiber</span><span class="isc-tag">DIA</span><span class="isc-tag">5G Backup</span><span class="isc-tag">Starlink</span><span class="isc-tag">Failover</span></div>
-      <div class="isc-footer"><span class="isc-solo">✓ Available standalone</span><button class="isc-btn" onclick="window.location='contact.html'">Get Quote</button></div>
+<!-- WHY AI NOW -->
+<div class="ai-section dark">
+  <div class="ai-eyebrow">⚡ Why AI Now</div>
+  <h2 class="ai-title">Your competitors are already<br/>using <span class="blue">AI. Are you?</span></h2>
+  <p class="ai-desc">AI is no longer a future technology — it's what separates businesses that grow from those that fall behind. The good news: SGI makes AI adoption simple, affordable, and immediate.</p>
+  <div class="why-ai-grid">
+    <div class="why-ai-card">
+      <div class="wai-num">01</div>
+      <div class="wai-title">You're losing leads after hours</div>
+      <div class="wai-desc">Every missed call is a lost customer. AI receptionists like Crexendo CAIRO and Nextiva answer, qualify, and route calls 24/7 — so your business never misses a lead, even at 2am on a Sunday.</div>
     </div>
-
-    <div class="ind-svc-card">
-      <div class="isc-icon">📶</div>
-      <div class="isc-name">Wi-Fi &amp; LAN Design</div>
-      <div class="isc-desc">Site survey, heatmapping, enterprise AP placement, structured cabling, VLANs, QoS, and guest networks — designed and installed.</div>
-      <div class="isc-tags"><span class="isc-tag">Survey &amp; Heatmap</span><span class="isc-tag">AP Installation</span><span class="isc-tag">Cat6 Cabling</span><span class="isc-tag">Managed Wi-Fi</span></div>
-      <div class="isc-footer"><span class="isc-solo">✓ Available standalone</span><button class="isc-btn" onclick="window.location='contact.html'">Get Quote</button></div>
+    <div class="why-ai-card">
+      <div class="wai-num">02</div>
+      <div class="wai-title">Hackers are using AI to attack you</div>
+      <div class="wai-desc">Modern cyberattacks use AI to evolve faster than humans can respond. AI-powered security from CrowdStrike and SentinelOne fights back automatically — detecting and stopping attacks in milliseconds.</div>
     </div>
-
-    <div class="ind-svc-card" style="border-color:var(--blue-pale);background:linear-gradient(135deg,#f8fbff,white);">
-      <div class="isc-icon">🔒</div>
-      <div class="isc-name">Cybersecurity</div>
-      <div class="isc-desc">Firewalls, SASE, endpoint protection, email security, MFA, and 24/7 MDR — from providers like Palo Alto, SentinelOne, and Coro.</div>
-      <div class="isc-tags"><span class="isc-tag">NGFW</span><span class="isc-tag">SASE/ZTNA</span><span class="isc-tag">EDR</span><span class="isc-tag">Email Security</span><span class="isc-tag">MDR</span></div>
-      <div class="isc-footer"><span class="isc-solo">✓ Available standalone</span><button class="isc-btn" onclick="window.location='cybersecurity.html'">Learn More</button></div>
+    <div class="why-ai-card">
+      <div class="wai-num">03</div>
+      <div class="wai-title">Your team is drowning in repetitive tasks</div>
+      <div class="wai-desc">Microsoft 365 Copilot (via Pax8) puts AI inside Word, Excel, Teams, and Outlook — drafting emails, summarizing meetings, analyzing data, and building reports in seconds instead of hours.</div>
     </div>
-
-    <div class="ind-svc-card">
-      <div class="isc-icon">☁️</div>
-      <div class="isc-name">Cloud &amp; Microsoft 365</div>
-      <div class="isc-desc">Microsoft 365, Google Workspace, Azure, AWS — migration, setup, device management, backup, and ongoing support.</div>
-      <div class="isc-tags"><span class="isc-tag">Microsoft 365</span><span class="isc-tag">Azure</span><span class="isc-tag">AWS</span><span class="isc-tag">MDM/Intune</span><span class="isc-tag">Backup &amp; DR</span></div>
-      <div class="isc-footer"><span class="isc-solo">✓ Available standalone</span><button class="isc-btn" onclick="window.location='cybersecurity.html'">Learn More</button></div>
-    </div>
-
-    <div class="ind-svc-card">
-      <div class="isc-icon">📞</div>
-      <div class="isc-name">VoIP &amp; Cloud Phone</div>
-      <div class="isc-desc">Replace your old phone system with a modern cloud PBX — RingCentral, Zoom Phone, Nextiva, 8x8, and more. Starting from $15/user/mo.</div>
-      <div class="isc-tags"><span class="isc-tag">Cloud PBX</span><span class="isc-tag">RingCentral</span><span class="isc-tag">Zoom Phone</span><span class="isc-tag">Video Meetings</span><span class="isc-tag">SMS</span></div>
-      <div class="isc-footer"><span class="isc-solo">✓ Available standalone</span><button class="isc-btn" onclick="window.location='contact.html'">Get Quote</button></div>
-    </div>
-
-    <div class="ind-svc-card">
-      <div class="isc-icon">📱</div>
-      <div class="isc-name">Mobility &amp; 5G Plans</div>
-      <div class="isc-desc">AT&amp;T, Verizon, and T-Mobile business wireless plans compared side-by-side. Mixed-carrier strategies for max coverage and savings.</div>
-      <div class="isc-tags"><span class="isc-tag">AT&amp;T Business</span><span class="isc-tag">Verizon</span><span class="isc-tag">T-Mobile</span><span class="isc-tag">MDM</span><span class="isc-tag">IoT</span></div>
-      <div class="isc-footer"><span class="isc-solo">✓ Available standalone</span><button class="isc-btn" onclick="window.location='contact.html'">Get Quote</button></div>
-    </div>
-
-    <div class="ind-svc-card">
-      <div class="isc-icon">🏢</div>
-      <div class="isc-name">Multi-Site Networks</div>
-      <div class="isc-desc">SD-WAN, LTE/5G failover, and centralized management across all your locations — one advisor, one contact, full visibility.</div>
-      <div class="isc-tags"><span class="isc-tag">SD-WAN</span><span class="isc-tag">Multi-location</span><span class="isc-tag">Failover</span><span class="isc-tag">Monitoring</span></div>
-      <div class="isc-footer"><span class="isc-solo">✓ Available standalone</span><button class="isc-btn" onclick="window.location='contact.html'">Get Quote</button></div>
-    </div>
-
-    <div class="ind-svc-card">
-      <div class="isc-icon">🎧</div>
-      <div class="isc-name">Contact Center (CCaaS)</div>
-      <div class="isc-desc">Cloud contact center solutions for sales and support teams — Five9, Talkdesk, NICE CXone, Genesys, and more with AI built in.</div>
-      <div class="isc-tags"><span class="isc-tag">Five9</span><span class="isc-tag">Talkdesk</span><span class="isc-tag">AI Agents</span><span class="isc-tag">Omnichannel</span></div>
-      <div class="isc-footer"><span class="isc-solo">✓ Available standalone</span><button class="isc-btn" onclick="window.location='contact.html'">Get Quote</button></div>
-    </div>
-
-    <div class="ind-svc-card">
-      <div class="isc-icon">💾</div>
-      <div class="isc-name">Backup &amp; Disaster Recovery</div>
-      <div class="isc-desc">Cloud backup for Microsoft 365, Google Workspace, and business data. Ransomware recovery, compliance archiving, and business continuity.</div>
-      <div class="isc-tags"><span class="isc-tag">M365 Backup</span><span class="isc-tag">Dropsuite</span><span class="isc-tag">Ransomware Recovery</span><span class="isc-tag">DR as a Service</span></div>
-      <div class="isc-footer"><span class="isc-solo">✓ Available standalone</span><button class="isc-btn" onclick="window.location='contact.html'">Get Quote</button></div>
-    </div>
-
-  </div>
-
-  <!-- BUNDLE UPSELL -->
-  <div class="bundle-upsell">
-    <div class="bu-left">
-      <h3>💡 Save more when you bundle</h3>
-      <p>Many of our clients start with one service and add more over time. Or skip straight to a package and get everything under the best price from each provider — often cheaper than buying each piece separately.</p>
-    </div>
-    <div class="bu-right">
-      <button class="bu-btn ghost" onclick="document.getElementById('packages').scrollIntoView({behavior:'smooth'})">View Packages</button>
-      <button class="bu-btn" onclick="window.location='contact.html'">Talk to an Advisor →</button>
+    <div class="why-ai-card">
+      <div class="wai-num">04</div>
+      <div class="wai-title">Customer expectations have changed</div>
+      <div class="wai-desc">Customers now expect instant, accurate answers — any time, any channel. AI virtual agents from Kore.ai, Yellow.ai, and UJET deliver that experience at a fraction of the cost of adding headcount.</div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- PACKAGES -->
-<section class="cat-section alt" id="packages">
-  <div class="cat-header full">
-    <div class="cat-eyebrow">Business Technology Packages</div>
-    <h2 class="cat-title">Build your complete solution.<br/><span>Pre-built packages for every business.</span></h2>
-    <p class="cat-desc">Stop managing multiple vendors. Our packages combine the services most businesses need — at one advisor who sources everything for you. Everything is still available individually if you prefer.</p>
-  </div>
-  <div class="pkg-grid">
-    <div class="pkg-c">
-      <div class="pkg-c-icon">🌐</div>
-      <div class="pkg-c-name">Connected Office</div>
-      <div class="pkg-c-tag">Perfect for businesses that need fast, reliable internet with a professional phone system.</div>
-      <ul class="pkg-c-list">
-        <li><span class="ck">✓</span>Business Fiber Internet (best carrier for your ZIP)</li>
-        <li><span class="ck">✓</span>Cloud VoIP Phone System</li>
-        <li><span class="ck">✓</span>Managed Wi-Fi Setup</li>
-        <li><span class="ck">✓</span>5G Wireless Backup</li>
-        <li><span class="ck">✓</span>One Point of Contact</li>
-      </ul>
-      <button class="pkg-c-btn out" onclick="window.location='contact.html'">Get a Quote →</button>
+<!-- AI CATEGORY 1: CONVERSATIONAL AI & VIRTUAL AGENTS -->
+<div class="ai-section mid">
+  <div class="ai-eyebrow">🤖 Category 1</div>
+  <h2 class="ai-title">Conversational AI &<br/><span class="blue">Virtual Agents</span></h2>
+  <p class="ai-desc">AI that talks to your customers — on the phone, on your website, in your app. Available 24/7, never frustrated, always consistent. Replace hold times and after-hours missed calls with intelligent AI that handles inquiries, qualifies leads, books appointments, and escalates to humans when needed.</p>
+  <div class="ai-grid">
+    <div class="ai-card">
+      <div class="ai-card-icon">🧠</div>
+      <div class="ai-card-badge">Enterprise AI · Sandler Partner</div>
+      <h3>Kore.ai</h3>
+      <div class="ai-card-provider">Conversational AI Platform</div>
+      <p>The world's leading enterprise conversational AI platform. Build AI voice bots, chat agents, and employee assistants — with pre-built solutions for banking, healthcare, retail, and telecom. Handles millions of interactions without a single human agent.</p>
+      <div class="ai-card-tags"><span class="ai-tag">Voice AI Agents</span><span class="ai-tag">Chat Bots</span><span class="ai-tag">Banking AI</span><span class="ai-tag">Healthcare AI</span><span class="ai-tag">Low-Code Builder</span></div>
+      <div class="ai-card-cta"><span class="ai-card-label">Best for: Enterprise automation</span><button class="ai-card-btn" onclick="window.location='contact.html'">Get Quote</button></div>
     </div>
-    <div class="pkg-c hot">
-      <div class="pkg-c-badge">Most Popular</div>
-      <div class="pkg-c-icon">🛡️</div>
-      <div class="pkg-c-name">Business Protection</div>
-      <div class="pkg-c-tag">For businesses that need security, uptime, and cloud tools — all sourced and set up for you.</div>
-      <ul class="pkg-c-list">
-        <li><span class="ck">✓</span>High-speed Business Internet</li>
-        <li><span class="ck">✓</span>Next-Gen Firewall (NGFW)</li>
-        <li><span class="ck">✓</span>Endpoint Protection &amp; EDR</li>
-        <li><span class="ck">✓</span>Email Security &amp; Anti-Phishing</li>
-        <li><span class="ck">✓</span>Microsoft 365 Setup &amp; Management</li>
-        <li><span class="ck">✓</span>Cloud Backup &amp; Disaster Recovery</li>
-        <li><span class="ck">✓</span>24/7 Network Monitoring</li>
-      </ul>
-      <button class="pkg-c-btn" onclick="window.location='contact.html'">Get a Quote →</button>
+    <div class="ai-card">
+      <div class="ai-card-icon">💬</div>
+      <div class="ai-card-badge">Enterprise AI</div>
+      <h3>Yellow.ai</h3>
+      <div class="ai-card-provider">Enterprise Virtual Agents</div>
+      <p>Deploy Dynamic AI Agents across voice, chat, email, WhatsApp, and SMS — in 100+ languages. Yellow.ai handles customer service, HR automation, and IT helpdesk with human-like accuracy. Used by 1,100+ enterprises globally.</p>
+      <div class="ai-card-tags"><span class="ai-tag">Omnichannel AI</span><span class="ai-tag">100+ Languages</span><span class="ai-tag">HR Automation</span><span class="ai-tag">IT Helpdesk AI</span></div>
+      <div class="ai-card-cta"><span class="ai-card-label">Best for: Enterprise CX</span><button class="ai-card-btn" onclick="window.location='contact.html'">Get Quote</button></div>
     </div>
-    <div class="pkg-c">
-      <div class="pkg-c-icon">🏢</div>
-      <div class="pkg-c-name">Smart Office</div>
-      <div class="pkg-c-tag">Complete setup for growing teams — everything from internet to phones to cloud collaboration.</div>
-      <ul class="pkg-c-list">
-        <li><span class="ck">✓</span>Business Internet &amp; Wi-Fi Design</li>
-        <li><span class="ck">✓</span>Cloud Phone System (VoIP)</li>
-        <li><span class="ck">✓</span>Microsoft 365 or Google Workspace</li>
-        <li><span class="ck">✓</span>Cybersecurity &amp; Firewall</li>
-        <li><span class="ck">✓</span>Device Management (MDM)</li>
-        <li><span class="ck">✓</span>One Advisor. Every Solution. Zero Bias.</li>
-      </ul>
-      <button class="pkg-c-btn out" onclick="window.location='contact.html'">Get a Quote →</button>
+    <div class="ai-card">
+      <div class="ai-card-icon">📞</div>
+      <div class="ai-card-badge">SMB AI · Available Now</div>
+      <h3>Crexendo CAIRO</h3>
+      <div class="ai-card-provider">AI Receptionist · 24/7</div>
+      <p>CAIRO is an AI receptionist built into Crexendo's cloud phone system — answering, routing, and qualifying calls around the clock with no human needed. Never miss a lead again. Perfect for small businesses that can't staff a receptionist 24/7.</p>
+      <div class="ai-card-tags"><span class="ai-tag">24/7 AI Receptionist</span><span class="ai-tag">Call Routing</span><span class="ai-tag">Lead Qualification</span><span class="ai-tag">UCaaS Included</span></div>
+      <div class="ai-card-cta"><span class="ai-card-label">Best for: SMB missing calls</span><button class="ai-card-btn" onclick="window.location='contact.html'">Get Quote</button></div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-card-icon">🎯</div>
+      <div class="ai-card-badge">CCaaS AI · Sandler Partner</div>
+      <h3>UJET + Google CCAI</h3>
+      <div class="ai-card-provider">AI Contact Center</div>
+      <p>UJET is built natively on Google Cloud AI — giving your contact center access to the most powerful AI available. Virtual agents handle routine inquiries while Google CCAI assists human agents in real time. The most advanced AI contact center platform available.</p>
+      <div class="ai-card-tags"><span class="ai-tag">Google CCAI</span><span class="ai-tag">AI Virtual Agents</span><span class="ai-tag">Agent Assist</span><span class="ai-tag">Real-time Analytics</span></div>
+      <div class="ai-card-cta"><span class="ai-card-label">Best for: AI-first contact centers</span><button class="ai-card-btn" onclick="window.location='contact.html'">Get Quote</button></div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-card-icon">🌐</div>
+      <div class="ai-card-badge">CPaaS AI</div>
+      <h3>Sestek</h3>
+      <div class="ai-card-provider">Speech AI · NLP · Conversational AI</div>
+      <p>Sestek delivers AI-powered conversational technology — speech analytics, NLP-based virtual agents, and text-to-speech. Their Conversational AI Platform automates customer interactions and analyzes conversations to drive continuous improvement.</p>
+      <div class="ai-card-tags"><span class="ai-tag">Speech AI</span><span class="ai-tag">NLP Virtual Agents</span><span class="ai-tag">Text-to-Speech</span><span class="ai-tag">Conversation Analytics</span></div>
+      <div class="ai-card-cta"><span class="ai-card-label">Best for: Voice AI automation</span><button class="ai-card-btn" onclick="window.location='contact.html'">Get Quote</button></div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-card-icon">🗣️</div>
+      <div class="ai-card-badge">Contact Center AI · Sandler Partner</div>
+      <h3>Sanas</h3>
+      <div class="ai-card-provider">Real-time AI Accent Translation</div>
+      <p>Sanas uses breakthrough AI to translate accents in real time during live calls — improving clarity between international agents and U.S. customers. Dramatically improves CSAT and reduces miscommunication in global contact centers.</p>
+      <div class="ai-card-tags"><span class="ai-tag">Real-time Accent AI</span><span class="ai-tag">Speech Processing</span><span class="ai-tag">CSAT Improvement</span><span class="ai-tag">Contact Center</span></div>
+      <div class="ai-card-cta"><span class="ai-card-label">Best for: International call centers</span><button class="ai-card-btn" onclick="window.location='contact.html'">Get Quote</button></div>
     </div>
   </div>
-  <div style="text-align:center;margin-top:28px;">
-    <p style="font-size:14px;color:var(--text-muted);">All services available individually. Each provider bills you directly. <a href="contact.html" style="color:var(--blue);font-weight:600;">Contact us</a> to get started.</p>
-  </div>
-</section>
+</div>
 
-<!-- HOW WE WORK -->
-<section class="cat-section">
-  <div style="text-align:center;max-width:600px;margin:0 auto 0;">
-    <div class="cat-eyebrow" style="text-align:center;">How We Work</div>
-    <h2 class="cat-title" style="text-align:center;">Your technology partner —<br/><span>from day one to ongoing support.</span></h2>
+<!-- AI CATEGORY 2: AI CYBERSECURITY -->
+<div class="ai-section light-dark">
+  <div class="ai-eyebrow">🔒 Category 2</div>
+  <h2 class="ai-title">AI-Powered<br/><span class="blue">Cybersecurity</span></h2>
+  <p class="ai-desc">Hackers use AI. Your defenses should too. AI cybersecurity detects threats in milliseconds, stops ransomware before it executes, and learns from every attack — getting smarter over time. No human SOC team can match the speed of AI-driven threat response.</p>
+  <div class="ai-grid">
+    <div class="ai-card">
+      <div class="ai-card-icon">🦅</div>
+      <div class="ai-card-badge">AI Security · #1 Endpoint</div>
+      <h3>CrowdStrike Falcon</h3>
+      <div class="ai-card-provider">AI-Native Endpoint Security</div>
+      <p>The world's most deployed AI-native cybersecurity platform. CrowdStrike's AI processes over 1 trillion signals daily to detect and stop breaches in real time. Used by 60%+ of Fortune 500 companies. The gold standard in AI endpoint security.</p>
+      <div class="ai-card-tags"><span class="ai-tag">AI Endpoint Protection</span><span class="ai-tag">XDR</span><span class="ai-tag">Threat Intelligence</span><span class="ai-tag">Identity AI</span><span class="ai-tag">Cloud Security</span></div>
+      <div class="ai-card-cta"><span class="ai-card-label">Best for: Serious endpoint protection</span><button class="ai-card-btn" onclick="window.location='contact.html'">Get Quote</button></div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-card-icon">🕵️</div>
+      <div class="ai-card-badge">Self-Learning AI</div>
+      <h3>Darktrace</h3>
+      <div class="ai-card-provider">AI Cyber Defense</div>
+      <p>Darktrace's Self-Learning AI builds a unique understanding of your business and detects threats that no rule-based tool would ever catch. Autonomously responds to threats in real time — stopping attacks while your team sleeps.</p>
+      <div class="ai-card-tags"><span class="ai-tag">Self-Learning AI</span><span class="ai-tag">Autonomous Response</span><span class="ai-tag">Network AI</span><span class="ai-tag">Email AI</span><span class="ai-tag">OT Security</span></div>
+      <div class="ai-card-cta"><span class="ai-card-label">Best for: AI-autonomous defense</span><button class="ai-card-btn" onclick="window.location='contact.html'">Get Quote</button></div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-card-icon">🛡️</div>
+      <div class="ai-card-badge">AI Endpoint · Pax8 Partner</div>
+      <h3>SentinelOne</h3>
+      <div class="ai-card-provider">AI Ransomware Protection</div>
+      <p>SentinelOne's AI detects and rolls back ransomware attacks automatically — restoring systems to their pre-attack state in minutes. Gartner Magic Quadrant Leader. If ransomware runs, SentinelOne undoes it.</p>
+      <div class="ai-card-tags"><span class="ai-tag">AI Endpoint AI</span><span class="ai-tag">Ransomware Rollback</span><span class="ai-tag">XDR</span><span class="ai-tag">MDR</span><span class="ai-tag">Cloud Security</span></div>
+      <div class="ai-card-cta"><span class="ai-card-label">Best for: Ransomware protection</span><button class="ai-card-btn" onclick="window.location='contact.html'">Get Quote</button></div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-card-icon">🔮</div>
+      <div class="ai-card-badge">AI Threat Detection</div>
+      <h3>Vectra AI</h3>
+      <div class="ai-card-provider">AI Network & Identity Threat Detection</div>
+      <p>Vectra's Attack Signal Intelligence AI prioritizes real threats from millions of signals — eliminating alert fatigue. Covers network, identity, cloud, and Microsoft 365. Your security team focuses on what matters, not noise.</p>
+      <div class="ai-card-tags"><span class="ai-tag">AI Threat Prioritization</span><span class="ai-tag">Network Detection</span><span class="ai-tag">Identity AI</span><span class="ai-tag">M365 Security</span></div>
+      <div class="ai-card-cta"><span class="ai-card-label">Best for: Cutting through alert noise</span><button class="ai-card-btn" onclick="window.location='contact.html'">Get Quote</button></div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-card-icon">📧</div>
+      <div class="ai-card-badge">Email AI · Pax8 Partner</div>
+      <h3>IRONSCALES</h3>
+      <div class="ai-card-provider">AI Self-Learning Email Security</div>
+      <p>IRONSCALES uses AI that learns from every phishing attempt reported across its global network — getting smarter with every threat. Protects Microsoft 365 and Google Workspace with AI that evolves faster than attackers can adapt.</p>
+      <div class="ai-card-tags"><span class="ai-tag">AI Anti-Phishing</span><span class="ai-tag">Self-Learning</span><span class="ai-tag">M365 & Google</span><span class="ai-tag">Phishing Simulation</span></div>
+      <div class="ai-card-cta"><span class="ai-card-label">Best for: AI email protection</span><button class="ai-card-btn" onclick="window.location='contact.html'">Get Quote</button></div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-card-icon">🌩️</div>
+      <div class="ai-card-badge">Cloud AI Security</div>
+      <h3>Wiz</h3>
+      <div class="ai-card-provider">AI Cloud Security Posture</div>
+      <p>Wiz scans your entire cloud environment in minutes using AI — identifying the critical risks that actually matter. No agents, no friction. Became the fastest SaaS company to reach $100M ARR. Used by 40%+ of Fortune 100.</p>
+      <div class="ai-card-tags"><span class="ai-tag">AI Risk Prioritization</span><span class="ai-tag">Agentless Scanning</span><span class="ai-tag">AWS/Azure/GCP</span><span class="ai-tag">Container Security</span></div>
+      <div class="ai-card-cta"><span class="ai-card-label">Best for: Cloud security posture</span><button class="ai-card-btn" onclick="window.location='contact.html'">Get Quote</button></div>
+    </div>
   </div>
-  <div class="how-row">
-    <div class="how-c"><div class="how-num">1</div><div class="how-title">Assess</div><div class="how-desc">We analyze your current setup, identify gaps and inefficiencies — completely free, no obligation.</div></div>
-    <div class="how-c"><div class="how-num">2</div><div class="how-title">Design</div><div class="how-desc">We build a customized solution using best-in-class providers matched to your exact business needs.</div></div>
-    <div class="how-c"><div class="how-num">3</div><div class="how-title">Deploy</div><div class="how-desc">We handle installation, setup, and full configuration — every vendor coordinated through us.</div></div>
-    <div class="how-c"><div class="how-num">4</div><div class="how-title">Manage</div><div class="how-desc">Ongoing monitoring, support, and optimization — we stay your partner long after day one.</div></div>
-  </div>
-</section>
+</div>
 
-<!-- INDUSTRIES -->
-<section class="cat-section alt">
-  <div class="cat-eyebrow">Industries We Serve</div>
-  <h2 class="cat-title">Built for businesses that <span>can't afford downtime.</span></h2>
-  <div class="ind-row">
-    <div class="ind-c"><div class="ind-em">🏥</div><div><h3>Healthcare &amp; Medical</h3><p>HIPAA-compliant networks, secure EMR connectivity, telemedicine, and endpoint security.</p></div></div>
-    <div class="ind-c"><div class="ind-em">🏗️</div><div><h3>Construction &amp; Field Services</h3><p>Mobile connectivity, Starlink, IoT tracking for crews, equipment, and job sites.</p></div></div>
-    <div class="ind-c"><div class="ind-em">🏪</div><div><h3>Retail &amp; Restaurants</h3><p>POS-ready networks, guest Wi-Fi, security cameras, and multi-location management.</p></div></div>
-    <div class="ind-c"><div class="ind-em">💼</div><div><h3>Professional Services</h3><p>Secure cloud tools, VoIP, and compliance-ready cybersecurity for legal, finance, insurance.</p></div></div>
-    <div class="ind-c"><div class="ind-em">🏢</div><div><h3>Multi-Location &amp; Franchises</h3><p>Centralized SD-WAN, simplified vendor management across every location — no matter how many.</p></div></div>
-    <div class="ind-c"><div class="ind-em">🚀</div><div><h3>Growing Businesses</h3><p>Technology infrastructure built for where you're going — scalable from day one.</p></div></div>
+<!-- AI CATEGORY 3: AI PRODUCTIVITY & CLOUD -->
+<div class="ai-section dark">
+  <div class="ai-eyebrow">☁️ Category 3</div>
+  <h2 class="ai-title">AI Productivity &<br/><span class="blue">Cloud Intelligence</span></h2>
+  <p class="ai-desc">Put AI inside the tools your team uses every day. Microsoft 365 Copilot, AWS AI services, and purpose-built business AI tools eliminate repetitive work — letting your team focus on what actually matters.</p>
+  <div class="ai-grid">
+    <div class="ai-card">
+      <div class="ai-card-icon">🪟</div>
+      <div class="ai-card-badge">AI Productivity · Pax8 Partner</div>
+      <h3>Microsoft 365 Copilot</h3>
+      <div class="ai-card-provider">AI Inside Every Microsoft App</div>
+      <p>Microsoft 365 Copilot puts AI directly inside Word, Excel, PowerPoint, Teams, and Outlook. Draft emails in seconds, summarize entire meeting transcripts, analyze spreadsheets in plain English, and build presentations automatically. Available via Pax8 — we handle setup and management.</p>
+      <div class="ai-card-tags"><span class="ai-tag">AI Writing (Word)</span><span class="ai-tag">AI in Excel</span><span class="ai-tag">Meeting Summaries</span><span class="ai-tag">Email Drafting</span><span class="ai-tag">Teams AI</span></div>
+      <div class="ai-card-cta"><span class="ai-card-label">Best for: Any Microsoft 365 user</span><button class="ai-card-btn" onclick="window.location='contact.html'">Get Quote</button></div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-card-icon">🟠</div>
+      <div class="ai-card-badge">AI Cloud · Pax8 Partner</div>
+      <h3>AWS AI & Machine Learning</h3>
+      <div class="ai-card-provider">AI Infrastructure at Scale</div>
+      <p>Build, train, and deploy AI models with AWS — the world's most comprehensive AI and ML cloud platform. Amazon Bedrock provides access to Claude, Llama, Titan, and other foundation models. Amazon SageMaker for custom ML. Available via Pax8 — we manage your AWS environment.</p>
+      <div class="ai-card-tags"><span class="ai-tag">Amazon Bedrock (LLMs)</span><span class="ai-tag">SageMaker (ML)</span><span class="ai-tag">Rekognition (Vision AI)</span><span class="ai-tag">Polly (Voice AI)</span><span class="ai-tag">Lex (Chatbots)</span></div>
+      <div class="ai-card-cta"><span class="ai-card-label">Best for: Building custom AI applications</span><button class="ai-card-btn" onclick="window.location='contact.html'">Get Quote</button></div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-card-icon">📊</div>
+      <div class="ai-card-badge">AI Analytics</div>
+      <h3>BigBear.ai</h3>
+      <div class="ai-card-provider">AI Decision Intelligence</div>
+      <p>BigBear.ai delivers AI-powered decision intelligence — using machine learning and data science to help organizations make faster, smarter decisions. Covers cybersecurity analytics, supply chain optimization, and mission-critical operations.</p>
+      <div class="ai-card-tags"><span class="ai-tag">Decision Intelligence</span><span class="ai-tag">Cyber Analytics</span><span class="ai-tag">Predictive Analytics</span><span class="ai-tag">ML Platform</span></div>
+      <div class="ai-card-cta"><span class="ai-card-label">Best for: Enterprise AI analytics</span><button class="ai-card-btn" onclick="window.location='contact.html'">Get Quote</button></div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-card-icon">🔍</div>
+      <div class="ai-card-badge">AI Data Protection</div>
+      <h3>Nightfall AI</h3>
+      <div class="ai-card-provider">AI Data Loss Prevention</div>
+      <p>Nightfall is the industry's first AI-native DLP platform — using machine learning to find and protect sensitive data (PII, PHI, credentials, IP) across Slack, GitHub, Google Drive, Salesforce, and more. Your AI-powered data guardian.</p>
+      <div class="ai-card-tags"><span class="ai-tag">AI-Powered DLP</span><span class="ai-tag">PII Detection</span><span class="ai-tag">SaaS Data Security</span><span class="ai-tag">Auto Remediation</span></div>
+      <div class="ai-card-cta"><span class="ai-card-label">Best for: SaaS data protection</span><button class="ai-card-btn" onclick="window.location='contact.html'">Get Quote</button></div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-card-icon">🎯</div>
+      <div class="ai-card-badge">AI Threat Intel</div>
+      <h3>Recorded Future</h3>
+      <div class="ai-card-provider">AI Threat Intelligence</div>
+      <p>The world's largest threat intelligence company uses AI to analyze billions of data points from the dark web, open web, and technical sources — delivering real-time alerts on threats before they reach your business.</p>
+      <div class="ai-card-tags"><span class="ai-tag">AI Threat Intelligence</span><span class="ai-tag">Dark Web Monitoring</span><span class="ai-tag">Brand Protection</span><span class="ai-tag">Vulnerability Intel</span></div>
+      <div class="ai-card-cta"><span class="ai-card-label">Best for: Proactive threat awareness</span><button class="ai-card-btn" onclick="window.location='contact.html'">Get Quote</button></div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-card-icon">⚡</div>
+      <div class="ai-card-badge">AI Automation</div>
+      <h3>Dialpad AI</h3>
+      <div class="ai-card-provider">AI-Native Business Communications</div>
+      <p>Every Dialpad call is transcribed in real time by AI — surfacing action items, sentiment analysis, and coaching suggestions automatically. AI CSAT scores every call without surveys. The most AI-embedded UCaaS platform available.</p>
+      <div class="ai-card-tags"><span class="ai-tag">Real-time AI Transcription</span><span class="ai-tag">Sentiment Analysis</span><span class="ai-tag">AI CSAT Scoring</span><span class="ai-tag">Sales AI Coach</span></div>
+      <div class="ai-card-cta"><span class="ai-card-label">Best for: AI-forward business teams</span><button class="ai-card-btn" onclick="window.location='contact.html'">Get Quote</button></div>
+    </div>
   </div>
-</section>
+</div>
 
-<!-- REVIEWS -->
-<section class="cat-section">
-  <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px;flex-wrap:wrap;gap:16px;">
-    <div><div class="cat-eyebrow">Client Reviews</div><h2 class="cat-title" style="margin-bottom:0;">Businesses trust SGI.</h2></div>
-    <div style="text-align:right;"><div style="font-size:52px;font-weight:800;color:var(--blue);letter-spacing:-2px;line-height:1;">5.0</div><div style="color:#f59e0b;font-size:20px;letter-spacing:3px;">★★★★★</div><div style="font-size:12px;color:var(--text-muted);margin-top:4px;">40+ verified reviews</div></div>
+<!-- AI CATEGORY 4: AI CONTACT CENTER COACHING -->
+<div class="ai-section mid">
+  <div class="ai-eyebrow">🎧 Category 4</div>
+  <h2 class="ai-title">AI for Contact Centers &<br/><span class="blue">Customer Experience</span></h2>
+  <p class="ai-desc">AI that makes every customer interaction better — in real time, on every call, for every agent. Whether you have 5 agents or 5,000, AI makes them all perform like your best rep.</p>
+  <div class="ai-grid">
+    <div class="ai-card">
+      <div class="ai-card-icon">👂</div>
+      <div class="ai-card-badge">Contact Center AI · Sandler Partner</div>
+      <h3>Observe.AI</h3>
+      <div class="ai-card-provider">AI Conversation Intelligence</div>
+      <p>Observe.AI analyzes 100% of customer calls — not just a random 5% sample. AI finds coaching opportunities, compliance risks, and customer insights at scale. Integrates with Five9, NICE, Genesys, and most CCaaS platforms.</p>
+      <div class="ai-card-tags"><span class="ai-tag">100% Call Analysis</span><span class="ai-tag">Real-time Assist</span><span class="ai-tag">QA Automation</span><span class="ai-tag">Agent Coaching</span></div>
+      <div class="ai-card-cta"><span class="ai-card-label">Best for: Contact center QA + coaching</span><button class="ai-card-btn" onclick="window.location='contact.html'">Get Quote</button></div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-card-icon">🎤</div>
+      <div class="ai-card-badge">Real-time AI · Sandler Partner</div>
+      <h3>Balto</h3>
+      <div class="ai-card-provider">Real-time AI Agent Guidance</div>
+      <p>Balto listens to live calls and surfaces the right response, compliance script, or upsell prompt at exactly the right moment — during the call, not after. Prevents mistakes before they happen. Works on any existing phone system.</p>
+      <div class="ai-card-tags"><span class="ai-tag">Live Call Guidance</span><span class="ai-tag">Compliance Enforcement</span><span class="ai-tag">Sales Coaching AI</span><span class="ai-tag">Works with Any System</span></div>
+      <div class="ai-card-cta"><span class="ai-card-label">Best for: Compliance + sales call centers</span><button class="ai-card-btn" onclick="window.location='contact.html'">Get Quote</button></div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-card-icon">📈</div>
+      <div class="ai-card-badge">Workforce AI · Sandler Partner</div>
+      <h3>Verint</h3>
+      <div class="ai-card-provider">AI Workforce Engagement</div>
+      <p>Verint's Da Vinci AI powers the industry's most comprehensive workforce engagement management platform — quality scoring, interaction analytics, workforce scheduling, and voice of the customer — all automated with AI.</p>
+      <div class="ai-card-tags"><span class="ai-tag">AI Quality Management</span><span class="ai-tag">Speech Analytics</span><span class="ai-tag">Workforce Scheduling</span><span class="ai-tag">VoC AI</span></div>
+      <div class="ai-card-cta"><span class="ai-card-label">Best for: Enterprise workforce optimization</span><button class="ai-card-btn" onclick="window.location='contact.html'">Get Quote</button></div>
+    </div>
   </div>
-  <div class="rev-row">
-    <div class="review-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"SGI handled our internet, Wi-Fi, and cybersecurity — all through one contact. Went from three vendors and constant issues to one call for everything."</p><div class="rev-author">Miguel R.</div><div class="rev-biz">Operations Manager · Rancho Cucamonga, CA</div></div>
-    <div class="review-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"They set us up with Microsoft 365, replaced our old phone system with VoIP, and upgraded our firewall. All in one week. Zero downtime. Incredible."</p><div class="rev-author">Sarah W.</div><div class="rev-biz">Practice Manager · Riverside, CA</div></div>
-    <div class="review-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Saved us $800/month on wireless by switching to a mixed AT&T and T-Mobile plan. SGI found the savings, handled everything, never lost a day of service."</p><div class="rev-author">Carlos M.</div><div class="rev-biz">Business Owner · Fontana, CA</div></div>
+</div>
+
+<!-- BUSINESS USE CASES -->
+<div class="ai-section dark">
+  <div class="ai-eyebrow">🏭 Real-World AI</div>
+  <h2 class="ai-title">AI solutions for<br/><span class="blue">your industry</span></h2>
+  <p class="ai-desc">AI isn't one-size-fits-all. Here's how businesses in your industry are using AI right now — and what SGI can set up for you.</p>
+  <div class="use-cases">
+    <div class="uc-card"><div class="uc-icon">🏥</div><div class="uc-title">Healthcare & Medical</div><div class="uc-desc">AI appointment scheduling, HIPAA-compliant virtual agents for patient inquiries, AI that analyzes 100% of patient calls for quality, and AI-powered medical device security monitoring.</div></div>
+    <div class="uc-card"><div class="uc-icon">🏗️</div><div class="uc-title">Construction & Field Services</div><div class="uc-desc">AI-powered IoT tracking for equipment and crews, AI that monitors job site connectivity and auto-fails over to backup, and AI cost analysis for wireless spend across multiple carriers.</div></div>
+    <div class="uc-card"><div class="uc-icon">🏪</div><div class="uc-title">Retail & Restaurants</div><div class="uc-desc">AI virtual agents handling customer service and reservations 24/7, AI-powered security cameras with real-time alerts, and Microsoft 365 Copilot for operations and inventory management.</div></div>
+    <div class="uc-card"><div class="uc-icon">💼</div><div class="uc-title">Professional Services</div><div class="uc-desc">AI email security blocking phishing targeting financial and legal firms, Microsoft 365 Copilot drafting contracts and briefs, and AI threat intelligence monitoring for your clients' data on the dark web.</div></div>
+    <div class="uc-card"><div class="uc-icon">📞</div><div class="uc-title">Sales & Call Centers</div><div class="uc-desc">Real-time AI coaching agents during live calls, AI virtual agents handling tier-1 calls without human agents, AI CSAT scoring every conversation, and AI-powered lead qualification routing to the right rep.</div></div>
+    <div class="uc-card"><div class="uc-icon">🚀</div><div class="uc-title">Growing Businesses</div><div class="uc-desc">AI receptionist that never misses a call, AI cybersecurity protection without an IT team, Microsoft 365 Copilot to multiply your small team's output, and AI expense management saving 15-30% on wireless spend.</div></div>
   </div>
-  <div style="text-align:center;margin-top:32px;"><a href="reviews.html" class="see-all-btn">Read all reviews →</a></div>
-</section>
+</div>
 
 <!-- CTA -->
-<div class="cta-split">
-  <div class="cta-left">
-    <div class="section-label light">Get Started Today</div>
-    <h2 style="font-size:38px;font-weight:800;color:white;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;">One partner.<br/>Everything your business needs.</h2>
-    <p style="font-size:15px;color:var(--gray-400);line-height:1.8;margin-bottom:28px;">Whether you need just internet or a complete technology environment — we'll assess your needs, recommend the right solution, and handle everything from deployment to ongoing support. Free assessment. No obligation.</p>
-    <div class="cta-contacts">
-      <div class="cta-contact"><span class="cc-label">Call</span>(949) 386-4416</div>
-      <div class="cta-contact"><span class="cc-label">Email</span>sales@sgitbs.com</div>
-      <div class="cta-contact"><span class="cc-label">Social</span>@sgiconnect</div>
+<div class="ai-cta">
+  <div class="ai-cta-left">
+    <div style="font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#2d8ff5;margin-bottom:12px;">Free AI Consultation</div>
+    <h2>Ready to bring AI into your business?</h2>
+    <p>We'll assess your current setup, identify where AI can save you time and money, and recommend the right solutions — no pressure, no obligation. Most businesses we work with implement their first AI solution within 2 weeks of our first call.</p>
+    <div class="ai-cta-contacts">
+      <div class="ai-contact"><span class="ai-contact-label">Call</span>(949) 386-4416</div>
+      <div class="ai-contact"><span class="ai-contact-label">Email</span>sales@sgitbs.com</div>
+      <div class="ai-contact"><span class="ai-contact-label">Social</span>@sgiconnect</div>
     </div>
   </div>
-  <div class="quote-form sgi-form">
-    <div class="form-title">Get Your Free Quote</div>
-    <div class="form-sub">Tell us what you need — we'll handle the rest.</div>
+  <div class="ai-form-wrap">
+    <div class="quote-form sgi-form">
+    <div class="form-title">Get a Free AI Consultation</div>
+    <div class="form-sub">Tell us about your business — we'll show you exactly where AI can help.</div>
     <div class="form-row-2">
       <div class="form-grp"><label>First Name</label><input type="text" placeholder="John" data-field="firstName"/></div>
       <div class="form-grp"><label>Last Name</label><input type="text" placeholder="Smith" data-field="lastName"/></div>
@@ -925,19 +1220,21 @@ a { text-decoration: none; }
       <div class="form-grp"><label>Business ZIP</label><input type="text" placeholder="91730" maxlength="5" data-field="zip"/></div>
     </div>
     <div class="form-grp"><label>Service Interest</label>
-      <select data-field="service"><option value="">Select a service...</option><option>Internet / Fiber</option>
-<option>Cybersecurity</option>
-<option>Cloud & Microsoft 365</option>
-<option>Wi-Fi & LAN Design</option>
-<option>Mobility / 5G Plans</option>
-<option>Multi-Site Network</option>
-<option>Business Technology Package</option>
-<option>Full Assessment — Not Sure Yet</option></select>
+      <select data-field="service"><option value="">Select...</option><option>AI Receptionist / Virtual Agent</option>
+<option>AI Cybersecurity (Endpoint Protection)</option>
+<option>AI Email Security</option>
+<option>AI for Microsoft 365 (Copilot)</option>
+<option>AI Contact Center Solutions</option>
+<option>AI Threat Intelligence</option>
+<option>AI Cloud Security</option>
+<option>AWS AI / Machine Learning</option>
+<option>Full AI Assessment — Not Sure Yet</option></select>
     </div>
     <div class="form-success" style="display:none;background:#f0fdf4;border:1.5px solid #16a34a;border-radius:8px;padding:14px 16px;margin-bottom:14px;font-size:14px;font-weight:600;color:#15803d;">✓ Request received! We'll reach out within 24 hours.</div>
-    <div class="form-error" style="display:none;background:#fef2f2;border:1.5px solid #dc2626;border-radius:8px;padding:12px 16px;margin-bottom:14px;font-size:13px;color:#dc2626;">Please fill in your name, phone number, and ZIP code.</div>
+    <div class="form-error" style="display:none;background:#fef2f2;border:1.5px solid #dc2626;border-radius:8px;padding:12px 16px;margin-bottom:14px;font-size:13px;color:#dc2626;">Please fill in your name, phone, and ZIP code.</div>
     <button class="form-btn" onclick="submitSGIForm(this)">Send My Request →</button>
-    <p class="form-disclaimer">No spam. No commitment. We respond the same day.</p>
+    <p class="form-disclaimer">No spam. No commitment. Same-day response.</p>
+  </div>
   </div>
 </div>
 
@@ -946,20 +1243,21 @@ a { text-decoration: none; }
     <div class="footer-brand">
       <div class="footer-logo">SGI</div>
       <div class="footer-tagline">TOTAL BUSINESS SOLUTIONS INC.</div>
-      <p>Complete technology partner — connectivity, cybersecurity, cloud, and mobility for businesses across Southern California and nationwide.</p>
+      <p>Complete technology partner — connectivity, cybersecurity, AI solutions, cloud, and mobility for businesses across Southern California and nationwide.</p>
       <div class="footer-badges"><span>Licensed</span><span>Carrier Neutral</span><span>AI-Ready</span><span>5.0 ★ Rated</span></div>
     </div>
     <div class="footer-col"><h4>Solutions</h4><ul>
       <li><a href="services.html">Connectivity &amp; Internet</a></li>
+      <li><a href="ai.html">AI Solutions</a></li>
       <li><a href="cybersecurity.html">Cybersecurity</a></li>
       <li><a href="cybersecurity.html">Cloud &amp; Microsoft 365</a></li>
       <li><a href="services.html">Wi-Fi &amp; LAN</a></li>
       <li><a href="services.html">Mobility / 5G</a></li>
-      <li><a href="services.html">Multi-Site Networks</a></li>
     </ul></div>
     <div class="footer-col"><h4>Pages</h4><ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html">Services</a></li>
+      <li><a href="ai.html">AI Solutions</a></li>
       <li><a href="cybersecurity.html">Cybersecurity &amp; Cloud</a></li>
       <li><a href="providers.html">Provider Catalog</a></li>
       <li><a href="reviews.html">Reviews</a></li>
