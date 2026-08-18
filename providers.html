@@ -246,8 +246,8 @@ footer { background:var(--navy-deep); padding:40px 48px; border-top:1px solid va
     </svg>
   </div>
   <div class="nav-links-row">
-    <a class="nav-link" href="index.html">Home</a>
-    <a class="nav-link" href="services.html">Services</a>
+    <a class="nav-link" href="index.html">Business</a>
+    <a class="nav-link" style="color:#0066cc;font-weight:700;" href="residential.html">🏠 Residential</a>
     <a class="nav-link" href="ai.html" style="color:#2d8ff5;font-weight:700;">🤖 AI Solutions</a>
     <a class="nav-link" href="cybersecurity.html">Cybersecurity &amp; Cloud</a>
     <a class="nav-link active" href="providers.html">Provider Catalog</a>
@@ -4751,5 +4751,45 @@ footer { background:var(--navy-deep); padding:40px 48px; border-top:1px solid va
 var SGI_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzCade7QS8tcZQukSv_31fb2YQo76QoOR5TgeL6he9bwhhasPOE7cnV24LHQaXhQX8/exec";
 function submitSGIForm(btn){var form=btn.closest(".sgi-form");if(!form)return;var ok=true;["firstName","phone","zip"].forEach(function(f){var el=form.querySelector('[data-field="'+f+'"]');if(el&&!el.value.trim()){el.style.borderColor="#dc2626";ok=false;}else if(el)el.style.borderColor="";});if(!ok){var e=form.querySelector(".form-error");if(e){e.style.display="block";setTimeout(function(){e.style.display="none";},4000);}return;}var data={page:window.location.href};form.querySelectorAll("[data-field]").forEach(function(el){data[el.getAttribute("data-field")]=el.value;});var orig=btn.textContent;btn.textContent="Sending...";btn.disabled=true;btn.style.opacity="0.7";fetch(SGI_SCRIPT_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},body:JSON.stringify(data)}).then(function(){sgiOK(form,btn,orig);}).catch(function(){sgiOK(form,btn,orig);})}function sgiOK(form,btn,orig){form.querySelectorAll("input,select,textarea").forEach(function(el){el.value="";el.style.borderColor="";});btn.textContent="✓ Request received!";btn.style.background="#16a34a";btn.style.opacity="1";btn.disabled=false;var b=form.querySelector(".form-success");if(b)b.style.display="block";setTimeout(function(){btn.textContent=orig;btn.style.background="";if(b)b.style.display="none";},6000);}
 </script>
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">SGI</div>
+      <div class="footer-tagline">TOTAL BUSINESS SOLUTIONS INC.</div>
+      <p>Serving both businesses and homeowners across Southern California and nationwide — connectivity, cybersecurity, cloud, AI, and home internet & TV solutions.</p>
+      <div class="footer-badges"><span>Business</span><span>Residential</span><span>Carrier Neutral</span><span>AI-Ready</span><span>5.0 ★ Rated</span></div>
+    </div>
+    <div class="footer-col"><h4>Business</h4><ul>
+      <li><a href="services.html">Internet &amp; Fiber</a></li>
+      <li><a href="ai.html">AI Solutions</a></li>
+      <li><a href="cybersecurity.html">Cybersecurity</a></li>
+      <li><a href="cybersecurity.html">Cloud &amp; Microsoft 365</a></li>
+      <li><a href="services.html">Mobility / 5G</a></li>
+      <li><a href="services.html">Multi-Site Networks</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Residential</h4><ul>
+      <li><a href="residential.html">Home Internet</a></li>
+      <li><a href="residential.html">Fiber Internet</a></li>
+      <li><a href="residential.html">TV &amp; Entertainment</a></li>
+      <li><a href="residential.html">Check Availability</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Pages</h4><ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="providers.html">Provider Catalog</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul>
+      <li><a href="tel:+19493864416">(949) 386-4416</a></li>
+      <li><a href="mailto:sales@sgitbs.com">sales@sgitbs.com</a></li>
+      <li><a href="#">sgitbs.com</a></li>
+      <li><a href="#">@sgiconnect</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2025 SGI Total Business Solutions Inc. All rights reserved.</div>
+    <div class="footer-links"><a href="#">Privacy</a><a href="#">Terms</a></div>
+  </div>
+</footer>
 </body>
 </html>
