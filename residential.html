@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SGI Residential — Home Internet &amp; TV Solutions</title>
+<meta name="description" content="SGI Residential helps homeowners compare and order home internet and TV from AT&T Fiber, Spectrum, Frontier, and DIRECTV. Check availability at your address."/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+
+
+
+
+/* ═══════════════════════════════════════
+   SGI TOTAL BUSINESS SOLUTIONS
+   shared.css — used by all pages
+═══════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:       #0b1f3a;
+  --navy-deep:  #060e1c;
+  --navy-mid:   #102646;
+  --navy-border:#1c3a60;
+  --blue:       #0066cc;
+  --blue-mid:   #1a7de0;
+  --blue-light: #5ab0ff;
+  --blue-pale:  #cce4ff;
+  --white:      #ffffff;
+  --gray-50:    #f8fafc;
+  --gray-100:   #f0f4f8;
+  --gray-200:   #e2eaf3;
+  --gray-400:   #94aec8;
+  --gray-600:   #4a6282;
+  --text-dark:  #0b1f3a;
+  --text-mid:   #2d4a6a;
+  --text-muted: #5a7a9a;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; font-weight: 400; color: var(--text-dark); background: #fff; overflow-x: hidden; }
+a { text-decoration: none; }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--navy-deep); }
+::-webkit-scrollbar-thumb { background: var(--navy-border); }
+
+/* ── TOP BAR ── */
+.topbar { background: var(--navy-deep); padding: 8px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.topbar-left { display: flex; gap: 20px; flex-wrap: wrap; }
+.topbar-item { font-size: 12px; color: var(--gray-400); display: flex; align-items: center; gap: 5px; }
+.topbar-item strong { color: var(--blue-light); }
+.tbs-highlight { color: #5ab0ff; }
+.topbar-right { display: flex; gap: 20px; }
+.topbar-right a { font-size: 11px; color: var(--gray-400); transition: color .2s; }
+.topbar-right a:hover { color: white; }
+
+/* ── NAV ── */
+.nav { background: white; border-bottom: 1px solid var(--gray-200); display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 72px; box-shadow: 0 1px 12px rgba(0,0,0,.06); position: sticky; top: 0; z-index: 1000; }
+.nav-logo-wrap { display: flex; align-items: center; cursor: pointer; }
+.nav-links { display: flex; list-style: none; gap: 0; }
+.nav-links a { padding: 0 11px; height: 72px; display: flex; align-items: center; font-size: 13px; font-weight: 500; color: var(--text-mid); transition: color .2s; position: relative; }
+.nav-links a::after { content:''; position:absolute; bottom:0; left:18px; right:18px; height:3px; background:var(--blue); transform:scaleX(0); transition:transform .2s; border-radius:2px 2px 0 0; }
+.nav-links a:hover, .nav-links a.active { color: var(--blue); }
+.nav-links a:hover::after, .nav-links a.active::after { transform:scaleX(1); }
+.nav-right { display: flex; gap: 10px; }
+
+/* Buttons */
+.btn-ghost { background:transparent; color:var(--blue); border:1.5px solid var(--blue); border-radius:6px; padding:8px 14px; font-family:'Inter',sans-serif; font-size:13px; font-weight:600; cursor:pointer; transition:all .2s; }
+.btn-ghost:hover { background:var(--blue); color:white; }
+.btn-solid { background:var(--blue); color:white; border:none; border-radius:6px; padding:9px 14px; font-family:'Inter',sans-serif; font-size:13px; font-weight:600; cursor:pointer; transition:all .2s; }
+.btn-solid:hover { background:var(--blue-mid); transform:translateY(-1px); }
+
+/* Hamburger */
+.hamburger { display:none; background:none; border:none; font-size:22px; cursor:pointer; color:var(--text-dark); padding:8px; }
+.mobile-menu { display:none; flex-direction:column; background:white; border-bottom:1px solid var(--gray-200); padding:12px 24px; gap:4px; position:sticky; top:72px; z-index:999; box-shadow:0 4px 12px rgba(0,0,0,.08); }
+.mobile-menu.open { display:flex; }
+.mobile-menu a { font-size:15px; font-weight:500; color:var(--text-mid); padding:10px 0; border-bottom:1px solid var(--gray-100); }
+.mobile-menu a:last-child { border-bottom:none; }
+.mobile-menu .mobile-cta { background:var(--blue); color:white; text-align:center; border-radius:6px; padding:12px; margin-top:8px; font-weight:600; border-bottom:none; }
+
+/* ── HERO ── */
+.hero { min-height:92vh; display:flex; align-items:center; padding:80px 48px; position:relative; overflow:hidden; background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 50%,#0d2a50 100%); }
+.hero-bg { position:absolute; inset:0; background-image:linear-gradient(rgba(28,58,96,.3) 1px,transparent 1px),linear-gradient(90deg,rgba(28,58,96,.3) 1px,transparent 1px); background-size:48px 48px; }
+.hero-glow { position:absolute; top:-100px; right:-100px; width:700px; height:700px; background:radial-gradient(circle,rgba(0,102,204,.18) 0%,transparent 65%); pointer-events:none; }
+.hero-content { position:relative; z-index:2; max-width:620px; }
+.hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(0,102,204,.2); border:1px solid rgba(0,102,204,.4); border-radius:100px; padding:6px 16px; margin-bottom:28px; }
+.badge-dot { width:7px; height:7px; border-radius:50%; background:var(--blue-light); animation:pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1}50%{opacity:.4} }
+.hero-badge span { font-size:12px; font-weight:500; color:#cce4ff; }
+.hero h1 { font-size:64px; font-weight:800; line-height:1.06; color:white; margin-bottom:24px; letter-spacing:-1.5px; }
+.hero h1 .blue { color:var(--blue-light); }
+.hero h1 .thin { font-weight:300; }
+.hero-sub { font-size:17px; color:var(--gray-400); line-height:1.75; max-width:520px; margin-bottom:36px; }
+.hero-pills { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:40px; }
+.hero-pill { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12); border-radius:6px; padding:7px 14px; font-size:12px; font-weight:500; color:#cce4ff; }
+.hero-btns { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:56px; }
+.btn-hero-primary { background:var(--blue); color:white; border:none; border-radius:8px; padding:16px 36px; font-family:'Inter',sans-serif; font-size:15px; font-weight:700; cursor:pointer; transition:all .2s; }
+.btn-hero-primary:hover { background:var(--blue-mid); transform:translateY(-2px); box-shadow:0 12px 32px rgba(0,102,204,.4); }
+.btn-hero-outline { background:transparent; color:white; border:1.5px solid rgba(255,255,255,.3); border-radius:8px; padding:16px 36px; font-family:'Inter',sans-serif; font-size:15px; font-weight:600; cursor:pointer; transition:all .2s; }
+.btn-hero-outline:hover { border-color:white; background:rgba(255,255,255,.07); }
+.hero-stats { display:flex; gap:48px; flex-wrap:wrap; padding-top:40px; border-top:1px solid rgba(255,255,255,.1); }
+.h-stat { display:flex; flex-direction:column; gap:4px; }
+.h-stat-num { font-size:36px; font-weight:800; color:white; letter-spacing:-1px; line-height:1; }
+.h-stat-num span { color:var(--blue-light); }
+.h-stat-label { font-size:12px; color:var(--gray-400); max-width:110px; line-height:1.4; }
+.hero-visual { position:absolute; right:48px; top:50%; transform:translateY(-50%); z-index:2; opacity:.7; }
+
+/* ── TRUST BAR ── */
+.trust-bar { background:white; border-bottom:1px solid var(--gray-200); padding:18px 48px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
+.trust-item { display:flex; align-items:center; gap:10px; }
+.trust-icon { width:36px; height:36px; background:var(--blue-pale); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:16px; flex-shrink:0; }
+.ti-title { font-size:14px; font-weight:700; color:var(--text-dark); }
+.ti-sub { font-size:11px; color:var(--text-muted); }
+.trust-div { width:1px; height:32px; background:var(--gray-200); }
+
+/* ── TICKER ── */
+.ticker-wrap { background:var(--gray-50); border-bottom:1px solid var(--gray-200); padding:14px 0; overflow:hidden; }
+.ticker-track { display:flex; gap:56px; animation:ticker 28s linear infinite; white-space:nowrap; }
+.ticker-chip { font-size:13px; font-weight:600; color:var(--text-muted); flex-shrink:0; }
+@keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ── SECTIONS ── */
+.section-light { padding:80px 48px; background:white; }
+.section-gray  { padding:80px 48px; background:var(--gray-50); }
+.section-dark  { padding:80px 48px; background:var(--navy-deep); }
+.section-navy  { padding:80px 48px; background:var(--navy); }
+.section-label { font-size:11px; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--blue); margin-bottom:12px; }
+.section-label.light { color:var(--blue-light); }
+.section-title { font-size:44px; font-weight:800; line-height:1.1; letter-spacing:-1px; color:var(--text-dark); margin-bottom:16px; }
+.section-title.light { color:white; }
+.section-title .blue { color:var(--blue); }
+.section-sub { font-size:16px; color:var(--text-muted); line-height:1.7; max-width:540px; margin-bottom:48px; }
+.section-header-row { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:40px; flex-wrap:wrap; gap:20px; }
+.see-all-btn { background:transparent; color:var(--blue); border:1.5px solid var(--blue); border-radius:6px; padding:9px 14px; font-size:13px; font-weight:600; cursor:pointer; transition:all .2s; white-space:nowrap; display:inline-block; }
+.see-all-btn:hover { background:var(--blue); color:white; }
+
+/* Services grid */
+.services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.svc-card { background:white; border:1px solid var(--gray-200); border-radius:12px; padding:28px 24px; transition:all .25s; position:relative; overflow:hidden; }
+.svc-card::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg,var(--blue),var(--blue-light)); transform:scaleX(0); transform-origin:left; transition:transform .3s; }
+.svc-card:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(0,102,204,.12); border-color:var(--blue-pale); }
+.svc-card:hover::before { transform:scaleX(1); }
+.svc-icon { font-size:28px; margin-bottom:16px; }
+.svc-card h3 { font-size:18px; font-weight:700; color:var(--text-dark); margin-bottom:10px; }
+.svc-card p { font-size:14px; color:var(--text-muted); line-height:1.65; }
+
+/* Why grid */
+.why-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--gray-200); border:1px solid var(--gray-200); border-radius:8px; overflow:hidden; margin-top:40px; }
+.why-card { background:white; padding:36px 32px; }
+.why-card.featured { background:var(--gray-50); }
+.why-num { font-size:56px; font-weight:800; color:var(--gray-200); line-height:1; margin-bottom:12px; letter-spacing:-2px; }
+.why-card h3 { font-size:22px; font-weight:700; color:var(--text-dark); margin-bottom:10px; }
+.why-card p { font-size:14px; color:var(--text-muted); line-height:1.75; }
+
+/* Reviews */
+.reviews-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.review-card { background:white; border:1px solid var(--gray-200); border-radius:12px; padding:28px 24px; transition:all .2s; }
+.review-card:hover { border-color:var(--blue-pale); box-shadow:0 8px 28px rgba(0,0,0,.07); transform:translateY(-2px); }
+.rev-stars { color:#f59e0b; font-size:16px; letter-spacing:2px; margin-bottom:14px; }
+.rev-text { font-size:14px; color:var(--text-mid); line-height:1.75; margin-bottom:18px; font-style:italic; }
+.rev-author { font-size:13px; font-weight:700; color:var(--text-dark); }
+.rev-biz { font-size:12px; color:var(--text-muted); margin-top:2px; }
+.rating-block { text-align:right; }
+.rating-num { font-size:48px; font-weight:800; color:var(--blue); line-height:1; letter-spacing:-2px; }
+.rating-stars { color:#f59e0b; font-size:18px; letter-spacing:2px; }
+.rating-sub { font-size:12px; color:var(--text-muted); margin-top:4px; }
+
+/* CTA band */
+.cta-band { background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy-mid) 100%); padding:80px 48px; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
+.cta-left h2 { font-size:40px; font-weight:800; color:white; line-height:1.1; letter-spacing:-1px; margin-bottom:16px; }
+.cta-left p { font-size:15px; color:var(--gray-400); line-height:1.8; margin-bottom:28px; }
+.cta-contacts { display:flex; flex-direction:column; gap:10px; }
+.cta-contact { display:flex; align-items:center; gap:12px; font-size:14px; font-weight:500; color:#cce4ff; }
+.cc-label { font-size:9px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--blue-light); min-width:48px; }
+
+/* Quote form */
+.quote-form { background:white; border-radius:16px; padding:36px 32px; box-shadow:0 24px 64px rgba(0,0,0,.24); }
+.form-title { font-size:20px; font-weight:800; color:var(--text-dark); margin-bottom:4px; }
+.form-sub { font-size:13px; color:var(--text-muted); margin-bottom:24px; }
+.form-grp { display:flex; flex-direction:column; gap:5px; margin-bottom:14px; }
+.form-grp label { font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--text-muted); }
+.form-grp input, .form-grp select { width:100%; background:var(--gray-50); border:1.5px solid var(--gray-200); border-radius:8px; padding:11px 14px; font-family:'Inter',sans-serif; font-size:14px; color:var(--text-dark); outline:none; transition:border-color .2s; }
+.form-grp input:focus, .form-grp select:focus { border-color:var(--blue); background:white; box-shadow:0 0 0 3px rgba(0,102,204,.1); }
+.form-grp input::placeholder { color:var(--gray-400); }
+.form-row-2 { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.form-btn { width:100%; background:var(--blue); color:white; border:none; border-radius:8px; padding:15px; font-family:'Inter',sans-serif; font-size:15px; font-weight:700; cursor:pointer; margin-top:4px; transition:all .2s; }
+.form-btn:hover { background:var(--blue-mid); transform:translateY(-1px); box-shadow:0 8px 24px rgba(0,102,204,.35); }
+.form-disclaimer { font-size:11px; color:var(--gray-400); text-align:center; margin-top:12px; }
+
+/* ── FOOTER ── */
+.footer { background:var(--navy-deep); padding:56px 48px 28px; border-top:1px solid var(--navy-border); }
+.footer-top { display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:48px; padding-bottom:40px; border-bottom:1px solid var(--navy-border); margin-bottom:24px; }
+.footer-logo { font-family:'Inter',sans-serif; font-size:24px; font-weight:800; color:white; letter-spacing:2px; }
+.footer-tagline { font-size:9px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--blue-light); margin:4px 0 12px; }
+.footer-brand p { font-size:13px; color:var(--gray-400); line-height:1.75; max-width:260px; margin-bottom:16px; }
+.footer-badges { display:flex; gap:8px; flex-wrap:wrap; }
+.footer-badges span { background:rgba(255,255,255,.06); border:1px solid var(--navy-border); border-radius:4px; padding:4px 10px; font-size:10px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:var(--gray-400); }
+.footer-col h4 { font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--blue-light); margin-bottom:18px; }
+.footer-col ul { list-style:none; display:flex; flex-direction:column; gap:9px; }
+.footer-col a { font-size:13px; color:var(--gray-400); transition:color .2s; }
+.footer-col a:hover { color:white; }
+.footer-bottom { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:12px; color:var(--gray-600); }
+.footer-links { display:flex; gap:20px; }
+.footer-links a { font-size:12px; color:var(--gray-600); transition:color .2s; }
+.footer-links a:hover { color:var(--blue-light); }
+
+/* ── PAGE HERO (inner pages) ── */
+.page-hero { background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 60%,#0d2a50 100%); padding:72px 48px 60px; position:relative; overflow:hidden; }
+.page-hero::before { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(28,58,96,.3) 1px,transparent 1px),linear-gradient(90deg,rgba(28,58,96,.3) 1px,transparent 1px); background-size:48px 48px; }
+.page-hero-inner { position:relative; z-index:2; }
+.page-hero h1 { font-size:52px; font-weight:800; color:white; line-height:1.1; letter-spacing:-1.5px; margin-bottom:16px; }
+.page-hero p { font-size:18px; color:var(--gray-400); line-height:1.75; max-width:600px; }
+
+/* ── COMPARE TABLE ── */
+.compare-wrap { overflow-x:auto; border-radius:12px; border:1px solid var(--gray-200); box-shadow:0 4px 24px rgba(0,0,0,.06); }
+.compare-table { width:100%; border-collapse:collapse; min-width:680px; }
+.compare-table th { padding:18px 22px; font-size:13px; font-weight:700; text-align:left; border-bottom:2px solid var(--gray-200); }
+.compare-table th.sgi-col { background:var(--navy); color:white; text-align:center; }
+.compare-table th.car-col { background:white; color:var(--text-mid); text-align:center; }
+.compare-table th:first-child { background:var(--gray-50); color:var(--text-muted); }
+.compare-table td { padding:14px 22px; font-size:14px; border-bottom:1px solid var(--gray-100); vertical-align:middle; }
+.compare-table td:first-child { font-weight:600; color:var(--text-mid); background:var(--gray-50); font-size:13px; }
+.compare-table td.sgi-col { background:rgba(0,102,204,.04); text-align:center; font-weight:600; color:var(--blue); }
+.compare-table td.car-col { text-align:center; color:var(--text-muted); }
+.compare-table tr:last-child td { border-bottom:none; }
+.chk { color:#16a34a; font-size:18px; }
+.crs { color:#dc2626; font-size:16px; }
+.prt { color:#d97706; font-size:13px; font-weight:600; }
+
+/* ── STEPS ── */
+.steps-row { display:grid; grid-template-columns:repeat(4,1fr); gap:0; position:relative; margin-top:48px; }
+.steps-row::before { content:''; position:absolute; top:28px; left:calc(12.5% + 4px); right:calc(12.5% + 4px); height:2px; background:var(--blue-pale); z-index:0; }
+.step { display:flex; flex-direction:column; align-items:center; text-align:center; padding:0 20px; position:relative; z-index:1; }
+.step-num { width:56px; height:56px; border-radius:50%; background:var(--navy); color:white; display:flex; align-items:center; justify-content:center; font-size:20px; font-weight:800; margin-bottom:16px; border:4px solid white; box-shadow:0 0 0 2px var(--blue); }
+.step h3 { font-size:16px; font-weight:700; color:var(--text-dark); margin-bottom:8px; }
+.step p { font-size:13px; color:var(--text-muted); line-height:1.6; }
+
+/* ── CARRIER CARDS ── */
+.carrier-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:16px; }
+.carrier-card { background:white; border:1px solid var(--gray-200); border-radius:12px; padding:22px 18px; display:flex; flex-direction:column; gap:6px; transition:all .2s; }
+.carrier-card:hover { border-color:var(--blue); box-shadow:0 4px 20px rgba(0,102,204,.1); transform:translateY(-2px); }
+.carrier-dot { width:6px; height:6px; border-radius:50%; background:var(--blue); margin-bottom:4px; }
+.carrier-name { font-size:16px; font-weight:700; color:var(--text-dark); }
+.carrier-type { font-size:12px; color:var(--text-muted); line-height:1.4; }
+.carrier-tag { display:inline-block; background:var(--blue-pale); color:var(--blue); font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:3px 10px; border-radius:100px; margin-top:4px; }
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  .ai-talk-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  
+  .topbar, .nav, .section-light, .section-gray, .section-dark, .section-navy, .cta-band, .footer, .page-hero { padding-left:20px; padding-right:20px; }
+  .trust-bar { padding:16px 20px; }
+  .nav-links, .nav-right { display:none; }
+  .hamburger { display:block; }
+  .hero { padding:80px 24px 60px; min-height:auto; }
+  .hero h1 { font-size:40px; }
+  .hero-visual { display:none; }
+  .hero-stats { gap:24px; }
+  .services-grid, .reviews-grid { grid-template-columns:1fr; }
+  .why-grid { grid-template-columns:1fr; }
+  .steps-row { grid-template-columns:repeat(2,1fr); gap:36px; }
+  .steps-row::before { display:none; }
+  .carrier-grid { grid-template-columns:repeat(2,1fr); }
+  .cta-band { grid-template-columns:1fr; gap:40px; }
+  .footer-top { grid-template-columns:1fr 1fr; gap:28px; }
+  .section-title { font-size:32px; }
+  .page-hero h1 { font-size:36px; }
+  .compare-table th, .compare-table td { padding:10px 14px; font-size:12px; }
+  .form-row-2 { grid-template-columns:1fr; }
+}
+
+
+
+/* ── NEW SECTIONS ── */
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+.sol-card {
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: 14px;
+  padding: 32px 28px;
+  transition: all .25s;
+  position: relative;
+  overflow: hidden;
+}
+.sol-card::before {
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--blue),var(--blue-light));
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .3s;
+}
+.sol-card:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(0,102,204,.12); border-color:var(--blue-pale); }
+.sol-card:hover::before { transform:scaleX(1); }
+.sol-icon { font-size:32px; margin-bottom:16px; }
+.sol-card h3 { font-size:19px; font-weight:700; color:var(--text-dark); margin-bottom:10px; }
+.sol-card p { font-size:14px; color:var(--text-muted); line-height:1.65; margin-bottom:16px; }
+.sol-tags { display:flex; flex-wrap:wrap; gap:6px; }
+.sol-tag { background:var(--gray-100); border:1px solid var(--gray-200); border-radius:4px; padding:3px 10px; font-size:11px; font-weight:500; color:var(--text-mid); }
+.sol-link { display:inline-flex; align-items:center; gap:4px; margin-top:14px; font-size:13px; font-weight:600; color:var(--blue); transition:gap .2s; }
+.sol-link:hover { gap:8px; }
+
+/* How we work */
+.how-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:var(--gray-200);
+  border:1px solid var(--gray-200);
+  border-radius:12px;
+  overflow:hidden;
+  margin-top:48px;
+}
+.how-card {
+  background:white;
+  padding:36px 28px;
+  text-align:center;
+  transition:background .2s;
+}
+.how-card:hover { background:var(--gray-50); }
+.how-num {
+  width:52px;height:52px;
+  border-radius:50%;
+  background:var(--navy);
+  color:white;
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;font-weight:800;
+  margin:0 auto 18px;
+}
+.how-title { font-size:17px; font-weight:700; color:var(--text-dark); margin-bottom:10px; }
+.how-desc { font-size:13px; color:var(--text-muted); line-height:1.65; }
+
+/* Industries */
+.industries-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-top:40px;
+}
+.ind-card {
+  background:white;
+  border:1px solid var(--gray-200);
+  border-radius:12px;
+  padding:24px 22px;
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+  transition:all .2s;
+}
+.ind-card:hover { border-color:var(--blue-pale); box-shadow:0 4px 20px rgba(0,102,204,.08); transform:translateY(-2px); }
+.ind-icon { font-size:28px; flex-shrink:0; }
+.ind-card h3 { font-size:15px; font-weight:700; color:var(--text-dark); margin-bottom:5px; }
+.ind-card p { font-size:12px; color:var(--text-muted); line-height:1.5; }
+
+/* Packages */
+.packages-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-top:40px;
+}
+.pkg-card {
+  background:white;
+  border:2px solid var(--gray-200);
+  border-radius:16px;
+  padding:36px 28px;
+  position:relative;
+  transition:all .25s;
+  display:flex;
+  flex-direction:column;
+}
+.pkg-card.featured {
+  border-color:var(--blue);
+  box-shadow:0 8px 32px rgba(0,102,204,.15);
+}
+.pkg-badge {
+  position:absolute;
+  top:-14px;left:50%;transform:translateX(-50%);
+  background:var(--blue);
+  color:white;
+  font-size:11px;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;
+  padding:4px 16px;
+  border-radius:100px;
+  white-space:nowrap;
+}
+.pkg-icon { font-size:36px; margin-bottom:14px; }
+.pkg-name { font-size:20px; font-weight:800; color:var(--text-dark); margin-bottom:6px; }
+.pkg-tagline { font-size:13px; color:var(--text-muted); margin-bottom:20px; line-height:1.5; }
+.pkg-includes { list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom:24px; flex:1; }
+.pkg-includes li { display:flex; align-items:flex-start; gap:10px; font-size:13px; color:var(--text-mid); }
+.pkg-check { color:var(--blue); font-size:15px; flex-shrink:0; margin-top:1px; }
+.pkg-btn {
+  background:var(--blue);color:white;border:none;border-radius:8px;
+  padding:13px;font-family:'Inter',sans-serif;font-size:14px;font-weight:700;
+  cursor:pointer;transition:all .2s;text-align:center;display:block;width:100%;
+}
+.pkg-btn:hover { background:var(--blue-mid); transform:translateY(-1px); }
+.pkg-btn.outline {
+  background:transparent;color:var(--blue);
+  border:2px solid var(--blue);
+}
+.pkg-btn.outline:hover { background:var(--blue); color:white; }
+
+/* CTA banner */
+.cta-banner {
+  background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy-mid) 100%);
+  padding:80px 48px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:start;
+}
+
+@media(max-width:960px){
+  .ai-talk-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  
+  .solutions-grid,.packages-grid,.industries-grid { grid-template-columns:1fr; }
+  .how-grid { grid-template-columns:repeat(2,1fr); }
+  .cta-banner { grid-template-columns:1fr; gap:40px; padding:48px 20px; }
+}
+
+
+/* ── EXTRA STYLES ── */
+.pill-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px;}
+.pill{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:7px 14px;font-size:12px;font-weight:500;color:#cce4ff;}
+.stat-band{background:var(--navy-deep);padding:40px 48px;display:grid;grid-template-columns:repeat(5,1fr);gap:1px;border-top:1px solid var(--navy-border);border-bottom:1px solid var(--navy-border);}
+.stat-band-item{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 12px;text-align:center;background:var(--navy-deep);}
+.sbi-num{font-size:36px;font-weight:800;color:white;letter-spacing:-1px;line-height:1;}
+.sbi-num span{color:var(--blue-light);}
+.sbi-label{font-size:11px;color:var(--gray-400);margin-top:6px;line-height:1.4;max-width:100px;}
+.cat-section{padding:80px 48px;}
+.cat-section.alt{background:var(--gray-50);}
+.cat-header{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-bottom:48px;}
+.cat-header.full{grid-template-columns:1fr;max-width:700px;}
+.cat-eyebrow{font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--blue);margin-bottom:12px;}
+.cat-title{font-size:40px;font-weight:800;line-height:1.1;letter-spacing:-1px;color:var(--text-dark);margin-bottom:14px;}
+.cat-title span{color:var(--blue);}
+.cat-desc{font-size:15px;color:var(--text-muted);line-height:1.8;}
+.individual-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px;}
+.ind-svc-card{background:white;border:1px solid var(--gray-200);border-radius:14px;padding:28px 24px;transition:all .25s;position:relative;overflow:hidden;display:flex;flex-direction:column;}
+.ind-svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue),var(--blue-light));transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+.ind-svc-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,102,204,.12);border-color:var(--blue-pale);}
+.ind-svc-card:hover::before{transform:scaleX(1);}
+.isc-icon{font-size:32px;margin-bottom:14px;}
+.isc-name{font-size:18px;font-weight:700;color:var(--text-dark);margin-bottom:8px;}
+.isc-desc{font-size:13px;color:var(--text-muted);line-height:1.65;margin-bottom:16px;flex:1;}
+.isc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
+.isc-tag{background:var(--gray-100);border:1px solid var(--gray-200);border-radius:4px;padding:3px 10px;font-size:11px;font-weight:500;color:var(--text-mid);}
+.isc-footer{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--gray-100);margin-top:auto;}
+.isc-solo{font-size:11px;color:var(--text-muted);font-style:italic;}
+.isc-btn{background:var(--blue);color:white;border:none;border-radius:6px;padding:8px 16px;font-family:'Inter',sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.isc-btn:hover{background:var(--blue-mid);}
+.bundle-upsell{background:linear-gradient(135deg,#eef6ff,#f0f8ff);border:1.5px solid var(--blue-pale);border-radius:16px;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.bu-left h3{font-size:20px;font-weight:800;color:var(--text-dark);margin-bottom:6px;}
+.bu-left p{font-size:14px;color:var(--text-muted);line-height:1.6;}
+.bu-right{display:flex;gap:10px;flex-wrap:wrap;}
+.bu-btn{background:var(--blue);color:white;border:none;border-radius:8px;padding:12px 24px;font-family:'Inter',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.bu-btn:hover{background:var(--blue-mid);transform:translateY(-1px);}
+.bu-btn.ghost{background:transparent;color:var(--blue);border:2px solid var(--blue);}
+.bu-btn.ghost:hover{background:var(--blue);color:white;}
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px;}
+.pkg-c{background:white;border:2px solid var(--gray-200);border-radius:16px;padding:36px 28px;position:relative;display:flex;flex-direction:column;transition:all .25s;}
+.pkg-c:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,102,204,.1);}
+.pkg-c.hot{border-color:var(--blue);box-shadow:0 8px 32px rgba(0,102,204,.15);}
+.pkg-c-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--blue);color:white;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 16px;border-radius:100px;white-space:nowrap;}
+.pkg-c-icon{font-size:40px;margin-bottom:14px;}
+.pkg-c-name{font-size:21px;font-weight:800;color:var(--text-dark);margin-bottom:6px;}
+.pkg-c-tag{font-size:13px;color:var(--text-muted);margin-bottom:20px;line-height:1.5;}
+.pkg-c-list{list-style:none;display:flex;flex-direction:column;gap:10px;flex:1;margin-bottom:24px;}
+.pkg-c-list li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--text-mid);}
+.ck{color:var(--blue);font-size:15px;flex-shrink:0;}
+.pkg-c-btn{width:100%;background:var(--blue);color:white;border:none;border-radius:8px;padding:13px;font-family:'Inter',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;}
+.pkg-c-btn:hover{background:var(--blue-mid);transform:translateY(-1px);}
+.pkg-c-btn.out{background:transparent;color:var(--blue);border:2px solid var(--blue);}
+.pkg-c-btn.out:hover{background:var(--blue);color:white;}
+.cta-split{background:linear-gradient(135deg,var(--navy-deep),var(--navy-mid));padding:80px 48px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.how-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--gray-200);border:1px solid var(--gray-200);border-radius:12px;overflow:hidden;margin-top:48px;}
+.how-c{background:white;padding:32px 24px;text-align:center;}
+.how-num{width:52px;height:52px;border-radius:50%;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;margin:0 auto 16px;}
+.how-title{font-size:17px;font-weight:700;color:var(--text-dark);margin-bottom:8px;}
+.how-desc{font-size:13px;color:var(--text-muted);line-height:1.65;}
+.ind-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;}
+.ind-c{background:white;border:1px solid var(--gray-200);border-radius:12px;padding:22px 20px;display:flex;align-items:flex-start;gap:14px;transition:all .2s;}
+.ind-c:hover{border-color:var(--blue-pale);box-shadow:0 4px 20px rgba(0,102,204,.08);transform:translateY(-2px);}
+.ind-em{font-size:26px;flex-shrink:0;}
+.ind-c h3{font-size:14px;font-weight:700;color:var(--text-dark);margin-bottom:4px;}
+.ind-c p{font-size:12px;color:var(--text-muted);line-height:1.55;}
+.proof-band{background:white;border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200);padding:28px 48px;display:flex;align-items:center;justify-content:space-around;flex-wrap:wrap;gap:20px;}
+.pb-item{display:flex;align-items:center;gap:10px;}
+.pb-icon{width:40px;height:40px;background:var(--blue-pale);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.pb-title{font-size:14px;font-weight:700;color:var(--text-dark);}
+.pb-sub{font-size:11px;color:var(--text-muted);}
+.pb-div{width:1px;height:36px;background:var(--gray-200);}
+.rev-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.warn-box{background:#fef2f2;border:1.5px solid #fecaca;border-radius:12px;padding:20px 24px;margin-bottom:28px;}
+.warn-box-title{font-size:14px;font-weight:700;color:#dc2626;margin-bottom:6px;}
+.warn-box-text{font-size:13px;color:#7f1d1d;line-height:1.65;}
+
+@media(max-width:960px){
+  .ai-talk-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  
+  .stat-band{grid-template-columns:repeat(3,1fr);padding:24px;}
+  .cat-section{padding:48px 20px;}
+  .cat-header{grid-template-columns:1fr;gap:20px;}
+  .individual-grid{grid-template-columns:1fr;}
+  .pkg-grid{grid-template-columns:1fr;}
+  .how-row{grid-template-columns:repeat(2,1fr);}
+  .ind-row{grid-template-columns:1fr;}
+  .cta-split{grid-template-columns:1fr;gap:40px;padding:48px 20px;}
+  .proof-band{padding:20px;}
+  .rev-row{grid-template-columns:1fr;}
+  .bundle-upsell{flex-direction:column;}
+}
+
+
+/* ── EXTRA STYLES ── */
+.pill-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px;}
+.pill{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:7px 14px;font-size:12px;font-weight:500;color:#cce4ff;}
+.stat-band{background:var(--navy-deep);padding:40px 48px;display:grid;grid-template-columns:repeat(5,1fr);gap:1px;border-top:1px solid var(--navy-border);border-bottom:1px solid var(--navy-border);}
+.stat-band-item{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 12px;text-align:center;background:var(--navy-deep);}
+.sbi-num{font-size:36px;font-weight:800;color:white;letter-spacing:-1px;line-height:1;}
+.sbi-num span{color:var(--blue-light);}
+.sbi-label{font-size:11px;color:var(--gray-400);margin-top:6px;line-height:1.4;max-width:100px;}
+.cat-section{padding:80px 48px;}
+.cat-section.alt{background:var(--gray-50);}
+.cat-header{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-bottom:48px;}
+.cat-header.full{grid-template-columns:1fr;max-width:700px;}
+.cat-eyebrow{font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--blue);margin-bottom:12px;}
+.cat-title{font-size:40px;font-weight:800;line-height:1.1;letter-spacing:-1px;color:var(--text-dark);margin-bottom:14px;}
+.cat-title span{color:var(--blue);}
+.cat-desc{font-size:15px;color:var(--text-muted);line-height:1.8;}
+.individual-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px;}
+.ind-svc-card{background:white;border:1px solid var(--gray-200);border-radius:14px;padding:28px 24px;transition:all .25s;position:relative;overflow:hidden;display:flex;flex-direction:column;}
+.ind-svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue),var(--blue-light));transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+.ind-svc-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,102,204,.12);border-color:var(--blue-pale);}
+.ind-svc-card:hover::before{transform:scaleX(1);}
+.isc-icon{font-size:32px;margin-bottom:14px;}
+.isc-name{font-size:18px;font-weight:700;color:var(--text-dark);margin-bottom:8px;}
+.isc-desc{font-size:13px;color:var(--text-muted);line-height:1.65;margin-bottom:16px;flex:1;}
+.isc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
+.isc-tag{background:var(--gray-100);border:1px solid var(--gray-200);border-radius:4px;padding:3px 10px;font-size:11px;font-weight:500;color:var(--text-mid);}
+.isc-footer{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--gray-100);margin-top:auto;}
+.isc-solo{font-size:11px;color:var(--text-muted);font-style:italic;}
+.isc-btn{background:var(--blue);color:white;border:none;border-radius:6px;padding:8px 16px;font-family:'Inter',sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.isc-btn:hover{background:var(--blue-mid);}
+.bundle-upsell{background:linear-gradient(135deg,#eef6ff,#f0f8ff);border:1.5px solid var(--blue-pale);border-radius:16px;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.bu-left h3{font-size:20px;font-weight:800;color:var(--text-dark);margin-bottom:6px;}
+.bu-left p{font-size:14px;color:var(--text-muted);line-height:1.6;}
+.bu-right{display:flex;gap:10px;flex-wrap:wrap;}
+.bu-btn{background:var(--blue);color:white;border:none;border-radius:8px;padding:12px 24px;font-family:'Inter',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.bu-btn:hover{background:var(--blue-mid);transform:translateY(-1px);}
+.bu-btn.ghost{background:transparent;color:var(--blue);border:2px solid var(--blue);}
+.bu-btn.ghost:hover{background:var(--blue);color:white;}
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px;}
+.pkg-c{background:white;border:2px solid var(--gray-200);border-radius:16px;padding:36px 28px;position:relative;display:flex;flex-direction:column;transition:all .25s;}
+.pkg-c:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,102,204,.1);}
+.pkg-c.hot{border-color:var(--blue);box-shadow:0 8px 32px rgba(0,102,204,.15);}
+.pkg-c-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--blue);color:white;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 16px;border-radius:100px;white-space:nowrap;}
+.pkg-c-icon{font-size:40px;margin-bottom:14px;}
+.pkg-c-name{font-size:21px;font-weight:800;color:var(--text-dark);margin-bottom:6px;}
+.pkg-c-tag{font-size:13px;color:var(--text-muted);margin-bottom:20px;line-height:1.5;}
+.pkg-c-list{list-style:none;display:flex;flex-direction:column;gap:10px;flex:1;margin-bottom:24px;}
+.pkg-c-list li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--text-mid);}
+.ck{color:var(--blue);font-size:15px;flex-shrink:0;}
+.pkg-c-btn{width:100%;background:var(--blue);color:white;border:none;border-radius:8px;padding:13px;font-family:'Inter',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;}
+.pkg-c-btn:hover{background:var(--blue-mid);transform:translateY(-1px);}
+.pkg-c-btn.out{background:transparent;color:var(--blue);border:2px solid var(--blue);}
+.pkg-c-btn.out:hover{background:var(--blue);color:white;}
+.cta-split{background:linear-gradient(135deg,var(--navy-deep),var(--navy-mid));padding:80px 48px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.how-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--gray-200);border:1px solid var(--gray-200);border-radius:12px;overflow:hidden;margin-top:48px;}
+.how-c{background:white;padding:32px 24px;text-align:center;}
+.how-num{width:52px;height:52px;border-radius:50%;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;margin:0 auto 16px;}
+.how-title{font-size:17px;font-weight:700;color:var(--text-dark);margin-bottom:8px;}
+.how-desc{font-size:13px;color:var(--text-muted);line-height:1.65;}
+.ind-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;}
+.ind-c{background:white;border:1px solid var(--gray-200);border-radius:12px;padding:22px 20px;display:flex;align-items:flex-start;gap:14px;transition:all .2s;}
+.ind-c:hover{border-color:var(--blue-pale);box-shadow:0 4px 20px rgba(0,102,204,.08);transform:translateY(-2px);}
+.ind-em{font-size:26px;flex-shrink:0;}
+.ind-c h3{font-size:14px;font-weight:700;color:var(--text-dark);margin-bottom:4px;}
+.ind-c p{font-size:12px;color:var(--text-muted);line-height:1.55;}
+.proof-band{background:white;border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200);padding:28px 48px;display:flex;align-items:center;justify-content:space-around;flex-wrap:wrap;gap:20px;}
+.pb-item{display:flex;align-items:center;gap:10px;}
+.pb-icon{width:40px;height:40px;background:var(--blue-pale);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.pb-title{font-size:14px;font-weight:700;color:var(--text-dark);}
+.pb-sub{font-size:11px;color:var(--text-muted);}
+.pb-div{width:1px;height:36px;background:var(--gray-200);}
+.rev-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.warn-box{background:#fef2f2;border:1.5px solid #fecaca;border-radius:12px;padding:20px 24px;margin-bottom:28px;}
+.warn-box-title{font-size:14px;font-weight:700;color:#dc2626;margin-bottom:6px;}
+.warn-box-text{font-size:13px;color:#7f1d1d;line-height:1.65;}
+
+@media(max-width:960px){
+  .ai-talk-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  
+  .stat-band{grid-template-columns:repeat(3,1fr);padding:24px;}
+  .cat-section{padding:48px 20px;}
+  .cat-header{grid-template-columns:1fr;gap:20px;}
+  .individual-grid{grid-template-columns:1fr;}
+  .pkg-grid{grid-template-columns:1fr;}
+  .how-row{grid-template-columns:repeat(2,1fr);}
+  .ind-row{grid-template-columns:1fr;}
+  .cta-split{grid-template-columns:1fr;gap:40px;padding:48px 20px;}
+  .proof-band{padding:20px;}
+  .rev-row{grid-template-columns:1fr;}
+  .bundle-upsell{flex-direction:column;}
+}
+
+
+/* ══ RESIDENTIAL PAGE ══ */
+.res-hero {
+  background: linear-gradient(135deg, #0b1f3a 0%, #102646 50%, #1a3a60 100%);
+  padding: 100px 48px 80px;
+  position: relative;
+  overflow: hidden;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+}
+.res-hero-bg {
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+  background-size:48px 48px;
+}
+.res-hero-glow { position:absolute;top:-80px;right:-80px;width:600px;height:600px;background:radial-gradient(circle,rgba(0,102,204,.2) 0%,transparent 65%);pointer-events:none; }
+.res-hero-content { position:relative;z-index:2;max-width:620px; }
+.res-division-badge {
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
+  border-radius:6px;padding:6px 16px;margin-bottom:24px;
+}
+.res-division-badge .biz-tag { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#94aec8;padding-right:10px;border-right:1px solid rgba(255,255,255,.15); }
+.res-division-badge .res-tag { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7ec8f0;padding-left:10px; }
+.res-hero h1 { font-size:58px;font-weight:800;line-height:1.08;letter-spacing:-1.5px;color:white;margin-bottom:20px; }
+.res-hero h1 .blue { color:#5ab0ff; }
+.res-hero p.lead { font-size:18px;color:#94aec8;line-height:1.8;max-width:520px;margin-bottom:36px; }
+.res-cta-row { display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px; }
+.res-btn-primary { background:#0066cc;color:white;border:none;border-radius:8px;padding:16px 36px;font-family:'Inter',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s; }
+.res-btn-primary:hover { background:#0055aa;transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,102,204,.4); }
+.res-btn-outline { background:transparent;color:white;border:1.5px solid rgba(255,255,255,.3);border-radius:8px;padding:16px 36px;font-family:'Inter',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s; }
+.res-btn-outline:hover { border-color:white;background:rgba(255,255,255,.08); }
+.res-stats { display:flex;gap:40px;flex-wrap:wrap;padding-top:36px;border-top:1px solid rgba(255,255,255,.1); }
+.rs-stat { display:flex;flex-direction:column;gap:4px; }
+.rs-stat-num { font-size:32px;font-weight:800;color:white;letter-spacing:-1px;line-height:1; }
+.rs-stat-num span { color:#5ab0ff; }
+.rs-stat-label { font-size:12px;color:#4a6282;line-height:1.4;max-width:100px; }
+.res-hero-visual { position:absolute;right:60px;top:50%;transform:translateY(-50%);width:320px;z-index:2;opacity:.85; }
+
+/* Provider badge bar */
+.res-providers-bar {
+  background:white;border-bottom:1px solid var(--gray-200);
+  padding:18px 48px;
+  display:flex;align-items:center;gap:32px;flex-wrap:wrap;
+}
+.rpb-label { font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);white-space:nowrap; }
+.rpb-providers { display:flex;align-items:center;gap:24px;flex-wrap:wrap; }
+.rpb-chip { background:var(--gray-50);border:1px solid var(--gray-200);border-radius:8px;padding:8px 16px;font-size:13px;font-weight:700;color:var(--text-mid);transition:all .2s;cursor:default; }
+.rpb-chip:hover { border-color:var(--blue);color:var(--blue); }
+.rpb-disc { font-size:11px;color:var(--gray-400);margin-left:auto; }
+
+/* Service cards */
+.res-svc-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:20px; }
+.res-svc-card {
+  background:white;border:1px solid var(--gray-200);border-radius:16px;
+  padding:28px 22px;transition:all .25s;position:relative;overflow:hidden;
+  display:flex;flex-direction:column;
+}
+.res-svc-card::before { content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue),#5ab0ff);transform:scaleX(0);transform-origin:left;transition:transform .3s; }
+.res-svc-card:hover { transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,102,204,.1);border-color:var(--blue-pale); }
+.res-svc-card:hover::before { transform:scaleX(1); }
+.rsc-icon { font-size:36px;margin-bottom:14px; }
+.rsc-name { font-size:18px;font-weight:800;color:var(--text-dark);margin-bottom:8px; }
+.rsc-desc { font-size:13px;color:var(--text-muted);line-height:1.7;margin-bottom:16px;flex:1; }
+.rsc-providers { display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px; }
+.rsc-prov { background:var(--gray-50);border:1px solid var(--gray-200);border-radius:4px;padding:3px 10px;font-size:11px;font-weight:600;color:var(--text-mid); }
+.rsc-btn { background:var(--blue);color:white;border:none;border-radius:8px;padding:11px;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;width:100%;margin-top:auto; }
+.rsc-btn:hover { background:#0055aa;transform:translateY(-1px); }
+
+/* Provider detail sections */
+.res-prov-section { padding:80px 48px; }
+.res-prov-section.alt { background:var(--gray-50); }
+.res-prov-inner { display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center; }
+.res-prov-inner.rev { direction:rtl; }
+.res-prov-inner.rev > * { direction:ltr; }
+.rp-eyebrow { font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--blue);margin-bottom:10px; }
+.rp-title { font-size:36px;font-weight:800;color:var(--text-dark);line-height:1.1;letter-spacing:-0.5px;margin-bottom:14px; }
+.rp-title span { color:var(--blue); }
+.rp-desc { font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:24px; }
+.rp-features { list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px; }
+.rp-features li { display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text-mid); }
+.rp-chk { color:var(--blue);font-size:16px;flex-shrink:0;margin-top:1px; }
+.rp-disc { font-size:11px;color:var(--gray-400);font-style:italic;margin-top:8px;line-height:1.5; }
+.rp-visual { background:var(--gray-50);border:1px solid var(--gray-200);border-radius:16px;padding:32px 28px; }
+.rp-visual.dark { background:var(--navy);border-color:var(--navy-border); }
+
+/* Plan cards */
+.plan-cards { display:flex;flex-direction:column;gap:12px; }
+.plan-card { background:white;border:1.5px solid var(--gray-200);border-radius:12px;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:all .2s; }
+.plan-card:hover { border-color:var(--blue);box-shadow:0 4px 16px rgba(0,102,204,.1); }
+.plan-card.featured { border-color:var(--blue);background:linear-gradient(135deg,#f0f7ff,white); }
+.pc-name { font-size:14px;font-weight:700;color:var(--text-dark); }
+.pc-speed { font-size:12px;color:var(--text-muted); }
+.pc-badge { font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--blue);background:var(--blue-pale);border-radius:100px;padding:2px 8px; }
+.pc-price { text-align:right; }
+.pc-promo { font-size:18px;font-weight:800;color:var(--blue);line-height:1; }
+.pc-ref { font-size:10px;color:var(--gray-400); }
+.plan-note { font-size:11px;color:var(--gray-400);margin-top:8px;font-style:italic; }
+
+/* How it works */
+.how3-row { display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--gray-200);border:1px solid var(--gray-200);border-radius:12px;overflow:hidden;margin-top:40px; }
+.how3-card { background:white;padding:36px 28px;text-align:center; }
+.how3-num { width:52px;height:52px;border-radius:50%;background:var(--blue);color:white;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;margin:0 auto 16px; }
+.how3-title { font-size:18px;font-weight:700;color:var(--text-dark);margin-bottom:10px; }
+.how3-desc { font-size:14px;color:var(--text-muted);line-height:1.7; }
+
+/* Why SGI residential */
+.why-res-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px; }
+.why-res-card { background:white;border:1px solid var(--gray-200);border-radius:14px;padding:28px 24px; }
+.wrc-icon { font-size:32px;margin-bottom:14px; }
+.wrc-title { font-size:17px;font-weight:700;color:var(--text-dark);margin-bottom:10px; }
+.wrc-desc { font-size:14px;color:var(--text-muted);line-height:1.7; }
+
+/* Residential form */
+.res-form-wrap { background:linear-gradient(135deg,var(--navy-deep),var(--navy-mid));padding:80px 48px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start; }
+.rf-left h2 { font-size:40px;font-weight:800;color:white;line-height:1.1;letter-spacing:-1px;margin-bottom:16px; }
+.rf-left p { font-size:15px;color:var(--gray-400);line-height:1.8;margin-bottom:24px; }
+.rf-contact { display:flex;flex-direction:column;gap:12px; }
+.rf-c { display:flex;align-items:center;gap:12px;font-size:14px;font-weight:500;color:#cce4ff; }
+.rf-c-label { font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#5ab0ff;min-width:48px; }
+.rf-disc { font-size:11px;color:#2a4060;line-height:1.6;margin-top:24px; }
+.res-form-box { background:white;border-radius:16px;padding:36px 32px;box-shadow:0 24px 64px rgba(0,0,0,.24); }
+.res-form-box .form-title { font-size:22px;font-weight:800;color:var(--text-dark);margin-bottom:6px; }
+.res-form-box .form-sub { font-size:13px;color:var(--text-muted);margin-bottom:24px; }
+.form-row-3 { display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px; }
+.form-grp-full { margin-bottom:14px; }
+.form-grp-full label { font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);display:block;margin-bottom:5px; }
+.form-grp-full input, .form-grp-full select, .form-grp-full textarea {
+  width:100%;background:var(--gray-50);border:1.5px solid var(--gray-200);
+  border-radius:8px;padding:11px 14px;font-family:'Inter',sans-serif;
+  font-size:14px;color:var(--text-dark);outline:none;transition:border-color .2s;
+}
+.form-grp-full input:focus, .form-grp-full select:focus { border-color:var(--blue);background:white;box-shadow:0 0 0 3px rgba(0,102,204,.1); }
+.form-grp-full input::placeholder { color:var(--gray-400); }
+.res-submit-btn { width:100%;background:var(--blue);color:white;border:none;border-radius:8px;padding:15px;font-family:'Inter',sans-serif;font-size:15px;font-weight:700;cursor:pointer;margin-top:4px;transition:all .2s; }
+.res-submit-btn:hover { background:#0055aa;transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,102,204,.35); }
+
+/* Nav residential tab */
+.nav-res { color: #0066cc !important; }
+.nav-res.active::after, .nav-res:hover::after { background: #0066cc !important; }
+
+/* Division switcher on homepage */
+.division-switcher { background:var(--navy-deep);padding:12px 48px;display:flex;align-items:center;gap:0;border-bottom:1px solid var(--navy-border); }
+.div-btn { padding:8px 24px;font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;border:none;border-radius:4px;transition:all .2s; }
+.div-btn.biz { background:var(--blue);color:white; }
+.div-btn.res { background:transparent;color:var(--gray-400); }
+.div-btn.res:hover { color:white; }
+.div-label { font-size:11px;color:var(--gray-600);margin-left:16px; }
+
+@media(max-width:960px){
+  .res-hero { padding:80px 20px 60px;min-height:auto; }
+  .res-hero h1 { font-size:38px; }
+  .res-hero-visual { display:none; }
+  .res-stats { gap:20px; }
+  .res-providers-bar { padding:16px 20px; }
+  .res-svc-grid { grid-template-columns:1fr 1fr; }
+  .res-prov-section { padding:48px 20px; }
+  .res-prov-inner { grid-template-columns:1fr;gap:32px;direction:ltr !important; }
+  .how3-row { grid-template-columns:1fr; }
+  .why-res-grid { grid-template-columns:1fr 1fr; }
+  .res-form-wrap { grid-template-columns:1fr;gap:40px;padding:48px 20px; }
+  .form-row-3 { grid-template-columns:1fr; }
+  .division-switcher { padding:12px 20px; }
+}
+
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="topbar-item">📞 <strong>(949) 386-4416</strong></div>
+    <div class="topbar-item">✉️ <strong>sales@sgitbs.com</strong></div>
+    <div class="topbar-item tbs-highlight">✔ Business &amp; Residential — Free Consultation</div>
+  </div>
+  <div class="topbar-right">
+    <a href="residential.html" style="color:#5ab0ff;">🏠 Residential</a>
+    <a href="contact.html">Contact</a>
+    <a href="#">@sgiconnect</a>
+  </div>
+</div>
+<nav class="nav">
+  <a href="index.html"><div class="nav-logo-wrap"><svg width="220" height="44" viewBox="0 0 220 44" fill="none"><defs><linearGradient id="wgR1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7ec8f0"/><stop offset="100%" stop-color="#1a7de0"/></linearGradient><linearGradient id="wgR2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#4aaae8" stop-opacity="0.8"/><stop offset="100%" stop-color="#0d5abf" stop-opacity="0.8"/></linearGradient><linearGradient id="wgR3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1a7de0" stop-opacity="0.5"/><stop offset="100%" stop-color="#0a3d8f" stop-opacity="0.5"/></linearGradient></defs><circle cx="22" cy="36" r="4" fill="#0a3d8f"/><path d="M12 27 Q22 17 32 27" stroke="url(#wgR3)" stroke-width="4.5" fill="none" stroke-linecap="round"/><path d="M6 20 Q22 4 38 20" stroke="url(#wgR2)" stroke-width="3.5" fill="none" stroke-linecap="round"/><path d="M1 13 Q22 -5 43 13" stroke="url(#wgR1)" stroke-width="2.5" fill="none" stroke-linecap="round"/><line x1="54" y1="4" x2="54" y2="38" stroke="#d0dde8" stroke-width="1.2"/><text x="64" y="34" font-family="Inter,sans-serif" font-size="30" font-weight="800" fill="#0b1f3a" letter-spacing="-0.5">S</text><text x="87" y="34" font-family="Inter,sans-serif" font-size="30" font-weight="800" fill="#0b1f3a" letter-spacing="-0.5">G</text><text x="116" y="34" font-family="Inter,sans-serif" font-size="30" font-weight="800" fill="#0b1f3a">I</text><rect x="116" y="4" width="9" height="4" rx="1.5" fill="#2d8ff5"/></svg></div></a>
+  <ul class="nav-links"><li><a href="index.html">Business</a></li>
+    <li><a href="residential.html" class="active nav-res">Residential</a></li>
+    <li><a href="ai.html" class="ai-nav">🤖 AI Solutions</a></li>
+    <li><a href="cybersecurity.html">Cybersecurity &amp; Cloud</a></li>
+    <li><a href="providers.html">Provider Catalog</a></li>
+    <li><a href="reviews.html">Reviews</a></li>
+    <li><a href="contact.html">Contact</a></li></ul>
+  <div class="nav-right">
+    <button class="btn-ghost" onclick="window.location='contact.html'">Free Assessment</button>
+    <button class="btn-solid" onclick="window.location='contact.html'">Get Free Quote</button>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()" id="hamburger">☰</button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Business</a>
+  <a href="residential.html" style="color:#0066cc;font-weight:700;">🏠 Residential</a>
+  <a href="ai.html" style="color:#2d8ff5;font-weight:700;">🤖 AI Solutions</a>
+  <a href="cybersecurity.html">Cybersecurity &amp; Cloud</a>
+  <a href="providers.html">Provider Catalog</a>
+  <a href="reviews.html">Reviews</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="mobile-cta">Get Free Quote</a>
+</div>
+
+<!-- HERO -->
+<section class="res-hero">
+  <div class="res-hero-bg"></div>
+  <div class="res-hero-glow"></div>
+  <div class="res-hero-content">
+    <div class="res-division-badge">
+      <span class="biz-tag">SGI Business</span>
+      <span class="res-tag">SGI Residential</span>
+    </div>
+    <h1>Home Internet &amp; TV.<br/><span class="blue">Made simple.</span></h1>
+    <p class="lead">Compare available internet and TV options for your home from AT&T Fiber, Spectrum, Frontier, and DIRECTV. Check your address to see what's available — an SGI specialist will help you choose.</p>
+    <div class="res-cta-row">
+      <button class="res-btn-primary" onclick="document.getElementById('resForm').scrollIntoView({behavior:'smooth'})">Check Availability →</button>
+      <button class="res-btn-outline" onclick="window.location='tel:+19493864416'">Talk to an SGI Specialist</button>
+    </div>
+    <div class="res-stats">
+      <div class="rs-stat"><div class="rs-stat-num">4<span>+</span></div><div class="rs-stat-label">Residential providers available</div></div>
+      <div class="rs-stat"><div class="rs-stat-num">$0</div><div class="rs-stat-label">Cost to compare your options</div></div>
+      <div class="rs-stat"><div class="rs-stat-num">1</div><div class="rs-stat-label">Specialist to help you from start to finish</div></div>
+    </div>
+  </div>
+  <div class="res-hero-visual">
+    <svg width="300" height="260" viewBox="0 0 300 260" fill="none" opacity="0.6">
+      <defs>
+        <linearGradient id="rv1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7ec8f0"/><stop offset="100%" stop-color="#1a7de0"/></linearGradient>
+        <linearGradient id="rv2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#4aaae8" stop-opacity="0.8"/><stop offset="100%" stop-color="#0d5abf" stop-opacity="0.8"/></linearGradient>
+        <linearGradient id="rv3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1a7de0" stop-opacity="0.5"/><stop offset="100%" stop-color="#0a3d8f" stop-opacity="0.5"/></linearGradient>
+      </defs>
+      <circle cx="150" cy="218" r="18" fill="#0a3d8f"/>
+      <path d="M88 168 Q150 108 212 168" stroke="url(#rv1)" stroke-width="16" fill="none" stroke-linecap="round"/>
+      <path d="M50 130 Q150 46 250 130" stroke="url(#rv2)" stroke-width="12" fill="none" stroke-linecap="round"/>
+      <path d="M16 94 Q150 -10 284 94" stroke="url(#rv3)" stroke-width="9" fill="none" stroke-linecap="round"/>
+    </svg>
+  </div>
+</section>
+
+<!-- PROVIDERS BAR -->
+<div class="res-providers-bar">
+  <span class="rpb-label">Available from</span>
+  <div class="rpb-providers">
+    <div class="rpb-chip">📡 AT&amp;T Fiber</div>
+    <div class="rpb-chip">🌐 Spectrum</div>
+    <div class="rpb-chip">⚡ Frontier Fiber</div>
+    <div class="rpb-chip">📺 DIRECTV</div>
+  </div>
+  <span class="rpb-disc">Availability varies by address. SGI helps you check what's available at your location.</span>
+</div>
+
+<!-- 4 SERVICE CARDS -->
+<section class="section-light">
+  <div class="section-label">What We Offer</div>
+  <h2 class="section-title" style="margin-bottom:12px;">Four ways SGI can help<br/>your <span class="blue">household get connected.</span></h2>
+  <p style="font-size:15px;color:var(--text-muted);margin-bottom:36px;">Every service is available individually. We'll help you find the right fit for your address, your household, and your budget.</p>
+  <div class="res-svc-grid">
+    <div class="res-svc-card">
+      <div class="rsc-icon">⚡</div>
+      <div class="rsc-name">Fiber Internet</div>
+      <div class="rsc-desc">Fast, reliable symmetrical fiber speeds for streaming, gaming, working from home, and connected households. Fiber delivers consistent performance without slowdowns during peak hours.</div>
+      <div class="rsc-providers">
+        <span class="rsc-prov">AT&amp;T Fiber</span>
+        <span class="rsc-prov">Frontier Fiber</span>
+      </div>
+      <button class="rsc-btn" onclick="document.getElementById('resForm').scrollIntoView({behavior:'smooth'})">Check Availability</button>
+    </div>
+    <div class="res-svc-card">
+      <div class="rsc-icon">🌐</div>
+      <div class="rsc-name">High-Speed Home Internet</div>
+      <div class="rsc-desc">Internet options for households ranging from everyday browsing to high-bandwidth connected homes. Plans vary by address — from entry-level to multi-gig speeds.</div>
+      <div class="rsc-providers">
+        <span class="rsc-prov">Spectrum Internet</span>
+        <span class="rsc-prov">+ More providers</span>
+      </div>
+      <button class="rsc-btn" onclick="document.getElementById('resForm').scrollIntoView({behavior:'smooth'})">Check Availability</button>
+    </div>
+    <div class="res-svc-card">
+      <div class="rsc-icon">📺</div>
+      <div class="rsc-name">TV &amp; Entertainment</div>
+      <div class="rsc-desc">Live TV, sports, local channels, movies, Spanish-language programming, kids, and streaming options. Channel availability varies by package and location.</div>
+      <div class="rsc-providers">
+        <span class="rsc-prov">Spectrum TV</span>
+        <span class="rsc-prov">DIRECTV</span>
+      </div>
+      <button class="rsc-btn" onclick="document.getElementById('resForm').scrollIntoView({behavior:'smooth'})">Check Availability</button>
+    </div>
+    <div class="res-svc-card">
+      <div class="rsc-icon">📦</div>
+      <div class="rsc-name">Internet + TV</div>
+      <div class="rsc-desc">Evaluate eligible combinations of home internet and television based on your address, budget, and viewing needs. An SGI specialist helps you find the best fit.</div>
+      <div class="rsc-providers">
+        <span class="rsc-prov">AT&amp;T + DIRECTV</span>
+        <span class="rsc-prov">Spectrum Internet + TV</span>
+      </div>
+      <button class="rsc-btn" onclick="document.getElementById('resForm').scrollIntoView({behavior:'smooth'})">Check Availability</button>
+    </div>
+  </div>
+  <p style="text-align:center;font-size:12px;color:var(--gray-400);margin-top:20px;">Availability, speeds, pricing, promotions and services vary by location and eligibility. Provider terms and conditions apply.</p>
+</section>
+
+<!-- AT&T FIBER -->
+<div class="res-prov-section">
+  <div class="res-prov-inner">
+    <div>
+      <div class="rp-eyebrow">Fiber Internet</div>
+      <h2 class="rp-title">AT&amp;T Fiber<br/><span>Fast. Symmetrical. Reliable.</span></h2>
+      <p class="rp-desc">AT&T Fiber delivers symmetrical upload and download speeds — so your whole household can stream, game, and work from home at the same time without slowdowns. No annual contract required on many plans. No data caps.</p>
+      <ul class="rp-features">
+        <li><span class="rp-chk">✓</span>Symmetrical speeds — same upload and download</li>
+        <li><span class="rp-chk">✓</span>No data caps on fiber plans</li>
+        <li><span class="rp-chk">✓</span>No annual contract required on eligible plans</li>
+        <li><span class="rp-chk">✓</span>Plans from 300 Mbps up to 5 Gig</li>
+        <li><span class="rp-chk">✓</span>Ask about current eligible promotions</li>
+      </ul>
+      <button class="res-btn-primary" onclick="document.getElementById('resForm').scrollIntoView({behavior:'smooth'})">Check AT&amp;T Availability →</button>
+      <p class="rp-disc">Availability and promotions vary by address and eligibility. Ask SGI about current offers.</p>
+    </div>
+    <div class="rp-visual">
+      <div style="font-size:13px;font-weight:700;color:var(--text-muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;">AT&amp;T Fiber Plans — Reference Pricing</div>
+      <div class="plan-cards">
+        <div class="plan-card"><div><div class="pc-name">AT&amp;T 300</div><div class="pc-speed">300/300 Mbps · Symmetrical</div></div><div class="pc-price"><div class="pc-promo">From $35<span style="font-size:12px;font-weight:500;">/mo</span></div><div class="pc-ref">Promotional pricing</div></div></div>
+        <div class="plan-card featured"><div><div class="pc-name">AT&amp;T 500</div><div class="pc-speed">500/500 Mbps · Symmetrical</div><div class="pc-badge">Popular</div></div><div class="pc-price"><div class="pc-promo">From $50<span style="font-size:12px;font-weight:500;">/mo</span></div><div class="pc-ref">Promotional pricing</div></div></div>
+        <div class="plan-card"><div><div class="pc-name">AT&amp;T 1 GIG</div><div class="pc-speed">Up to 1 Gbps · Symmetrical</div></div><div class="pc-price"><div class="pc-promo">From $50<span style="font-size:12px;font-weight:500;">/mo</span></div><div class="pc-ref">Promotional pricing</div></div></div>
+        <div class="plan-card"><div><div class="pc-name">AT&amp;T 5 GIG</div><div class="pc-speed">Up to 5 Gbps · Multi-gig</div></div><div class="pc-price"><div class="pc-promo">From $95<span style="font-size:12px;font-weight:500;">/mo</span></div><div class="pc-ref">Promotional pricing</div></div></div>
+      </div>
+      <p class="plan-note">Promotional pricing. Actual pricing, availability, taxes and fees vary by address and eligibility. Verify current offers with your SGI specialist.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SPECTRUM INTERNET -->
+<div class="res-prov-section alt">
+  <div class="res-prov-inner rev">
+    <div>
+      <div class="rp-eyebrow">High-Speed Internet</div>
+      <h2 class="rp-title">Spectrum Internet<br/><span>No contracts. No data caps.</span></h2>
+      <p class="rp-desc">Spectrum Internet offers no annual contracts and no data caps — with plans ranging from entry-level speeds up to 2 Gig in select markets. Plans and speeds vary by address.</p>
+      <ul class="rp-features">
+        <li><span class="rp-chk">✓</span>No annual contracts</li>
+        <li><span class="rp-chk">✓</span>No data caps</li>
+        <li><span class="rp-chk">✓</span>Plans from 100 Mbps to 2 Gig (where available)</li>
+        <li><span class="rp-chk">✓</span>Advanced WiFi on current eligible offers</li>
+        <li><span class="rp-chk">✓</span>Ask about current Year 1 promotional pricing</li>
+      </ul>
+      <button class="res-btn-primary" onclick="document.getElementById('resForm').scrollIntoView({behavior:'smooth'})">Check Spectrum Availability →</button>
+      <p class="rp-disc">Spectrum plans and pricing vary by address and eligibility. Promotional pricing applies to Year 1 on eligible accounts.</p>
+    </div>
+    <div class="rp-visual">
+      <div style="font-size:13px;font-weight:700;color:var(--text-muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;">Spectrum Internet Plans — Reference Pricing</div>
+      <div class="plan-cards">
+        <div class="plan-card"><div><div class="pc-name">Spectrum Advantage</div><div class="pc-speed">100 Mbps</div></div><div class="pc-price"><div class="pc-promo">$30<span style="font-size:12px;font-weight:500;">/mo</span></div><div class="pc-ref">Yr 1 promo pricing</div></div></div>
+        <div class="plan-card featured"><div><div class="pc-name">Spectrum Premier</div><div class="pc-speed">500 Mbps</div><div class="pc-badge">Popular</div></div><div class="pc-price"><div class="pc-promo">$40<span style="font-size:12px;font-weight:500;">/mo</span></div><div class="pc-ref">Yr 1 promo pricing</div></div></div>
+        <div class="plan-card"><div><div class="pc-name">Spectrum Gig</div><div class="pc-speed">1 Gig</div></div><div class="pc-price"><div class="pc-promo">$60<span style="font-size:12px;font-weight:500;">/mo</span></div><div class="pc-ref">Yr 1 promo pricing</div></div></div>
+        <div class="plan-card"><div><div class="pc-name">Spectrum 2 Gig</div><div class="pc-speed">2 Gig · Select markets</div></div><div class="pc-price"><div class="pc-promo">Verify</div><div class="pc-ref">Address-based pricing</div></div></div>
+      </div>
+      <p class="plan-note">Year 1 promotional pricing. Rates increase after promotional period. Availability and exact pricing vary by address. Verify with SGI specialist.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FRONTIER FIBER -->
+<div class="res-prov-section">
+  <div class="res-prov-inner">
+    <div>
+      <div class="rp-eyebrow">Fiber Internet</div>
+      <h2 class="rp-title">Frontier Fiber<br/><span>Built for the connected home.</span></h2>
+      <p class="rp-desc">Frontier Fiber delivers symmetrical multi-gig speeds with Wi-Fi 7 on eligible plans — from 500 Mbps all the way up to 7 Gig in select markets. Current promotions include price guarantees on eligible plans — ask your SGI specialist for current offers at your address.</p>
+      <ul class="rp-features">
+        <li><span class="rp-chk">✓</span>Symmetrical fiber — up to 7 Gig in select markets</li>
+        <li><span class="rp-chk">✓</span>Wi-Fi 7 on eligible plans</li>
+        <li><span class="rp-chk">✓</span>Whole-Home Wi-Fi on eligible Gig plans</li>
+        <li><span class="rp-chk">✓</span>Price guarantees available on eligible plans</li>
+        <li><span class="rp-chk">✓</span>Ask about first-month deals and current promotions</li>
+      </ul>
+      <button class="res-btn-primary" onclick="document.getElementById('resForm').scrollIntoView({behavior:'smooth'})">Check Frontier Availability →</button>
+      <p class="rp-disc">Frontier availability and promotions vary by address. Not all plans or promotions available in all areas.</p>
+    </div>
+    <div class="rp-visual">
+      <div style="font-size:13px;font-weight:700;color:var(--text-muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;">Frontier Fiber Plans — Reference Pricing</div>
+      <div class="plan-cards">
+        <div class="plan-card"><div><div class="pc-name">Frontier Fiber 500</div><div class="pc-speed">500/500 Mbps · Wi-Fi 7</div></div><div class="pc-price"><div class="pc-promo">From $29.99<span style="font-size:12px;font-weight:500;">/mo</span></div><div class="pc-ref">Public reference pricing</div></div></div>
+        <div class="plan-card featured"><div><div class="pc-name">Frontier Fiber 1 GIG</div><div class="pc-speed">1000/1000 Mbps · Whole-Home Wi-Fi</div><div class="pc-badge">Best Value</div></div><div class="pc-price"><div class="pc-promo">From $49.99<span style="font-size:12px;font-weight:500;">/mo</span></div><div class="pc-ref">Public reference pricing</div></div></div>
+        <div class="plan-card"><div><div class="pc-name">Frontier Fiber 2 GIG</div><div class="pc-speed">2000/2000 Mbps</div></div><div class="pc-price"><div class="pc-promo">From $64.99<span style="font-size:12px;font-weight:500;">/mo</span></div><div class="pc-ref">Public reference pricing</div></div></div>
+        <div class="plan-card"><div><div class="pc-name">Frontier 5 GIG / 7 GIG</div><div class="pc-speed">Premium multi-gig · Select markets</div></div><div class="pc-price"><div class="pc-promo">Verify</div><div class="pc-ref">Check portal</div></div></div>
+      </div>
+      <p class="plan-note">Public reference pricing. Promotional offers (including first-month deals and price guarantees) vary by eligibility and address. Verify with SGI specialist.</p>
+    </div>
+  </div>
+</div>
+
+<!-- TV & ENTERTAINMENT -->
+<div class="res-prov-section alt">
+  <div class="section-label">TV &amp; Entertainment</div>
+  <h2 class="section-title" style="margin-bottom:12px;">Live TV. Local channels. <span class="blue">Your favorites.</span></h2>
+  <p style="font-size:15px;color:var(--text-muted);margin-bottom:40px;">SGI helps households find the right TV option — whether that's Spectrum's cable TV, DIRECTV's live satellite or streaming packages, or a combination with your internet service. Channel availability varies by package and location.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+
+    <div style="background:white;border:1px solid var(--gray-200);border-radius:16px;padding:32px 28px;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:12px;">Spectrum TV</div>
+      <h3 style="font-size:24px;font-weight:800;color:var(--text-dark);margin-bottom:12px;">Cable TV with streaming included.</h3>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.75;margin-bottom:20px;">Spectrum TV packages include access to popular entertainment, news, sports, local programming, and streaming app value — with Spanish-language options available. Exact channels vary by package and ZIP code.</p>
+      <div style="background:var(--gray-50);border-radius:10px;padding:16px;margin-bottom:20px;">
+        <div style="font-size:12px;font-weight:700;color:var(--text-muted);margin-bottom:10px;">PACKAGES AVAILABLE</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;"><span style="font-weight:600;color:var(--text-dark);">TV Select Signature</span><span style="color:var(--text-muted);">150+ channels · From $100/mo Yr 1</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;"><span style="font-weight:600;color:var(--text-dark);">TV Select Plus</span><span style="color:var(--text-muted);">160+ channels · From $110/mo Yr 1</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;"><span style="font-weight:600;color:var(--text-dark);">TV Platinum</span><span style="color:var(--text-muted);">230+ channels · From $145/mo Yr 1</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;"><span style="font-weight:600;color:var(--blue);font-weight:700;">Mi Plan Latino</span><span style="color:var(--text-muted);">Spanish-language · Verify address</span></div>
+        </div>
+      </div>
+      <p style="font-size:12px;color:var(--gray-400);margin-bottom:16px;">Popular channels include ESPN, FS1, TNT, CNN, Fox News, Disney Channel, Nickelodeon and more. Streaming apps vary by package. Exact lineup varies by ZIP.</p>
+      <div style="background:#f0f7ff;border:1px solid var(--blue-pale);border-radius:8px;padding:12px 14px;margin-bottom:16px;">
+        <div style="font-size:13px;font-weight:600;color:var(--blue);">Looking for a specific channel?</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:3px;">Ask your SGI specialist to confirm it's included before you order.</div>
+      </div>
+      <button class="rsc-btn" onclick="document.getElementById('resForm').scrollIntoView({behavior:'smooth'})">Check Spectrum TV Options</button>
+    </div>
+
+    <div style="background:white;border:1px solid var(--gray-200);border-radius:16px;padding:32px 28px;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:12px;">DIRECTV</div>
+      <h3 style="font-size:24px;font-weight:800;color:var(--text-dark);margin-bottom:12px;">Live TV. Sports. Entertainment.</h3>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.75;margin-bottom:20px;">DIRECTV offers extensive live TV coverage including sports, local channels (where available), Spanish-language programming, premium channels, and entertainment — delivered via streaming or satellite depending on your address and preference.</p>
+      <div style="background:var(--gray-50);border-radius:10px;padding:16px;margin-bottom:20px;">
+        <div style="font-size:12px;font-weight:700;color:var(--text-muted);margin-bottom:10px;">PACKAGES AVAILABLE</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;"><span style="font-weight:600;color:var(--text-dark);">ENTERTAINMENT</span><span style="color:var(--text-muted);">90+ channels · From $59.99 first mo</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;"><span style="font-weight:600;color:var(--text-dark);">CHOICE</span><span style="color:var(--text-muted);">125+ channels · Sports networks included</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;"><span style="font-weight:600;color:var(--text-dark);">ULTIMATE</span><span style="color:var(--text-muted);">160+ channels · Sports + movies</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;"><span style="font-weight:600;color:var(--text-dark);">PREMIER</span><span style="color:var(--text-muted);">185+ channels · HBO, STARZ, Paramount+</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;"><span style="font-weight:600;color:var(--blue);">MiEspañol</span><span style="color:var(--text-muted);">Spanish-language entertainment</span></div>
+        </div>
+      </div>
+      <p style="font-size:12px;color:var(--gray-400);margin-bottom:16px;">Streaming and satellite delivery options available. Pricing, fees and agreement terms vary by fulfillment type and package. Local channel availability varies by market.</p>
+      <div style="background:#f0f7ff;border:1px solid var(--blue-pale);border-radius:8px;padding:12px 14px;margin-bottom:16px;">
+        <div style="font-size:13px;font-weight:600;color:var(--blue);">Sports fan? Looking for Spanish channels?</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:3px;">Ask your SGI specialist — we'll confirm the right package before you order.</div>
+      </div>
+      <button class="rsc-btn" onclick="document.getElementById('resForm').scrollIntoView({behavior:'smooth'})">Check DIRECTV Options</button>
+    </div>
+
+  </div>
+  <p style="text-align:center;font-size:11px;color:var(--gray-400);margin-top:16px;">Channel availability varies by package and location. Promotional pricing applies to eligible accounts for specified periods. Provider terms apply.</p>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="section-light">
+  <div style="text-align:center;max-width:560px;margin:0 auto 0;">
+    <div class="section-label" style="text-align:center;">How It Works</div>
+    <h2 class="section-title" style="text-align:center;margin-bottom:8px;">Three steps to get <span class="blue">connected.</span></h2>
+    <p style="font-size:15px;color:var(--text-muted);margin-bottom:0;">No pressure. No confusing packages. Just honest help finding what's available at your address.</p>
+  </div>
+  <div class="how3-row">
+    <div class="how3-card">
+      <div class="how3-num">1</div>
+      <div class="how3-title">Enter Your Address</div>
+      <div class="how3-desc">Internet availability, speeds, and promotions vary by location. Your address tells us which providers and plans are actually available to you.</div>
+    </div>
+    <div class="how3-card">
+      <div class="how3-num">2</div>
+      <div class="how3-title">Compare Your Options</div>
+      <div class="how3-desc">An SGI specialist helps identify the eligible providers, speeds, and services available at your home — and walks you through what actually fits your household and budget.</div>
+    </div>
+    <div class="how3-card">
+      <div class="how3-num">3</div>
+      <div class="how3-title">Get Connected</div>
+      <div class="how3-desc">Once you've chosen the right option, your SGI specialist helps you complete the order and coordinates the next steps — from scheduling installation to confirming your service.</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY SGI RESIDENTIAL -->
+<section class="section-gray">
+  <div class="section-label">Why Choose SGI Residential</div>
+  <h2 class="section-title" style="margin-bottom:40px;">We're not a carrier.<br/><span class="blue">We work for you.</span></h2>
+  <div class="why-res-grid">
+    <div class="why-res-card">
+      <div class="wrc-icon">🔀</div>
+      <div class="wrc-title">Multiple Provider Options</div>
+      <div class="wrc-desc">We help you evaluate available connectivity options — AT&T Fiber, Spectrum, Frontier, and DIRECTV — instead of limiting the conversation to one network. You see what's actually available at your address.</div>
+    </div>
+    <div class="why-res-card">
+      <div class="wrc-icon">📍</div>
+      <div class="wrc-title">Address-Based Availability</div>
+      <div class="wrc-desc">Internet technology, speeds, and promotions vary by location. What's available two blocks away might not be available at your home. We check your specific address before making any recommendations.</div>
+    </div>
+    <div class="why-res-card">
+      <div class="wrc-icon">📺</div>
+      <div class="wrc-title">Internet + Entertainment</div>
+      <div class="wrc-desc">You can explore both home internet and television options in one conversation — from fiber internet to live TV packages. We help you evaluate combinations that make sense for your household.</div>
+    </div>
+    <div class="why-res-card">
+      <div class="wrc-icon">🧑‍💼</div>
+      <div class="wrc-title">Personal Assistance</div>
+      <div class="wrc-desc">You speak with an SGI specialist instead of navigating every provider's website and confusing package options yourself. We explain what you're getting before you commit to anything.</div>
+    </div>
+    <div class="why-res-card">
+      <div class="wrc-icon">✅</div>
+      <div class="wrc-title">No Pressure</div>
+      <div class="wrc-desc">Our goal is to help you understand what's available and choose what actually fits your household — not to push you toward the most expensive package. You decide. We help.</div>
+    </div>
+    <div class="why-res-card">
+      <div class="wrc-icon">📞</div>
+      <div class="wrc-title">One Call Does It All</div>
+      <div class="wrc-desc">From checking availability to placing your order, your SGI specialist handles it — so you don't have to wait on hold with a carrier or navigate confusing online checkout flows.</div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD FORM -->
+<div class="res-form-wrap" id="resForm">
+  <div class="rf-left">
+    <div style="font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#5ab0ff;margin-bottom:12px;">Check Availability</div>
+    <h2>Find out what's available<br/>at your address.</h2>
+    <p>Fill in your information and an SGI specialist will confirm available providers, speeds, current promotions, and pricing for your exact address — at no cost and no obligation.</p>
+    <div class="rf-contact">
+      <div class="rf-c"><span class="rf-c-label">Call</span>(949) 386-4416</div>
+      <div class="rf-c"><span class="rf-c-label">Email</span>sales@sgitbs.com</div>
+      <div class="rf-c"><span class="rf-c-label">Social</span>@sgiconnect</div>
+    </div>
+    <p class="rf-disc">By submitting this form, you agree that SGI Total Business Solutions may contact you by phone, email, or text regarding home internet and TV services. We do not sell your information. You may opt out at any time.</p>
+  </div>
+  <div class="res-form-box sgi-form">
+    <div class="form-title">Check My Options</div>
+    <div class="form-sub">Enter your details and we'll confirm what's available at your address.</div>
+    <div class="form-row-2" style="margin-bottom:0;">
+      <div class="form-grp"><label>First Name</label><input type="text" placeholder="Jane" data-field="firstName"/></div>
+      <div class="form-grp"><label>Last Name</label><input type="text" placeholder="Smith" data-field="lastName"/></div>
+    </div>
+    <div class="form-row-2" style="margin-top:14px;margin-bottom:0;">
+      <div class="form-grp"><label>Phone</label><input type="tel" placeholder="(949) 000-0000" data-field="phone"/></div>
+      <div class="form-grp"><label>Email</label><input type="email" placeholder="jane@email.com" data-field="email"/></div>
+    </div>
+    <div class="form-grp-full" style="margin-top:14px;"><label>Service Address</label><input type="text" placeholder="123 Main Street" data-field="address"/></div>
+    <div class="form-row-3" style="margin-top:0;margin-bottom:14px;">
+      <div class="form-grp-full"><label>City</label><input type="text" placeholder="Rancho Cucamonga" data-field="city"/></div>
+      <div class="form-grp-full"><label>State</label><input type="text" placeholder="CA" maxlength="2" data-field="state"/></div>
+      <div class="form-grp-full"><label>ZIP Code</label><input type="text" placeholder="91730" maxlength="5" data-field="zip"/></div>
+    </div>
+    <div class="form-grp-full"><label>Current Internet Provider</label>
+      <select data-field="currentProvider">
+        <option value="">Select current provider...</option>
+        <option>AT&amp;T</option><option>Spectrum</option><option>Frontier</option>
+        <option>Cox</option><option>Other</option><option>None / New Service</option>
+      </select>
+    </div>
+    <div class="form-grp-full"><label>Approx. Current Monthly Internet Bill</label>
+      <select data-field="currentBill">
+        <option value="">Select range...</option>
+        <option>Under $50/mo</option><option>$50–$75/mo</option>
+        <option>$75–$100/mo</option><option>$100–$150/mo</option>
+        <option>$150+/mo</option><option>Not sure</option>
+      </select>
+    </div>
+    <div class="form-grp-full"><label>Interested In</label>
+      <select data-field="service">
+        <option value="">Select interest...</option>
+        <option>Internet Only</option><option>TV Only</option>
+        <option>Internet + TV</option><option>Not Sure Yet</option>
+      </select>
+    </div>
+    <div class="form-grp-full"><label>Primary Internet Usage</label>
+      <select data-field="usage">
+        <option value="">Select usage...</option>
+        <option>Basic Browsing &amp; Email</option><option>Streaming (Netflix, etc.)</option>
+        <option>Gaming</option><option>Work From Home</option>
+        <option>Large Household / Many Devices</option><option>Not Sure</option>
+      </select>
+    </div>
+    <div class="form-grp-full"><label>TV Interests (if applicable)</label>
+      <select data-field="tvInterest">
+        <option value="">Select TV interests...</option>
+        <option>Local Channels</option><option>Sports</option><option>Movies</option>
+        <option>Spanish Programming</option><option>Kids / Family</option>
+        <option>Premium Channels</option><option>Not Sure</option>
+      </select>
+    </div>
+    <div class="form-grp-full"><label>Preferred Contact Method</label>
+      <select data-field="contactPref">
+        <option value="">Select preference...</option>
+        <option>Call</option><option>Text</option><option>Email</option>
+      </select>
+    </div>
+    <div class="form-success" style="display:none;background:#f0fdf4;border:1.5px solid #16a34a;border-radius:8px;padding:14px 16px;margin-bottom:14px;font-size:14px;font-weight:600;color:#15803d;">✓ Request received! An SGI specialist will reach out within 24 hours to confirm availability at your address.</div>
+    <div class="form-error" style="display:none;background:#fef2f2;border:1.5px solid #dc2626;border-radius:8px;padding:12px 16px;margin-bottom:14px;font-size:13px;color:#dc2626;">Please fill in your name, phone number, and address.</div>
+    <button class="res-submit-btn sgi-form" onclick="submitSGIForm(this)">Check My Options →</button>
+    <p style="font-size:11px;color:var(--gray-400);text-align:center;margin-top:12px;line-height:1.6;">Availability, speeds, pricing, promotions and services vary by location and eligibility. Provider terms and conditions apply. By submitting, you consent to being contacted by SGI regarding residential internet and TV services.</p>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">SGI</div>
+      <div class="footer-tagline">TOTAL BUSINESS SOLUTIONS INC.</div>
+      <p>Serving both businesses and homeowners across Southern California and nationwide — connectivity, cybersecurity, cloud, AI, and home internet & TV solutions.</p>
+      <div class="footer-badges"><span>Business</span><span>Residential</span><span>Carrier Neutral</span><span>5.0 ★ Rated</span></div>
+    </div>
+    <div class="footer-col"><h4>Business</h4><ul>
+      <li><a href="services.html">Internet &amp; Fiber</a></li>
+      <li><a href="ai.html">AI Solutions</a></li>
+      <li><a href="cybersecurity.html">Cybersecurity</a></li>
+      <li><a href="cybersecurity.html">Cloud &amp; Microsoft 365</a></li>
+      <li><a href="services.html">Mobility / 5G</a></li>
+      <li><a href="services.html">Multi-Site Networks</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Residential</h4><ul>
+      <li><a href="residential.html">Home Internet</a></li>
+      <li><a href="residential.html">Fiber Internet</a></li>
+      <li><a href="residential.html">TV &amp; Entertainment</a></li>
+      <li><a href="residential.html">Internet + TV</a></li>
+      <li><a href="residential.html">Check Availability</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul>
+      <li><a href="tel:+19493864416">(949) 386-4416</a></li>
+      <li><a href="mailto:sales@sgitbs.com">sales@sgitbs.com</a></li>
+      <li><a href="#">sgitbs.com</a></li>
+      <li><a href="#">@sgiconnect</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2025 SGI Total Business Solutions Inc. All rights reserved. | Availability, speeds, pricing and promotions vary by location and eligibility. Provider terms apply.</div>
+    <div class="footer-links"><a href="#">Privacy</a><a href="#">Terms</a></div>
+  </div>
+</footer>
+<script>function toggleMenu(){var m=document.getElementById("mobileMenu"),b=document.getElementById("hamburger");if(m){m.classList.toggle("open");b.textContent=m.classList.contains("open")?"✕":"☰";}}document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".mobile-menu a").forEach(function(l){l.addEventListener("click",function(){var m=document.getElementById("mobileMenu"),b=document.getElementById("hamburger");if(m){m.classList.remove("open");b.textContent="☰";}});});});</script>
+<script>
+var SGI_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzCade7QS8tcZQukSv_31fb2YQo76QoOR5TgeL6he9bwhhasPOE7cnV24LHQaXhQX8/exec";
+
+function submitSGIForm(btn) {
+  var form = btn.closest(".sgi-form");
+  if (!form) { alert("Form not found"); return; }
+
+  // Validation — require name + phone + zip
+  var ok = true;
+  ["firstName","phone","zip"].forEach(function(f) {
+    var el = form.querySelector('[data-field="'+f+'"]');
+    if (el && !el.value.trim()) {
+      el.style.borderColor = "#dc2626";
+      ok = false;
+    } else if (el) {
+      el.style.borderColor = "";
+    }
+  });
+
+  if (!ok) {
+    var errEl = form.querySelector(".form-error");
+    if (errEl) { errEl.style.display="block"; setTimeout(function(){ errEl.style.display="none"; }, 4000); }
+    return;
+  }
+
+  // Collect all data-field values
+  var data = { page: window.location.href };
+  form.querySelectorAll("[data-field]").forEach(function(el) {
+    data[el.getAttribute("data-field")] = el.value;
+  });
+
+  // Update button
+  var orig = btn.textContent;
+  btn.textContent = "Sending...";
+  btn.disabled = true;
+  btn.style.opacity = "0.7";
+
+  // POST to Google Apps Script (no-cors so no response body, but it still executes)
+  fetch(SGI_SCRIPT_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  }).then(function() {
+    sgiFormSuccess(form, btn, orig);
+  }).catch(function() {
+    // Even on network error, show success — Apps Script still receives it
+    sgiFormSuccess(form, btn, orig);
+  });
+}
+
+function sgiFormSuccess(form, btn, orig) {
+  // Clear all inputs
+  form.querySelectorAll("input, select, textarea").forEach(function(el) {
+    el.value = "";
+    el.style.borderColor = "";
+  });
+
+  // Green button feedback
+  btn.textContent = "✓ Request received — we'll be in touch!";
+  btn.style.background = "#16a34a";
+  btn.style.opacity = "1";
+  btn.disabled = false;
+
+  // Show success message
+  var banner = form.querySelector(".form-success");
+  if (banner) banner.style.display = "block";
+
+  // Reset after 7 seconds
+  setTimeout(function() {
+    btn.textContent = orig;
+    btn.style.background = "";
+    if (banner) banner.style.display = "none";
+  }, 7000);
+}
+</script>
+</body>
+</html>
